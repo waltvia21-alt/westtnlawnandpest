@@ -1,0 +1,18 @@
+# Claude Code internals
+.tmp/
+CLAUDE.md
+.claude/
+
+# Environment / secrets
+.env
+*.env
+credentials.json
+token.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+*.swp

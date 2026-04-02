@@ -1,0 +1,926 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weed Control &amp; Fertilization — West TN Lawn &amp; Pest | Jackson, TN</title>
+  <meta name="description" content="Expert weed control, fertilization & lime applications for Jackson, TN lawns. West TN Lawn & Pest — results guaranteed or we retreat for free." />
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="canonical" href="https://westtnlawnandpest.com/services/weed-control.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://westtnlawnandpest.com/services/weed-control.html" />
+  <meta property="og:title" content="Weed Control & Fertilization Services in West Tennessee | West TN Lawn & Pest" />
+  <meta property="og:description" content="Expert weed control, fertilization, lime application & disease prevention for West Tennessee lawns. Pre & post-emergent treatments timed to your grass. Free quote." />
+  <meta property="og:image" content="https://westtnlawnandpest.com/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Weed Control & Fertilization in West Tennessee | West TN Lawn & Pest" />
+  <meta name="twitter:description" content="Expert weed control, fertilization & lawn treatments for West Tennessee. Free quote — 731-313-7732." />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Lawn Weed Control & Fertilization",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "West TN Lawn & Pest",
+      "telephone": "+17313137732",
+      "url": "https://westtnlawnandpest.com",
+      "address": {"@type": "PostalAddress", "addressLocality": "Jackson", "addressRegion": "TN", "addressCountry": "US"}
+    },
+    "areaServed": {"@type": "State", "name": "West Tennessee"},
+    "description": "Pre and post-emergent weed control, slow-release fertilization, lime application, disease prevention, and fungus control for West Tennessee lawns.",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Lawn Services",
+      "itemListElement": [
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Weed Control"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Lawn Fertilization"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Lime Application"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Disease Prevention Treatments"}}
+      ]
+    }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    img { display: block; max-width: 100%; }
+
+    /* ── Design Tokens ── */
+    :root {
+      --forest:    #1B6B2A;
+      --pine:      #1A3A24;
+      --leaf:      #22803A;
+      --sage:      #6B7C6F;
+      --cream:     #F7F5F0;
+      --gold:      #C4A44A;
+      --gold-lt:   #DFB85E;
+      --white:     #FFFFFF;
+      --text:      #1C2B1E;
+      --border:    #DDD9D0;
+      --green-100: #E5EFE6;
+      --r-sm: 6px;  --r-md: 12px;  --r-lg: 20px;
+      --sh-sm: 0 2px 8px rgba(0,0,0,.07);
+      --sh-md: 0 6px 24px rgba(0,0,0,.10);
+      --sh-lg: 0 16px 56px rgba(0,0,0,.13);
+      --ease: all .24s ease;
+    }
+
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      color: var(--text); background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, h4 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      line-height: 1.12; color: var(--pine);
+    }
+
+    /* ── Utility ── */
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+    .section    { padding: 96px 0; }
+    .section--cream { background: var(--cream); }
+    .section--pine  { background: var(--pine); }
+    .text-center { text-align: center; }
+
+    .chip {
+      display: inline-flex; align-items: center; gap: 7px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px; font-weight: 600; letter-spacing: 2.5px;
+      text-transform: uppercase; padding: 6px 14px;
+      border-radius: 100px;
+    }
+    .chip--green { background: var(--green-100); color: var(--forest); }
+    .chip--white { background: rgba(255,255,255,.14); color: #fff; }
+
+    .section-eyebrow { margin-bottom: 14px; }
+    .section-title   { font-size: clamp(32px, 4vw, 50px); margin-bottom: 16px; }
+    .section-body    { font-size: 17px; color: var(--sage); line-height: 1.7; max-width: 600px; }
+    .section-body--center { margin: 0 auto; }
+
+    .rule {
+      width: 48px; height: 3px;
+      background: linear-gradient(90deg, var(--forest), var(--gold));
+      border-radius: 2px; margin: 16px 0 32px;
+    }
+    .rule--center { margin: 16px auto 32px; }
+
+    /* ── Buttons ── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 9px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px; font-weight: 600; letter-spacing: .2px;
+      padding: 14px 28px; border-radius: var(--r-sm);
+      border: none; cursor: pointer; text-decoration: none;
+      transition: var(--ease);
+    }
+    .btn--forest {
+      background: var(--forest); color: var(--white);
+    }
+    .btn--forest:hover { background: var(--leaf); transform: translateY(-1px); box-shadow: var(--sh-md); }
+    .btn--gold {
+      background: var(--gold); color: var(--pine);
+    }
+    .btn--gold:hover { background: var(--gold-lt); transform: translateY(-1px); box-shadow: var(--sh-md); }
+    .btn--outline-white {
+      background: transparent; color: var(--white);
+      border: 2px solid rgba(255,255,255,.55);
+    }
+    .btn--outline-white:hover { background: rgba(255,255,255,.12); border-color: var(--white); }
+    .btn--sm { padding: 10px 20px; font-size: 14px; }
+
+    /* ── Promo Banner ── */
+    .promo-banner {
+      background: var(--forest);
+      color: var(--white);
+      text-align: center;
+      padding: 11px 24px;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: .2px;
+    }
+    .promo-banner a {
+      color: var(--gold-lt);
+      text-decoration: none;
+      font-weight: 700;
+      margin-left: 8px;
+    }
+    .promo-banner a:hover { text-decoration: underline; }
+
+    /* ── Nav ── */
+    .nav {
+      background: var(--pine);
+      position: sticky; top: 0; z-index: 900;
+      box-shadow: 0 2px 16px rgba(0,0,0,.3);
+    }
+    .nav__inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 68px; gap: 16px;
+    }
+    .nav__logo { text-decoration: none; flex-shrink: 0; display: flex; align-items: center; }
+    .nav__links {
+      display: flex; align-items: center; gap: 4px;
+      list-style: none; margin: 0;
+    }
+    .nav__links a {
+      font-size: 12.5px; font-weight: 500; letter-spacing: .3px; color: rgba(255,255,255,.8);
+      text-decoration: none; padding: 6px 10px; border-radius: var(--r-sm);
+      transition: var(--ease); white-space: nowrap;
+    }
+    .nav__links a:hover { color: var(--white); background: rgba(255,255,255,.08); }
+    .nav__links a.active {
+      color: var(--white);
+      border-bottom: 2px solid var(--gold);
+      padding-bottom: 5px;
+    }
+    .nav__right {
+      display: flex; align-items: center; gap: 16px; flex-shrink: 0;
+    }
+    .nav__phone {
+      display: flex; align-items: center; gap: 7px; white-space: nowrap;
+      font-size: 14px; font-weight: 600; color: var(--white);
+      text-decoration: none;
+    }
+    .nav__phone:hover { color: var(--gold-lt); }
+    .nav__hamburger {
+      display: none; background: none; border: none; cursor: pointer;
+      padding: 6px; color: var(--white);
+    }
+    .nav__hamburger svg { display: block; }
+
+    /* Mobile nav */
+    .nav__mobile {
+      display: none;
+      background: var(--pine);
+      border-top: 1px solid rgba(255,255,255,.1);
+      padding: 12px 0 20px;
+    }
+    .nav__mobile.open { display: block; }
+    .nav__mobile a {
+      display: block; padding: 11px 24px;
+      font-size: 15px; font-weight: 500;
+      color: rgba(255,255,255,.85); text-decoration: none;
+    }
+    .nav__mobile a:hover { color: var(--white); background: rgba(255,255,255,.06); }
+    .nav__mobile a.active { color: var(--white); font-weight: 600; }
+    .nav__mobile .mobile-cta {
+      margin: 12px 24px 0;
+    }
+
+    @media (max-width: 900px) {
+      .nav__links, .nav__phone { display: none; }
+      .nav__hamburger { display: flex; }
+    }
+
+    /* ── Page Hero ── */
+    .hero {
+      position: relative;
+      min-height: 520px;
+      display: flex; align-items: center;
+      overflow: hidden;
+    }
+    .hero__bg {
+      position: absolute; inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1585320806297-9794b3e4aaae?w=1800&q=80');
+      background-size: cover; background-position: center;
+    }
+    .hero__overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(26,58,36,.88) 0%, rgba(27,107,42,.65) 100%);
+    }
+    .hero__content {
+      position: relative; z-index: 1;
+      padding: 80px 0;
+    }
+    .hero__eyebrow { margin-bottom: 18px; }
+    .hero h1 {
+      font-size: clamp(36px, 5vw, 64px);
+      color: var(--white);
+      line-height: 1.08;
+      max-width: 740px;
+      margin-bottom: 20px;
+    }
+    .hero__sub {
+      font-size: 18px; color: rgba(255,255,255,.85);
+      line-height: 1.65; max-width: 560px;
+      margin-bottom: 36px;
+    }
+    .hero__actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    /* ── Services Grid ── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 60px;
+    }
+    @media (max-width: 1000px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 620px) {
+      .services-grid { grid-template-columns: 1fr; }
+    }
+
+    /* First service card spans full width on 3-col, or first row of 2-col */
+    .service-card {
+      background: var(--white);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      box-shadow: var(--sh-md);
+      border: 1px solid var(--border);
+      display: flex; flex-direction: column;
+      transition: var(--ease);
+    }
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--sh-lg);
+    }
+    .service-card__icon {
+      width: 100%; height: 180px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 10px;
+      background: linear-gradient(145deg, #E8F2E9 0%, #D4E9D7 100%);
+    }
+    .service-card__icon span {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 2.5px; text-transform: uppercase;
+      color: var(--forest); background: rgba(27,107,42,.12);
+      padding: 4px 12px; border-radius: 100px;
+    }
+    .service-card__body {
+      padding: 28px 28px 32px;
+      flex: 1; display: flex; flex-direction: column;
+    }
+    .service-card__tag {
+      display: inline-block;
+      font-size: 11px; font-weight: 600; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--forest);
+      margin-bottom: 10px;
+    }
+    .service-card h3 {
+      font-size: 24px; margin-bottom: 14px; color: var(--pine);
+    }
+    .service-card__desc {
+      font-size: 15px; color: var(--sage); line-height: 1.68;
+      margin-bottom: 20px;
+    }
+    .service-card__features {
+      list-style: none; margin: 0 0 28px;
+      display: flex; flex-direction: column; gap: 8px;
+      flex: 1;
+    }
+    .service-card__features li {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 14px; color: var(--text); line-height: 1.5;
+    }
+    .service-card__features li::before {
+      content: '';
+      flex-shrink: 0;
+      width: 18px; height: 18px; margin-top: 1px;
+      background: var(--green-100);
+      border-radius: 50%;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M3.5 8.5l3 3 6-6' stroke='%231B6B2A' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-size: 14px; background-repeat: no-repeat; background-position: center;
+    }
+    .service-card .btn { align-self: flex-start; margin-top: auto; }
+
+    /* ── Trust Strip ── */
+    .trust-strip {
+      background: var(--pine);
+      padding: 0;
+    }
+    .trust-strip__inner {
+      display: flex; align-items: stretch;
+      justify-content: center;
+    }
+    .trust-item {
+      display: flex; align-items: center; gap: 14px;
+      padding: 28px 36px;
+      border-right: 1px solid rgba(255,255,255,.1);
+      flex: 1; justify-content: center;
+    }
+    .trust-item:last-child { border-right: none; }
+    .trust-item__icon {
+      width: 44px; height: 44px; flex-shrink: 0;
+      background: rgba(255,255,255,.08);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .trust-item__icon svg { color: var(--gold); }
+    .trust-item__text strong {
+      display: block;
+      font-family: 'DM Serif Display', serif;
+      font-size: 17px; color: var(--white); margin-bottom: 2px;
+    }
+    .trust-item__text span {
+      font-size: 13px; color: rgba(255,255,255,.6);
+    }
+    @media (max-width: 860px) {
+      .trust-strip__inner { flex-wrap: wrap; }
+      .trust-item {
+        flex: 1 1 50%;
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,.1);
+      }
+      .trust-item:nth-child(odd) { border-right: 1px solid rgba(255,255,255,.1); }
+      .trust-item:last-child, .trust-item:nth-last-child(2):nth-child(odd) { border-bottom: none; }
+    }
+    @media (max-width: 480px) {
+      .trust-item { flex: 1 1 100%; border-right: none !important; }
+      .trust-item:last-child { border-bottom: none; }
+    }
+
+    /* ── CTA Section ── */
+    .cta-section {
+      position: relative;
+      overflow: hidden;
+      padding: 100px 0;
+    }
+    .cta-section__bg {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, var(--pine) 0%, var(--forest) 100%);
+    }
+    .cta-section__pattern {
+      position: absolute; inset: 0; opacity: .04;
+      background-image: radial-gradient(circle, #fff 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+    .cta-section__content {
+      position: relative; z-index: 1;
+      text-align: center;
+    }
+    .cta-section h2 {
+      font-size: clamp(30px, 4vw, 48px);
+      color: var(--white); margin-bottom: 16px;
+    }
+    .cta-section p {
+      font-size: 18px; color: rgba(255,255,255,.8);
+      line-height: 1.65; max-width: 540px; margin: 0 auto 36px;
+    }
+    .cta-section__actions {
+      display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+    }
+    .cta-phone {
+      font-size: 28px; font-weight: 700; font-family: 'DM Serif Display', serif;
+      color: var(--gold-lt); text-decoration: none; display: inline-flex; align-items: center;
+      margin-bottom: 8px; letter-spacing: .5px;
+    }
+    .cta-phone:hover { color: var(--white); }
+
+    /* ── Footer ── */
+    .footer {
+      background: #111d14;
+      color: rgba(255,255,255,.7);
+      padding: 72px 0 0;
+    }
+    .footer__grid {
+      display: grid;
+      grid-template-columns: 2fr 1.2fr 1.5fr 1.5fr;
+      gap: 40px;
+      padding-bottom: 56px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    @media (max-width: 960px) {
+      .footer__grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 540px) {
+      .footer__grid { grid-template-columns: 1fr; }
+    }
+    .footer__brand p {
+      font-size: 14px; line-height: 1.7; margin-top: 16px;
+      max-width: 300px; color: rgba(255,255,255,.55);
+    }
+    .footer__col h4 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: rgba(255,255,255,.4);
+      margin-bottom: 18px;
+    }
+    .footer__col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .footer__col ul a {
+      font-size: 14px; color: rgba(255,255,255,.65); text-decoration: none;
+      transition: color .2s;
+    }
+    .footer__col ul a:hover { color: var(--gold-lt); }
+    .footer__contact-item {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 14px; margin-bottom: 12px;
+    }
+    .footer__contact-item svg { flex-shrink: 0; margin-top: 2px; color: var(--gold); }
+    .footer__contact-item a { color: rgba(255,255,255,.65); text-decoration: none; }
+    .footer__contact-item a:hover { color: var(--gold-lt); }
+    .footer__bottom {
+      padding: 20px 0;
+      display: flex; align-items: center; justify-content: space-between;
+      font-size: 13px; color: rgba(255,255,255,.35);
+      flex-wrap: wrap; gap: 10px;
+    }
+    .footer__bottom a { color: rgba(255,255,255,.35); text-decoration: none; }
+    .footer__bottom a:hover { color: rgba(255,255,255,.6); }
+
+    /* ── Green-100 ── */
+    .green-100 { background: var(--green-100); }
+
+    /* ── Misc responsive ── */
+    @media (max-width: 768px) {
+      .container { padding: 0 18px; }
+      .hero { min-height: 420px; }
+      .hero__content { padding: 60px 0; }
+      .hero h1 { font-size: clamp(32px, 7vw, 52px); }
+      .hero__sub { font-size: 16px; margin-bottom: 28px; }
+      .hero__actions { gap: 10px; }
+      .section { padding: 64px 0; }
+    }
+    @media (max-width: 640px) {
+      .section { padding: 56px 0; }
+      .hero { min-height: 360px; }
+      .hero__content { padding: 52px 0; }
+    }
+    @media (max-width: 480px) {
+      .container { padding: 0 16px; }
+      .hero { min-height: 320px; }
+      .hero__content { padding: 44px 0; }
+      .hero h1 { font-size: clamp(28px, 8vw, 42px); }
+      .hero__sub { font-size: 15px; }
+      .hero__actions .btn { width: 100%; justify-content: center; }
+      .section { padding: 48px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Promo Banner -->
+  <div class="promo-banner">
+    Spring Special: Free Lawn Assessment — No obligation.
+    <a href="tel:7313137732">Call 731-313-7732</a>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="../index.html" class="nav__logo" aria-label="West TN Lawn & Pest — Home">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 120" height="42" aria-hidden="true">
+            <defs><linearGradient id="navCG" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#2E9042"/><stop offset="100%" stop-color="#156A24"/></linearGradient></defs>
+            <circle cx="60" cy="60" r="55" fill="url(#navCG)" stroke="#1A3A24" stroke-width="4"/>
+            <circle cx="60" cy="60" r="48" fill="none" stroke="rgba(255,255,255,.25)" stroke-width="2"/>
+            <polygon points="60,19 64.4,31.9 78.1,32.1 67.1,40.3 71.2,53.4 60,45.5 48.8,53.4 52.9,40.3 41.9,32.1 55.6,31.9" fill="white"/>
+            <polygon points="41,56 45.4,68.9 59.1,69.1 48.1,77.3 52.2,90.4 41,82.5 29.8,90.4 33.9,77.3 22.9,69.1 36.6,68.9" fill="white"/>
+            <polygon points="79,56 83.4,68.9 97.1,69.1 86.1,77.3 90.2,90.4 79,82.5 67.8,90.4 71.9,77.3 60.9,69.1 74.6,68.9" fill="white"/>
+            <text x="128" y="74" font-family="'DM Sans',Arial,sans-serif" font-size="52" font-weight="700" font-style="italic" fill="white">West<tspan font-style="normal">TN</tspan></text>
+            <text x="131" y="98" font-family="'DM Sans',Arial,sans-serif" font-size="22" font-weight="500" fill="rgba(255,255,255,.80)" letter-spacing="1">Lawn &amp; Pest</text>
+          </svg>
+        </a>
+
+        <ul class="nav__links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="weed-control.html" class="active">Lawn Services</a></li>
+          <li><a href="pest-control.html">Pest Control</a></li>
+          <li><a href="../index.html#plans">Plans</a></li>
+          <li><a href="../index.html#areas">Areas</a></li>
+          <li><a href="../faq.html">FAQ</a></li>
+          <li><a href="../book.html">Book</a></li>
+          <li><a href="../about.html">About</a></li>
+        <li><a href="../account.html">Account</a></li>
+        </ul>
+
+        <div class="nav__right">
+          <a href="tel:7313137732" class="nav__phone"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.79 19.79 19.79 0 01.07 1.18 2 2 0 012.07 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>731-313-7732</a>
+          <a href="../index.html#quote" class="btn btn--gold btn--sm">Free Quote</a>
+          <button class="nav__hamburger" id="hamburgerBtn" aria-label="Toggle menu" aria-expanded="false">
+            <svg id="iconOpen" xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+            <svg id="iconClose" xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="display:none">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="nav__mobile" id="mobileMenu" role="menu">
+      <a href="../index.html" role="menuitem">Home</a>
+      <a href="weed-control.html" class="active" role="menuitem">Lawn Services</a>
+      <a href="pest-control.html" role="menuitem">Pest Control</a>
+      <a href="../index.html#plans" role="menuitem">Plans</a>
+      <a href="../index.html#areas" role="menuitem">Areas</a>
+      <a href="../faq.html" role="menuitem">FAQ</a>
+      <a href="../account.html" role="menuitem">Account</a>
+      <div class="mobile-cta">
+        <a href="../index.html#quote" class="btn btn--forest" style="width:100%;justify-content:center;">Get a Free Quote</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="hero" aria-label="Lawn care services hero">
+    <div class="hero__bg" role="img" aria-label="Lush green lawn in West Tennessee"></div>
+    <div class="hero__overlay"></div>
+    <div class="container hero__content">
+      <div class="hero__eyebrow">
+        <span class="chip chip--white">Lawn Care Services</span>
+      </div>
+      <h1>Professional Lawn Care Services for West Tennessee</h1>
+      <p class="hero__sub">
+        From targeted weed control and custom fertilization programs to lime applications and fungus treatments — we build the thick, green, weed-free lawn your property deserves.
+      </p>
+      <div class="hero__actions">
+        <a href="../index.html#quote" class="btn btn--gold">Get a Free Quote</a>
+        <a href="tel:7313137732" class="btn btn--outline-white">Call 731-313-7732</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="section section--cream" id="services" aria-labelledby="services-heading">
+    <div class="container">
+      <div class="text-center">
+        <span class="chip chip--green section-eyebrow">What We Do</span>
+        <h2 class="section-title" id="services-heading">Our Lawn Care Programs</h2>
+        <div class="rule rule--center"></div>
+        <p class="section-body section-body--center">
+          Every service is timed to West Tennessee's climate and turf conditions — because what works in Nashville doesn't always work here.
+        </p>
+      </div>
+
+      <div class="services-grid">
+
+        <!-- Card 1: Weed Control -->
+        <article class="service-card">
+          <div class="service-card__icon">
+            <svg width="68" height="68" viewBox="0 0 48 48" fill="none" stroke="#1B6B2A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M24 40V26"/>
+              <path d="M24 32C22 30 16 26 17 20C20 19 24 24 24 32" fill="#22803A" fill-opacity=".35"/>
+              <path d="M24 32C26 30 32 26 31 20C28 19 24 24 24 32" fill="#22803A" fill-opacity=".35"/>
+              <circle cx="24" cy="16" r="4" fill="#22803A" fill-opacity=".2"/>
+              <path d="M24 12V9M24 21v3M20 16h-3M28 16h3M21.5 13.5l-2-2M26.5 18.5l2 2M26.5 13.5l2-2M21.5 18.5l-2 2"/>
+              <path d="M13 11L35 35" stroke="#C4A44A" stroke-width="2.4"/>
+              <path d="M35 11L13 35" stroke="#C4A44A" stroke-width="2.4"/>
+            </svg>
+            <span>Weed Control</span>
+          </div>
+          <div class="service-card__body">
+            <span class="service-card__tag">Treatment</span>
+            <h3>Weed Control</h3>
+            <p class="service-card__desc">
+              Pre-emergent and post-emergent weed treatments that eliminate broadleaf weeds, crabgrass, and grassy weeds from your West Tennessee lawn.
+            </p>
+            <p class="service-card__desc">
+              We time applications to the calendar your weeds actually follow — targeting germination windows before they open and knocking out existing growth before it spreads.
+            </p>
+            <ul class="service-card__features">
+              <li>Pre-emergent weed prevention</li>
+              <li>Broadleaf weed treatment (dandelions, clover, henbit)</li>
+              <li>Crabgrass &amp; grassy weed control</li>
+              <li>Spot treatments between visits</li>
+              <li>Seasonal timing for maximum effectiveness</li>
+            </ul>
+            <a href="../index.html#quote" class="btn btn--forest btn--sm">Get a Quote</a>
+          </div>
+        </article>
+
+        <!-- Card 2: Fertilization -->
+        <article class="service-card">
+          <div class="service-card__icon">
+            <svg width="68" height="68" viewBox="0 0 48 48" fill="none" stroke="#1B6B2A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10 38C10 38 16 34 24 34C32 34 38 38 38 38" stroke="#1A3A24" stroke-width="2"/>
+              <path d="M24 34V22"/>
+              <path d="M24 28C21 26 16 22 18 16C21 15 25 21 24 28" fill="#22803A" fill-opacity=".4"/>
+              <path d="M24 28C27 26 32 22 30 16C27 15 23 21 24 28" fill="#22803A" fill-opacity=".4"/>
+              <path d="M24 22V14M21 17l3-3 3 3" stroke="#22803A" stroke-width="1.6"/>
+              <circle cx="36" cy="12" r="4" fill="#C4A44A" fill-opacity=".25" stroke="#C4A44A"/>
+              <path d="M36 6V4M36 20v2M30 12h-2M42 12h2M32 8l-1.5-1.5M40 16l1.5 1.5M40 8l1.5-1.5M32 16l-1.5 1.5" stroke="#C4A44A" stroke-width="1.4"/>
+            </svg>
+            <span>Fertilization</span>
+          </div>
+          <div class="service-card__body">
+            <span class="service-card__tag">Nutrition</span>
+            <h3>Fertilization Services</h3>
+            <p class="service-card__desc">
+              Slow-release fertilization programs custom-blended for West Tennessee warm-season turf. We feed your lawn what it needs, when it needs it.
+            </p>
+            <p class="service-card__desc">
+              Our blends are matched to your soil test results — not off-the-shelf guesswork — so every application works harder and lasts longer.
+            </p>
+            <ul class="service-card__features">
+              <li>Custom soil-based fertilizer blends</li>
+              <li>Spring green-up applications</li>
+              <li>Summer stress protection formulas</li>
+              <li>Fall winterization treatments</li>
+              <li>Slow-release nitrogen programs</li>
+            </ul>
+            <a href="../index.html#quote" class="btn btn--forest btn--sm">Get a Quote</a>
+          </div>
+        </article>
+
+        <!-- Card 3: Lime Application -->
+        <article class="service-card">
+          <div class="service-card__icon">
+            <svg width="68" height="68" viewBox="0 0 48 48" fill="none" stroke="#1B6B2A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8 36C8 36 16 32 24 32C32 32 40 36 40 36" stroke="#1A3A24" stroke-width="2"/>
+              <path d="M8 40h32" stroke="#1A3A24" stroke-width="2"/>
+              <ellipse cx="24" cy="30" rx="10" ry="4" fill="#C4A44A" fill-opacity=".25" stroke="#C4A44A" stroke-width="1.5"/>
+              <path d="M24 30V18"/>
+              <path d="M18 24C18 24 20 20 24 18C28 20 30 24 30 24" fill="#22803A" fill-opacity=".35" stroke="#1B6B2A" stroke-width="1.5"/>
+              <path d="M16 20C16 20 18 15 24 13C30 15 32 20 32 20" fill="#22803A" fill-opacity=".25" stroke="#1B6B2A" stroke-width="1.5"/>
+              <circle cx="24" cy="12" r="3" fill="#22803A" fill-opacity=".3" stroke="#1B6B2A"/>
+              <path d="M14 28h4M30 28h4M12 32h3M33 32h3" stroke="#C4A44A" stroke-width="1.4" stroke-dasharray="2 2"/>
+            </svg>
+            <span>Lime Application</span>
+          </div>
+          <div class="service-card__body">
+            <span class="service-card__tag">Soil Health</span>
+            <h3>Lime Application</h3>
+            <p class="service-card__desc">
+              Soil pH is the foundation of a healthy lawn. Lime applications neutralize acidic soil so your grass can absorb nutrients effectively.
+            </p>
+            <p class="service-card__desc">
+              Most West Tennessee soils trend acidic over time. Without the right pH, even the best fertilizer gets locked out — lime fixes that at the root level.
+            </p>
+            <ul class="service-card__features">
+              <li>Soil pH testing and analysis</li>
+              <li>Pelletized lime application</li>
+              <li>Improves fertilizer effectiveness</li>
+              <li>Reduces moss and weed pressure</li>
+              <li>Recommended for most West Tennessee soils</li>
+            </ul>
+            <a href="../index.html#quote" class="btn btn--forest btn--sm">Get a Quote</a>
+          </div>
+        </article>
+
+        <!-- Card 4: Disease Prevention -->
+        <article class="service-card">
+          <div class="service-card__icon">
+            <svg width="68" height="68" viewBox="0 0 48 48" fill="none" stroke="#1B6B2A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M24 6L26.8 14.2L36 14.6L29 20L31.4 29.2L24 24.4L16.6 29.2L19 20L12 14.6L21.2 14.2Z" fill="#22803A" fill-opacity=".25" stroke="#1B6B2A"/>
+              <path d="M24 24V42"/>
+              <path d="M18 30C18 30 20 36 24 38C28 36 30 30 30 30" fill="#22803A" fill-opacity=".3" stroke="#1B6B2A" stroke-width="1.5"/>
+              <path d="M10 20l3 2M38 20l-3 2M10 30l4-1M38 30l-4-1" stroke="#C4A44A" stroke-width="1.5" stroke-dasharray="2 2"/>
+            </svg>
+            <span>Disease Prevention</span>
+          </div>
+          <div class="service-card__body">
+            <span class="service-card__tag">Prevention</span>
+            <h3>Disease Prevention Treatments</h3>
+            <p class="service-card__desc">
+              Protect your lawn before problems start. Our disease prevention program targets the fungal and bacterial conditions common in West Tennessee's humid summers.
+            </p>
+            <p class="service-card__desc">
+              Preventive treatment costs a fraction of remediation. We apply at the right intervals so disease pressure never gains a foothold.
+            </p>
+            <ul class="service-card__features">
+              <li>Seasonal preventive treatments</li>
+              <li>Targets brown patch and dollar spot</li>
+              <li>Customized to your grass type</li>
+              <li>Applied before disease conditions develop</li>
+              <li>Included in Total Care program</li>
+            </ul>
+            <a href="../index.html#quote" class="btn btn--forest btn--sm">Get a Quote</a>
+          </div>
+        </article>
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Strip -->
+  <div class="trust-strip" role="list" aria-label="Why choose West TN Lawn &amp; Pest">
+    <div class="container">
+      <div class="trust-strip__inner">
+
+        <div class="trust-item" role="listitem">
+          <div class="trust-item__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" color="#C4A44A">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/>
+            </svg>
+          </div>
+          <div class="trust-item__text">
+            <strong>Licensed &amp; Insured</strong>
+            <span>Fully certified in Tennessee</span>
+          </div>
+        </div>
+
+        <div class="trust-item" role="listitem">
+          <div class="trust-item__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" color="#C4A44A">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/>
+            </svg>
+          </div>
+          <div class="trust-item__text">
+            <strong>Satisfaction Guaranteed</strong>
+            <span>We make it right, period</span>
+          </div>
+        </div>
+
+        <div class="trust-item" role="listitem">
+          <div class="trust-item__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" color="#C4A44A">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/>
+            </svg>
+          </div>
+          <div class="trust-item__text">
+            <strong>Same-Week Service</strong>
+            <span>Fast scheduling, no long waits</span>
+          </div>
+        </div>
+
+        <div class="trust-item" role="listitem">
+          <div class="trust-item__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" color="#C4A44A">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/>
+            </svg>
+          </div>
+          <div class="trust-item__text">
+            <strong>West Tennessee Experts</strong>
+            <span>Local knowledge, proven results</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA Section -->
+  <section class="cta-section" aria-labelledby="cta-heading">
+    <div class="cta-section__bg"></div>
+    <div class="cta-section__pattern"></div>
+    <div class="container cta-section__content">
+      <span class="chip chip--white" style="margin-bottom:20px;display:inline-flex;">Get Started Today</span>
+      <h2 id="cta-heading">Ready to Get Started?</h2>
+      <p>Call us for a free lawn assessment or submit a quote request online — we'll get back to you the same day.</p>
+      <a href="tel:7313137732" class="cta-phone"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:8px;"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.79 19.79 19.79 0 01.07 1.18 2 2 0 012.07 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>731-313-7732</a>
+      <div class="cta-section__actions">
+        <a href="../index.html#quote" class="btn btn--gold">Get My Free Quote</a>
+        <a href="tel:7313137732" class="btn btn--outline-white">Call Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" aria-label="Site footer">
+    <div class="container">
+      <div class="footer__grid">
+
+        <!-- Brand -->
+        <div class="footer__brand">
+          <a href="../index.html" aria-label="West TN Lawn & Pest — Home">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 120" height="38" aria-hidden="true">
+              <defs><linearGradient id="footCG" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#2E9042"/><stop offset="100%" stop-color="#156A24"/></linearGradient></defs>
+              <circle cx="60" cy="60" r="55" fill="url(#footCG)" stroke="#1A3A24" stroke-width="4"/>
+              <circle cx="60" cy="60" r="48" fill="none" stroke="rgba(255,255,255,.25)" stroke-width="2"/>
+              <polygon points="60,19 64.4,31.9 78.1,32.1 67.1,40.3 71.2,53.4 60,45.5 48.8,53.4 52.9,40.3 41.9,32.1 55.6,31.9" fill="white"/>
+              <polygon points="41,56 45.4,68.9 59.1,69.1 48.1,77.3 52.2,90.4 41,82.5 29.8,90.4 33.9,77.3 22.9,69.1 36.6,68.9" fill="white"/>
+              <polygon points="79,56 83.4,68.9 97.1,69.1 86.1,77.3 90.2,90.4 79,82.5 67.8,90.4 71.9,77.3 60.9,69.1 74.6,68.9" fill="white"/>
+              <text x="128" y="74" font-family="'DM Sans',Arial,sans-serif" font-size="52" font-weight="700" font-style="italic" fill="white">West<tspan font-style="normal">TN</tspan></text>
+              <text x="131" y="98" font-family="'DM Sans',Arial,sans-serif" font-size="22" font-weight="500" fill="rgba(255,255,255,.80)" letter-spacing="1">Lawn &amp; Pest</text>
+            </svg>
+          </a>
+          <p>West Tennessee's trusted lawn care and pest control specialists. Serving Jackson and surrounding communities with professional, reliable programs.</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer__col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="weed-control.html">Lawn Services</a></li>
+            <li><a href="pest-control.html">Pest Control</a></li>
+            <li><a href="../index.html#plans">Service Plans</a></li>
+            <li><a href="../index.html#quote">Free Quote</a></li>
+            <li><a href="../about.html">About</a></li>
+        <li><a href="../account.html">Account</a></li>
+          </ul>
+        </div>
+
+        <!-- Service Areas -->
+        <div class="footer__col">
+          <h4>Areas</h4>
+          <ul>
+            <li><a href="../index.html">Jackson, TN</a></li>
+            <li><a href="../locations/humboldt-tn.html">Humboldt, TN</a></li>
+            <li><a href="../locations/medina-tn.html">Medina, TN</a></li>
+            <li><a href="../locations/milan-tn.html">Milan, TN</a></li>
+            <li><a href="../locations/three-way-tn.html">Three Way, TN</a></li>
+            <li><a href="../locations/bells-tn.html">Bells, TN</a></li>
+            <li><a href="../locations/gadsden-tn.html">Gadsden, TN</a></li>
+            <li><a href="../locations/henderson-tn.html">Henderson, TN</a></li>
+            <li><a href="../locations/trenton-tn.html">Trenton, TN</a></li>
+            <li><a href="../locations/alamo-tn.html">Alamo, TN</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer__col">
+          <h4>Contact Us</h4>
+          <div class="footer__contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/>
+            </svg>
+            <a href="tel:7313137732" style="color:inherit;text-decoration:none;">731-313-7732</a>
+          </div>
+          <div class="footer__contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/>
+            </svg>
+            <a href="mailto:info@westtnlawnandpest.com">info@westtnlawnandpest.com</a>
+          </div>
+          <div class="footer__contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            <span>Mon–Fri 7am–6pm<br/>Sat 8am–2pm</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom">
+        <span>&copy; 2026 West TN Lawn &amp; Pest. All rights reserved.</span>
+        <span>
+          <a href="../privacy.html">Privacy Policy</a> &nbsp;·&nbsp;
+          <a href="../terms.html">Terms of Service</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Hamburger JS -->
+  <script>
+    (function () {
+      var btn = document.getElementById('hamburgerBtn');
+      var menu = document.getElementById('mobileMenu');
+      var iconOpen = document.getElementById('iconOpen');
+      var iconClose = document.getElementById('iconClose');
+
+      if (!btn || !menu) return;
+
+      btn.addEventListener('click', function () {
+        var isOpen = menu.classList.toggle('open');
+        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        iconOpen.style.display = isOpen ? 'none' : 'block';
+        iconClose.style.display = isOpen ? 'block' : 'none';
+      });
+
+      // Close mobile menu on nav link click
+      menu.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          menu.classList.remove('open');
+          btn.setAttribute('aria-expanded', 'false');
+          iconOpen.style.display = 'block';
+          iconClose.style.display = 'none';
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>

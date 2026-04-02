@@ -1,0 +1,674 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Lawn Quote \u2014 West TN Lawn &amp; Pest | Jackson, TN</title>
+  <meta name="description" content="Get an instant lawn care price — draw your lawn on the map and see your quote in seconds. No sales calls. Serving Jackson, TN." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="canonical" href="https://westtnlawnandpest.com/quote.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://westtnlawnandpest.com/quote.html" />
+  <meta property="og:title" content="Get an Instant Lawn Care Quote | West TN Lawn & Pest" />
+  <meta property="og:description" content="Draw your lawn on the satellite map and get an instant price. No sales calls, no waiting. West Tennessee lawn care from West TN Lawn & Pest." />
+  <meta property="og:image" content="https://westtnlawnandpest.com/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Instant Lawn Care Quote | West TN Lawn & Pest" />
+  <meta name="twitter:description" content="Draw your lawn, get your price instantly. No sales calls. West Tennessee lawn care." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --forest: #1B6B2A; --pine: #1A3A24; --leaf: #22803A;
+      --sage: #6B7C6F; --cream: #F7F5F0; --gold: #C4A44A;
+      --gold-lt: #DFB85E; --white: #FFFFFF; --text: #1C2B1E;
+      --border: #DDD9D0; --green-100: #E5EFE6;
+      --r-sm: 6px; --r-md: 12px; --r-lg: 20px;
+      --sh-sm: 0 2px 8px rgba(0,0,0,.07);
+      --sh-md: 0 6px 24px rgba(0,0,0,.10);
+      --sh-lg: 0 16px 56px rgba(0,0,0,.15);
+      --ease: all .24s ease;
+    }
+
+    body { font-family: 'DM Sans', system-ui, sans-serif; color: var(--text); background: var(--white); -webkit-font-smoothing: antialiased; }
+    h1,h2,h3,h4 { font-family: 'DM Serif Display', Georgia, serif; line-height: 1.12; color: var(--pine); }
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+
+    /* ── Promo Banner ── */
+    .promo { background: var(--forest); color: #fff; text-align: center; padding: 10px 16px; font-size: 13px; font-weight: 500; }
+    .promo a { color: var(--gold-lt); text-decoration: none; font-weight: 600; }
+
+    /* ── Nav ── */
+    .nav { background: var(--pine); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,.25); }
+    .nav__inner { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .nav__logo { display: flex; align-items: center; text-decoration: none; gap: 10px; }
+    .nav__links { list-style: none; display: flex; align-items: center; gap: 4px; }
+    .nav__links a { color: rgba(255,255,255,.85); text-decoration: none; font-size: 14px; font-weight: 500; padding: 8px 14px; border-radius: var(--r-sm); transition: var(--ease); }
+    .nav__links a:hover, .nav__links a.active { color: #fff; background: rgba(255,255,255,.1); }
+    .nav__right { display: flex; align-items: center; gap: 16px; }
+    .nav__phone { color: rgba(255,255,255,.9); font-weight: 600; font-size: 15px; text-decoration: none; }
+    .nav__cta { background: var(--gold); color: var(--pine); font-weight: 700; font-size: 14px; padding: 10px 20px; border-radius: var(--r-sm); text-decoration: none; transition: var(--ease); }
+    .nav__cta:hover { background: var(--gold-lt); }
+    .nav__ham { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none; }
+    .nav__ham span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px; transition: var(--ease); }
+    @media(max-width:900px) {
+      .nav__ham { display: flex; }
+      .nav__links { display: none; position: absolute; top: 68px; left: 0; right: 0; background: var(--pine); flex-direction: column; align-items: flex-start; padding: 12px 24px 20px; gap: 4px; box-shadow: 0 8px 24px rgba(0,0,0,.2); }
+      .nav__links.nav__links--open { display: flex; }
+      .nav__links a { width: 100%; padding: 12px 0; border-radius: 0; border-bottom: 1px solid rgba(255,255,255,.08); }
+      .nav__right .nav__phone { display: none; }
+    }
+
+    /* ── Page Hero ── */
+    .page-hero {
+      background: linear-gradient(150deg, #0D2414 0%, #1A3A24 40%, #1B6B2A 100%);
+      padding: 64px 0 56px; text-align: center;
+    }
+    .page-hero__eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--gold-lt); background: rgba(196,164,74,.15);
+      border: 1px solid rgba(196,164,74,.3); border-radius: 100px;
+      padding: 7px 18px; margin-bottom: 22px;
+    }
+    .page-hero h1 { font-size: clamp(34px, 5vw, 52px); color: #fff; margin-bottom: 16px; }
+    .page-hero h1 em { font-style: italic; color: #A8D9A5; }
+    .page-hero p { color: rgba(255,255,255,.8); font-size: 17px; max-width: 540px; margin: 0 auto; line-height: 1.7; }
+
+    /* ── Steps Bar ── */
+    .steps-bar { background: var(--cream); border-bottom: 1px solid var(--border); padding: 28px 0; }
+    .steps-bar__inner { display: flex; align-items: center; justify-content: center; gap: 0; }
+    .step { display: flex; align-items: center; gap: 12px; }
+    .step__num {
+      width: 36px; height: 36px; border-radius: 50%; background: var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; font-weight: 700; color: var(--sage); flex-shrink: 0;
+      transition: var(--ease);
+    }
+    .step.active .step__num { background: var(--forest); color: #fff; }
+    .step.done .step__num { background: var(--leaf); color: #fff; }
+    .step__label { font-size: 13px; font-weight: 600; color: var(--sage); }
+    .step.active .step__label { color: var(--pine); }
+    .step.done .step__label { color: var(--forest); }
+    .step__divider { width: 48px; height: 2px; background: var(--border); margin: 0 8px; flex-shrink: 0; }
+    .step.done + .step__divider { background: var(--leaf); }
+    @media(max-width:600px) { .step__label { display: none; } .step__divider { width: 24px; } }
+
+    /* ── Quote Tool ── */
+    .quote-tool { padding: 64px 0 80px; }
+    .quote-tool__grid { display: grid; grid-template-columns: 1fr 360px; gap: 32px; align-items: start; }
+    @media(max-width:900px) { .quote-tool__grid { grid-template-columns: 1fr; } }
+
+    /* Map panel */
+    .map-panel { border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--sh-lg); border: 2px solid var(--border); }
+    .map-panel__topbar {
+      background: var(--pine); padding: 14px 20px;
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    }
+    .map-panel__topbar label { color: rgba(255,255,255,.7); font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; display: block; margin-bottom: 6px; }
+    .address-wrap { flex: 1; position: relative; }
+    #addressInput {
+      width: 100%; padding: 11px 44px 11px 14px;
+      border: 1.5px solid rgba(255,255,255,.2); border-radius: var(--r-sm);
+      background: rgba(255,255,255,.1); color: #fff; font-size: 14px;
+      font-family: 'DM Sans', sans-serif;
+      outline: none; transition: var(--ease);
+    }
+    #addressInput::placeholder { color: rgba(255,255,255,.5); }
+    #addressInput:focus { border-color: var(--gold); background: rgba(255,255,255,.15); }
+    .address-search-btn {
+      position: absolute; right: 10px; top: 50%; transform: translateY(-50%);
+      background: none; border: none; cursor: pointer; color: rgba(255,255,255,.7);
+      display: flex; align-items: center; padding: 4px;
+      transition: var(--ease);
+    }
+    .address-search-btn:hover { color: var(--gold); }
+
+    #map { width: 100%; height: 520px; display: block; }
+
+    .map-panel__bottombar {
+      background: var(--pine); padding: 14px 20px;
+      display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+    }
+    .map-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 18px; border-radius: var(--r-sm); font-size: 13px; font-weight: 600;
+      cursor: pointer; border: none; font-family: 'DM Sans', sans-serif;
+      transition: var(--ease);
+    }
+    .map-btn--draw { background: var(--gold); color: var(--pine); }
+    .map-btn--draw:hover { background: var(--gold-lt); }
+    .map-btn--draw.active { background: #fff; color: var(--pine); outline: 2px solid var(--gold); }
+    .map-btn--clear { background: rgba(255,255,255,.12); color: rgba(255,255,255,.8); }
+    .map-btn--clear:hover { background: rgba(255,255,255,.22); color: #fff; }
+    .map-hint { color: rgba(255,255,255,.55); font-size: 12px; margin-left: auto; }
+
+    /* Side panel */
+    .side-panel { display: flex; flex-direction: column; gap: 20px; }
+
+    .instruction-card {
+      background: var(--cream); border: 1px solid var(--border);
+      border-radius: var(--r-lg); padding: 28px;
+    }
+    .instruction-card h3 { font-size: 18px; color: var(--pine); margin-bottom: 16px; }
+    .instruction-steps { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+    .instruction-steps li { display: flex; gap: 14px; align-items: flex-start; }
+    .instruction-steps li .num {
+      width: 28px; height: 28px; border-radius: 50%; background: var(--forest);
+      color: #fff; font-size: 12px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;
+    }
+    .instruction-steps li p { font-size: 14px; color: var(--sage); line-height: 1.6; }
+    .instruction-steps li strong { color: var(--text); }
+
+    /* Result card */
+    .result-card {
+      background: var(--white); border: 2px solid var(--forest);
+      border-radius: var(--r-lg); padding: 28px;
+      box-shadow: var(--sh-md);
+      display: none;
+      animation: slideUp .3s ease;
+    }
+    .result-card.visible { display: block; }
+    @keyframes slideUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+
+    .result-card__eyebrow {
+      font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase;
+      color: var(--forest); margin-bottom: 18px;
+    }
+    .result-card__stat { margin-bottom: 20px; }
+    .result-card__stat-label { font-size: 12px; color: var(--sage); font-weight: 500; margin-bottom: 4px; }
+    .result-card__stat-value { font-family: 'DM Serif Display', Georgia, serif; font-size: 38px; color: var(--pine); line-height: 1; }
+    .result-card__stat-value span { font-size: 18px; }
+    .result-card__divider { border: none; border-top: 1px solid var(--border); margin: 18px 0; }
+    .result-card__price-label { font-size: 12px; color: var(--sage); font-weight: 500; margin-bottom: 6px; }
+    .result-card__price { font-family: 'DM Serif Display', Georgia, serif; font-size: 52px; color: var(--forest); line-height: 1; margin-bottom: 4px; }
+    .result-card__per-app { font-size: 12px; color: var(--sage); margin-bottom: 22px; }
+    .result-cta {
+      display: block; width: 100%; padding: 14px;
+      background: var(--forest); color: #fff; text-align: center;
+      font-weight: 700; font-size: 15px; border-radius: var(--r-sm);
+      text-decoration: none; transition: var(--ease); border: none; cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .result-cta:hover { background: var(--pine); }
+    .result-cta--outline {
+      display: block; width: 100%; padding: 12px;
+      background: transparent; color: var(--forest);
+      border: 1.5px solid var(--forest); text-align: center;
+      font-weight: 600; font-size: 14px; border-radius: var(--r-sm);
+      text-decoration: none; transition: var(--ease); margin-top: 10px;
+      cursor: pointer; font-family: 'DM Sans', sans-serif;
+    }
+    .result-cta--outline:hover { background: var(--green-100); }
+    .result-card__disclaimer { font-size: 11px; color: var(--sage); margin-top: 14px; line-height: 1.6; text-align: center; }
+
+    /* Guarantee banner */
+    .guarantee-card {
+      background: var(--pine); border-radius: var(--r-lg); padding: 24px;
+      display: flex; gap: 16px; align-items: flex-start;
+    }
+    .guarantee-card svg { flex-shrink: 0; margin-top: 2px; }
+    .guarantee-card h4 { color: #fff; font-size: 16px; margin-bottom: 6px; }
+    .guarantee-card p { color: rgba(255,255,255,.7); font-size: 13px; line-height: 1.6; }
+
+    /* ── Footer ── */
+    .footer { background: var(--pine); color: rgba(255,255,255,.75); padding: 56px 0 32px; }
+    .footer__grid { display: grid; grid-template-columns: 1.6fr 1fr 1.4fr 1.2fr; gap: 48px; margin-bottom: 48px; }
+    .footer__brand p { font-size: 14px; line-height: 1.7; margin-top: 16px; color: rgba(255,255,255,.6); }
+    .footer__col h4 { color: #fff; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 16px; }
+    .footer__col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .footer__col ul li a { color: rgba(255,255,255,.65); text-decoration: none; font-size: 14px; transition: var(--ease); }
+    .footer__col ul li a:hover { color: var(--gold-lt); }
+    .footer__contact p { font-size: 14px; line-height: 1.9; color: rgba(255,255,255,.65); }
+    .footer__contact a { color: rgba(255,255,255,.65); text-decoration: none; transition: var(--ease); }
+    .footer__contact a:hover { color: var(--gold-lt); }
+    .footer__bottom { border-top: 1px solid rgba(255,255,255,.1); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .footer__bottom p, .footer__bottom a { font-size: 13px; color: rgba(255,255,255,.45); text-decoration: none; }
+    .footer__bottom a:hover { color: rgba(255,255,255,.8); }
+    @media(max-width:860px) { .footer__grid { grid-template-columns: 1fr 1fr; gap: 32px; } }
+    @media(max-width:768px) {
+      .container { padding: 0 18px; }
+      .page-hero { padding: 44px 0 36px; }
+      .page-hero p { font-size: 15px; }
+      .quote-tool { padding: 40px 0 56px; }
+      #map { height: 380px; }
+      .map-panel__topbar { flex-direction: column; align-items: stretch; gap: 10px; }
+      .footer__bottom { flex-direction: column; text-align: center; gap: 8px; }
+    }
+    @media(max-width:480px) {
+      .container { padding: 0 16px; }
+      .page-hero { padding: 36px 0 28px; }
+      .quote-tool { padding: 32px 0 48px; }
+      #map { height: 300px; }
+      .result-card__price { font-size: 40px; }
+      .result-card__stat-value { font-size: 30px; }
+      .map-btn { padding: 9px 14px; font-size: 12px; }
+      .map-hint { display: none; }
+      .instruction-card { padding: 20px; }
+      .footer__grid { grid-template-columns: 1fr; }
+    }
+
+    /* Autocomplete dropdown z-index fix */
+    .pac-container { z-index: 9999; }
+  </style>
+</head>
+<body>
+
+  <!-- Promo Banner -->
+  <div class="promo">
+    Free lawn assessments for West Tennessee homeowners — <a href="tel:7313137732">call 731-313-7732</a>
+  </div>
+
+  <!-- Nav -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="index.html" class="nav__logo" aria-label="West TN Lawn & Pest home">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 120" height="42" aria-hidden="true">
+            <defs>
+              <linearGradient id="navCG" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#2E9042"/>
+                <stop offset="100%" stop-color="#156A24"/>
+              </linearGradient>
+            </defs>
+            <circle cx="60" cy="60" r="55" fill="url(#navCG)" stroke="#1A3A24" stroke-width="4"/>
+            <circle cx="60" cy="60" r="48" fill="none" stroke="rgba(255,255,255,.25)" stroke-width="2"/>
+            <polygon points="60,19 64.4,31.9 78.1,32.1 67.1,40.3 71.2,53.4 60,45.5 48.8,53.4 52.9,40.3 41.9,32.1 55.6,31.9" fill="white"/>
+            <polygon points="41,56 45.4,68.9 59.1,69.1 48.1,77.3 52.2,90.4 41,82.5 29.8,90.4 33.9,77.3 22.9,69.1 36.6,68.9" fill="white"/>
+            <polygon points="79,56 83.4,68.9 97.1,69.1 86.1,77.3 90.2,90.4 79,82.5 67.8,90.4 71.9,77.3 60.9,69.1 74.6,68.9" fill="white"/>
+            <text x="128" y="74" font-family="'DM Sans',Arial,sans-serif" font-size="52" font-weight="700" font-style="italic" fill="white">West<tspan font-style="normal">TN</tspan></text>
+            <text x="131" y="98" font-family="'DM Sans',Arial,sans-serif" font-size="22" font-weight="500" fill="rgba(255,255,255,.80)" letter-spacing="1">Lawn &amp; Pest</text>
+          </svg>
+        </a>
+        <button class="nav__ham" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav__links" id="navLinks">
+          <li><a href="services/weed-control.html">Services</a></li>
+          <li><a href="services/pest-control.html">Pest Control</a></li>
+          <li><a href="index.html#plans">Plans</a></li>
+          <li><a href="index.html#areas">Areas</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="book.html">Book</a></li>
+          <li><a href="about.html">About</a></li>
+        <li><a href="account.html">Account</a></li>
+        </ul>
+        <div class="nav__right">
+          <a href="tel:7313137732" class="nav__phone"><a href="tel:7313137732" style="color:inherit;text-decoration:none;">731-313-7732</a></a>
+          <a href="quote.html" class="nav__cta active">Free Quote</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero__eyebrow">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        Instant Pricing — No Sales Call Needed
+      </div>
+      <h1>Get Your <em>Instant Quote</em></h1>
+      <p>Draw your lawn on the satellite map below. We'll calculate your square footage and show you an exact price — in seconds.</p>
+    </div>
+  </section>
+
+  <!-- Steps Bar -->
+  <div class="steps-bar">
+    <div class="container">
+      <div class="steps-bar__inner" id="stepsBar">
+        <div class="step active" id="step1">
+          <div class="step__num">1</div>
+          <div class="step__label">Find Your Property</div>
+        </div>
+        <div class="step__divider"></div>
+        <div class="step" id="step2">
+          <div class="step__num">2</div>
+          <div class="step__label">Draw Your Lawn</div>
+        </div>
+        <div class="step__divider" id="div2"></div>
+        <div class="step" id="step3">
+          <div class="step__num">3</div>
+          <div class="step__label">Get Your Price</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quote Tool -->
+  <section class="quote-tool">
+    <div class="container">
+      <div class="quote-tool__grid">
+
+        <!-- Map Panel -->
+        <div class="map-panel">
+          <div class="map-panel__topbar">
+            <div class="address-wrap">
+              <label for="addressInput">Enter Your Address</label>
+              <input
+                type="text"
+                id="addressInput"
+                placeholder="123 Main St, Jackson, TN"
+                autocomplete="off"
+              />
+              <button class="address-search-btn" onclick="searchAddress()" aria-label="Search address">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <div id="map"></div>
+
+          <div class="map-panel__bottombar">
+            <button class="map-btn map-btn--draw" id="drawBtn" onclick="startDrawing()">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+              Draw Lawn Area
+            </button>
+            <button class="map-btn map-btn--clear" onclick="clearShape()">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6M14 11v6"/></svg>
+              Clear
+            </button>
+            <span class="map-hint" id="mapHint">Enter your address to begin</span>
+          </div>
+        </div>
+
+        <!-- Side Panel -->
+        <div class="side-panel">
+
+          <div class="instruction-card">
+            <h3>How It Works</h3>
+            <ol class="instruction-steps">
+              <li>
+                <div class="num">1</div>
+                <p><strong>Enter your address</strong> above and the map will zoom to your property in satellite view.</p>
+              </li>
+              <li>
+                <div class="num">2</div>
+                <p>Click <strong>"Draw Lawn Area"</strong> and trace around one grass section. Double-click to finish. <strong>Skip over</strong> the house, driveway, and beds.</p>
+              </li>
+              <li>
+                <div class="num">3</div>
+                <p>Click <strong>"Draw Lawn Area"</strong> again to add more sections (front yard, back yard, sides). All areas are <strong>added together</strong> automatically.</p>
+              </li>
+            </ol>
+          </div>
+
+          <!-- Result Card (hidden until shape drawn) -->
+          <div class="result-card" id="resultCard">
+            <div class="result-card__eyebrow">Your Instant Quote</div>
+
+            <div class="result-card__stat">
+              <div class="result-card__stat-label">Total Lawn Area</div>
+              <div class="result-card__stat-value"><span id="sqft">0</span> <span>sq ft</span></div>
+              <div style="font-size:12px;color:var(--forest);font-weight:600;margin-top:5px;" id="areaCount"></div>
+            </div>
+
+            <hr class="result-card__divider" />
+
+            <div class="result-card__price-label">Estimated Price Per Visit</div>
+            <div class="result-card__price" id="price">$0.00</div>
+            <div class="result-card__per-app">Per treatment visit · minimum may apply</div>
+
+            <a href="book.html" class="result-cta" id="bookingLink">
+              Book My Service Online
+            </a>
+            <a href="tel:7313137732" class="result-cta--outline">
+              📞 Call to Schedule — 731-313-7732
+            </a>
+
+            <p class="result-card__disclaimer">
+              Final price confirmed after a free on-site assessment. Quote is an estimate based on mapped area.<br/><br/>
+              Measurements are subject to verification by West TN Lawn &amp; Pest and actual areas treated may vary.
+            </p>
+          </div>
+
+          <div class="guarantee-card">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <polyline points="9 12 11 14 15 10"/>
+            </svg>
+            <div>
+              <h4>100% Satisfaction Guaranteed</h4>
+              <p>If you're not happy with a treatment, we'll come back and re-treat at no charge. No hassle, no fine print.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 120" height="36" aria-hidden="true">
+            <defs>
+              <linearGradient id="footCG" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#2E9042"/>
+                <stop offset="100%" stop-color="#156A24"/>
+              </linearGradient>
+            </defs>
+            <circle cx="60" cy="60" r="55" fill="url(#footCG)" stroke="#1A3A24" stroke-width="4"/>
+            <circle cx="60" cy="60" r="48" fill="none" stroke="rgba(255,255,255,.25)" stroke-width="2"/>
+            <polygon points="60,19 64.4,31.9 78.1,32.1 67.1,40.3 71.2,53.4 60,45.5 48.8,53.4 52.9,40.3 41.9,32.1 55.6,31.9" fill="white"/>
+            <polygon points="41,56 45.4,68.9 59.1,69.1 48.1,77.3 52.2,90.4 41,82.5 29.8,90.4 33.9,77.3 22.9,69.1 36.6,68.9" fill="white"/>
+            <polygon points="79,56 83.4,68.9 97.1,69.1 86.1,77.3 90.2,90.4 79,82.5 67.8,90.4 71.9,77.3 60.9,69.1 74.6,68.9" fill="white"/>
+            <text x="128" y="74" font-family="'DM Sans',Arial,sans-serif" font-size="52" font-weight="700" font-style="italic" fill="white">West<tspan font-style="normal">TN</tspan></text>
+            <text x="131" y="98" font-family="'DM Sans',Arial,sans-serif" font-size="22" font-weight="500" fill="rgba(255,255,255,.80)" letter-spacing="1">Lawn &amp; Pest</text>
+          </svg>
+          <p>Professional lawn care and outdoor pest control serving West Tennessee. Results guaranteed.</p>
+        </div>
+        <div class="footer__col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services/weed-control.html">Weed Control</a></li>
+            <li><a href="services/weed-control.html">Fertilization</a></li>
+            <li><a href="services/weed-control.html">Lime Application</a></li>
+            <li><a href="services/pest-control.html">Flea &amp; Tick</a></li>
+            <li><a href="services/pest-control.html">Mole Control</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Areas</h4>
+          <ul>
+            <li><a href="locations/jackson-tn.html">Jackson, TN</a></li>
+            <li><a href="locations/humboldt-tn.html">Humboldt, TN</a></li>
+            <li><a href="locations/medina-tn.html">Medina, TN</a></li>
+            <li><a href="locations/milan-tn.html">Milan, TN</a></li>
+            <li><a href="locations/three-way-tn.html">Three Way, TN</a></li>
+            <li><a href="locations/bells-tn.html">Bells, TN</a></li>
+            <li><a href="locations/gadsden-tn.html">Gadsden, TN</a></li>
+            <li><a href="locations/henderson-tn.html">Henderson, TN</a></li>
+            <li><a href="locations/trenton-tn.html">Trenton, TN</a></li>
+            <li><a href="locations/alamo-tn.html">Alamo, TN</a></li>
+          </ul>
+        </div>
+        <div class="footer__col footer__contact">
+          <h4>Contact</h4>
+          <p>
+            <a href="tel:7313137732"><a href="tel:7313137732" style="color:inherit;text-decoration:none;">731-313-7732</a></a><br>
+            <a href="mailto:info@westtnlawnandpest.com">info@westtnlawnandpest.com</a><br><br>
+            Serving West Tennessee<br>
+            Mon–Fri 7am–6pm<br>
+            Sat 8am–2pm
+          </p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2025 West TN Lawn &amp; Pest. All rights reserved.</p>
+        <div style="display:flex;gap:20px;">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const PRICE_PER_1000 = 7.25;
+    const MIN_PRICE = 60.00;
+    let map, drawingManager;
+    let shapes = []; // supports multiple drawn areas
+
+    function initMap() {
+      map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 13,
+        center: { lat: 35.6145, lng: -88.8139 },
+        mapTypeId: 'satellite',
+        tilt: 0,
+        mapTypeControl: false,
+        streetViewControl: false,
+        fullscreenControl: true,
+        zoomControlOptions: { position: google.maps.ControlPosition.RIGHT_CENTER }
+      });
+
+      // Address autocomplete via Places API
+      const autocomplete = new google.maps.places.Autocomplete(
+        document.getElementById('addressInput'),
+        { componentRestrictions: { country: 'us' }, fields: ['geometry'] }
+      );
+      autocomplete.addListener('place_changed', function() {
+        const place = autocomplete.getPlace();
+        if (!place.geometry) { searchAddress(); return; }
+        map.setCenter(place.geometry.location);
+        map.setZoom(19);
+        document.getElementById('mapHint').textContent = 'Now click "Draw Lawn Area" to trace your lawn';
+        advanceStep(2);
+      });
+
+      document.getElementById('addressInput').addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') { e.preventDefault(); searchAddress(); }
+      });
+
+      drawingManager = new google.maps.drawing.DrawingManager({
+        drawingMode: null,
+        drawingControl: false,
+        polygonOptions: {
+          fillColor: '#22803A',
+          fillOpacity: 0.30,
+          strokeWeight: 2.5,
+          strokeColor: '#C4A44A',
+          editable: true,
+          draggable: true
+        }
+      });
+      drawingManager.setMap(map);
+
+      google.maps.event.addListener(drawingManager, 'polygoncomplete', function(polygon) {
+        drawingManager.setDrawingMode(null);
+        document.getElementById('drawBtn').classList.remove('active');
+
+        shapes.push(polygon);
+        updateTotals();
+        advanceStep(3);
+
+        const count = shapes.length;
+        document.getElementById('mapHint').textContent =
+          count === 1 ? '1 area drawn · Add more or adjust points' : `${count} areas drawn · Add more or clear all`;
+
+        // Recompute on any edit to this polygon
+        ['set_at', 'insert_at', 'remove_at'].forEach(ev => {
+          google.maps.event.addListener(polygon.getPath(), ev, updateTotals);
+        });
+      });
+    }
+
+    function searchAddress() {
+      const val = document.getElementById('addressInput').value.trim();
+      if (!val) return;
+      const geocoder = new google.maps.Geocoder();
+      geocoder.geocode({ address: val + ', Tennessee' }, function(results, status) {
+        if (status === 'OK') {
+          map.setCenter(results[0].geometry.location);
+          map.setZoom(19);
+          document.getElementById('mapHint').textContent = 'Now click "Draw Lawn Area" to trace your lawn';
+          advanceStep(2);
+        }
+      });
+    }
+
+    function startDrawing() {
+      drawingManager.setDrawingMode(google.maps.drawing.OverlayType.POLYGON);
+      document.getElementById('drawBtn').classList.add('active');
+      document.getElementById('mapHint').textContent = 'Click to place points · Double-click to finish';
+    }
+
+    function clearShape() {
+      shapes.forEach(s => s.setMap(null));
+      shapes = [];
+      drawingManager.setDrawingMode(null);
+      document.getElementById('drawBtn').classList.remove('active');
+      document.getElementById('mapHint').textContent = 'Click "Draw Lawn Area" to start';
+      hideResult();
+      advanceStep(2);
+    }
+
+    function updateTotals() {
+      const totalSqFt = Math.round(
+        shapes.reduce((sum, polygon) => {
+          return sum + google.maps.geometry.spherical.computeArea(polygon.getPath()) * 10.7639;
+        }, 0)
+      );
+      const price = Math.max((totalSqFt / 1000) * PRICE_PER_1000, MIN_PRICE);
+      const count = shapes.length;
+
+      document.getElementById('sqft').textContent = totalSqFt.toLocaleString();
+      document.getElementById('price').textContent = '$' + price.toFixed(2);
+      document.getElementById('areaCount').textContent =
+        count === 1 ? '1 section drawn' : `${count} sections drawn`;
+      showResult();
+
+      const emailLink = document.querySelector('.result-cta--outline');
+      emailLink.href = `mailto:info@westtnlawnandpest.com?subject=Quote Request&body=Hi, I used the online quote tool. My lawn is approximately ${totalSqFt.toLocaleString()} sq ft (${count} section${count > 1 ? 's' : ''}). My estimated price is $${price.toFixed(2)} per visit. Please contact me to schedule.`;
+    }
+
+    function showResult() {
+      document.getElementById('resultCard').classList.add('visible');
+      // Pass address to booking page via URL param
+      const addr = document.getElementById('addressInput').value.trim();
+      if (addr) {
+        document.getElementById('bookingLink').href = 'book.html?address=' + encodeURIComponent(addr);
+      }
+      if (window.innerWidth < 900) {
+        document.getElementById('resultCard').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    function hideResult() {
+      document.getElementById('resultCard').classList.remove('visible');
+    }
+
+    function advanceStep(n) {
+      for (let i = 1; i <= 3; i++) {
+        const s = document.getElementById('step' + i);
+        s.classList.remove('active', 'done');
+        if (i < n) s.classList.add('done');
+        if (i === n) s.classList.add('active');
+      }
+    }
+
+    document.querySelector('.nav__ham').addEventListener('click', function() {
+      document.getElementById('navLinks').classList.toggle('nav__links--open');
+      const spans = this.querySelectorAll('span');
+      const isOpen = document.getElementById('navLinks').classList.contains('nav__links--open');
+      spans[0].style.transform = isOpen ? 'rotate(45deg) translate(5px,5px)' : '';
+      spans[1].style.opacity = isOpen ? '0' : '';
+      spans[2].style.transform = isOpen ? 'rotate(-45deg) translate(5px,-5px)' : '';
+    });
+  </script>
+
+  <!-- Load Google Maps with Drawing + Geometry + Places libraries -->
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7KenIZs3cLM9FaEJdze08owTK0WVmFTU&libraries=drawing,geometry,places&callback=initMap"
+    async defer>
+  </script>
+
+</body>
+</html>

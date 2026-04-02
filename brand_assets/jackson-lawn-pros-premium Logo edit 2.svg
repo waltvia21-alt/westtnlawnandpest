@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 420" width="600" height="420">
+
+  <!-- === THE MARK: Premium grass icon — designed to work standalone === -->
+  <!-- This is a carefully crafted 5-blade grass cluster with organic curves -->
+  <!-- Each blade has slightly different weight and arc for natural feel -->
+  
+  <!-- Far left blade - sweeping outward -->
+  <path d="M265 175 Q258 140 240 95 Q244 105 252 130 Q256 148 265 175Z" fill="#1B6B2A"/>
+  <path d="M265 175 Q256 135 235 85 Q242 100 250 128 Q258 150 265 175Z" fill="#22803A" opacity="0.9"/>
+  
+  <!-- Inner left blade -->
+  <path d="M285 175 Q280 130 268 72 Q273 95 278 128 Q282 152 285 175Z" fill="#1B6B2A"/>
+  <path d="M285 175 Q278 125 264 62 Q272 90 276 125 Q280 150 285 175Z" fill="#22803A" opacity="0.85"/>
+
+  <!-- Center blade - tallest, boldest, the anchor -->
+  <path d="M300 175 Q300 115 300 42 Q300 115 300 175Z" fill="#1B6B2A" stroke="#1B6B2A" stroke-width="7" stroke-linecap="round"/>
+  <path d="M297 175 Q296 110 294 45 Q298 110 300 175Z" fill="#22803A" opacity="0.5"/>
+
+  <!-- Inner right blade -->
+  <path d="M315 175 Q320 130 332 72 Q327 95 322 128 Q318 152 315 175Z" fill="#1B6B2A"/>
+  <path d="M315 175 Q322 125 336 62 Q328 90 324 125 Q320 150 315 175Z" fill="#22803A" opacity="0.85"/>
+
+  <!-- Far right blade - sweeping outward -->
+  <path d="M335 175 Q342 140 360 95 Q356 105 348 130 Q344 148 335 175Z" fill="#1B6B2A"/>
+  <path d="M335 175 Q344 135 365 85 Q358 100 350 128 Q342 150 335 175Z" fill="#22803A" opacity="0.9"/>
+
+  <!-- Subtle ground shadow beneath grass - adds depth -->
+  <ellipse cx="300" cy="178" rx="52" ry="4" fill="#1B6B2A" opacity="0.12"/>
+
+
+  <!-- === TYPOGRAPHY === -->
+
+  <!-- "JACKSON" — deep charcoal-green, commands authority -->
+  <text x="300" y="240" text-anchor="middle" 
+        font-family="'Georgia', 'Times New Roman', serif" 
+        font-size="62" font-weight="bold" letter-spacing="10" 
+        fill="#1A3A24">
+    JACKSON
+  </text>
+
+  <!-- Precision divider — 2px, exact width, brand green -->
+  <line x1="120" y1="258" x2="480" y2="258" stroke="#1B6B2A" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- "LAWN PROS" — brand green, slightly lighter weight feel through size contrast -->
+  <text x="300" y="298" text-anchor="middle" 
+        font-family="'Georgia', 'Times New Roman', serif" 
+        font-size="48" font-weight="bold" letter-spacing="9" 
+        fill="#1B6B2A">
+    LAWN PROS
+  </text>
+
+  <!-- Tagline — muted, understated, professional -->
+  <text x="300" y="338" text-anchor="middle" 
+        font-family="'Helvetica Neue', Arial, sans-serif" 
+        font-size="13.5" font-weight="500" letter-spacing="5.5" 
+        fill="#6B7C6F">
+    WEED CONTROL &amp; FERTILIZATION
+  </text>
+
+  <!-- Location — subtle, grounding detail -->
+  <text x="300" y="362" text-anchor="middle" 
+        font-family="'Helvetica Neue', Arial, sans-serif" 
+        font-size="10.5" font-weight="400" letter-spacing="4" 
+        fill="#8A9A8E">
+    JACKSON, TN
+  </text>
+
+</svg>

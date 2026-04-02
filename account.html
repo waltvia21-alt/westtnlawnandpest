@@ -1,0 +1,834 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Account — West TN Lawn &amp; Pest | Jackson, TN</title>
+  <meta name="description" content="Manage your West TN Lawn & Pest account. View service history, upcoming treatments, and invoices. Serving Jackson, TN." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="canonical" href="https://westtnlawnandpest.com/account.html" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --forest: #1B6B2A;
+      --pine:   #1A3A24;
+      --leaf:   #22803A;
+      --sage:   #6B7C6F;
+      --cream:  #F7F5F0;
+      --gold:   #C4A44A;
+      --white:  #ffffff;
+      --text:   #1C2B1E;
+      --muted:  #5A6B5E;
+      --border: #D8E0DA;
+      --error:  #C0392B;
+      --radius: 10px;
+      --shadow: 0 4px 24px rgba(26,58,36,.12);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', Arial, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    /* ── NAV ─────────────────────────────────────────── */
+    .nav {
+      background: var(--pine);
+      padding: 0 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,.25);
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+      gap: 16px;
+    }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,.85);
+      text-decoration: none;
+      font-size: .92rem;
+      font-weight: 500;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: color .2s, background .2s;
+      white-space: nowrap;
+    }
+    .nav-links a:hover { color: #fff; background: rgba(255,255,255,.1); }
+    .nav-phone {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      color: #fff;
+      font-weight: 600;
+      font-size: 14px;
+      text-decoration: none;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: opacity .2s;
+    }
+    .nav-phone:hover { opacity: .85; }
+    .nav-phone svg { flex-shrink: 0; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: rgba(255,255,255,.85);
+      border-radius: 2px;
+      transition: .3s;
+    }
+    .mobile-menu {
+      display: none;
+      background: var(--pine);
+      border-top: 1px solid rgba(255,255,255,.1);
+      padding: 12px 24px 16px;
+    }
+    .mobile-menu.open { display: block; }
+    .mobile-menu a {
+      display: block;
+      color: rgba(255,255,255,.85);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,.07);
+    }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu a:hover { color: #fff; }
+
+    /* ── HERO STRIP ──────────────────────────────────── */
+    .hero {
+      background: var(--pine);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 200px;
+      padding: 40px 24px;
+      text-align: center;
+      border-bottom: 3px solid var(--forest);
+    }
+    .hero h1 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      color: var(--white);
+      letter-spacing: -.01em;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      color: rgba(255,255,255,.78);
+      font-size: 1.05rem;
+      max-width: 480px;
+      font-weight: 400;
+    }
+
+    /* ── AUTH SECTION ────────────────────────────────── */
+    .auth-section {
+      background: var(--white);
+      padding: 52px 24px 60px;
+    }
+    .auth-card {
+      max-width: 480px;
+      margin: 0 auto;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    /* Tabs */
+    .auth-tabs {
+      display: flex;
+      border-bottom: 1px solid var(--border);
+    }
+    .tab-btn {
+      flex: 1;
+      padding: 16px;
+      font-family: 'DM Sans', Arial, sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      background: var(--cream);
+      color: var(--muted);
+      cursor: pointer;
+      transition: background .2s, color .2s;
+      letter-spacing: .01em;
+    }
+    .tab-btn:first-child { border-right: 1px solid var(--border); }
+    .tab-btn.active {
+      background: var(--white);
+      color: var(--forest);
+      border-bottom: 2px solid var(--forest);
+      margin-bottom: -1px;
+    }
+    .tab-btn:hover:not(.active) { background: #eeecea; color: var(--text); }
+
+    /* Form panels */
+    .auth-panel { display: none; padding: 32px 32px 28px; }
+    .auth-panel.active { display: block; }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 18px;
+    }
+    .form-group:last-of-type { margin-bottom: 0; }
+    .form-group label {
+      font-size: .86rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 6px;
+      letter-spacing: .01em;
+    }
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="tel"],
+    .form-group input[type="password"] {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      font-family: 'DM Sans', Arial, sans-serif;
+      font-size: .97rem;
+      color: var(--text);
+      background: #fff;
+      transition: border-color .2s, box-shadow .2s;
+      outline: none;
+    }
+    .form-group input:focus {
+      border-color: var(--forest);
+      box-shadow: 0 0 0 3px rgba(27,107,42,.12);
+    }
+    .pass-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .pass-wrap input { padding-right: 44px; }
+    .toggle-pass {
+      position: absolute;
+      right: 13px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--sage);
+      padding: 4px;
+      display: flex;
+      align-items: center;
+      transition: color .2s;
+    }
+    .toggle-pass:hover { color: var(--forest); }
+
+    .form-hint {
+      font-size: .78rem;
+      color: var(--sage);
+      margin-top: 5px;
+    }
+
+    /* Password strength */
+    .strength-bar {
+      height: 4px;
+      border-radius: 2px;
+      background: var(--border);
+      margin-top: 7px;
+      overflow: hidden;
+    }
+    .strength-fill {
+      height: 100%;
+      border-radius: 2px;
+      width: 0;
+      transition: width .3s, background .3s;
+    }
+    .strength-label {
+      font-size: .75rem;
+      margin-top: 4px;
+      font-weight: 600;
+    }
+
+    /* Checkbox row */
+    .check-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin: 16px 0 20px;
+    }
+    .check-row input[type="checkbox"] {
+      width: 17px;
+      height: 17px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      accent-color: var(--forest);
+      cursor: pointer;
+    }
+    .check-row label {
+      font-size: .88rem;
+      color: var(--muted);
+      line-height: 1.5;
+      cursor: pointer;
+    }
+    .check-row label a { color: var(--forest); text-decoration: underline; }
+
+    /* Remember + forgot row */
+    .meta-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 14px 0 22px;
+    }
+    .remember-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .remember-row input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      accent-color: var(--forest);
+      cursor: pointer;
+    }
+    .remember-row label { font-size: .87rem; color: var(--muted); cursor: pointer; }
+    .forgot-link {
+      font-size: .87rem;
+      color: var(--forest);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .forgot-link:hover { text-decoration: underline; }
+
+    /* Buttons */
+    .btn-primary {
+      width: 100%;
+      padding: 13px;
+      background: var(--forest);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius);
+      font-family: 'DM Sans', Arial, sans-serif;
+      font-size: 1.02rem;
+      font-weight: 600;
+      cursor: pointer;
+      letter-spacing: .02em;
+      transition: background .2s, transform .1s, box-shadow .2s;
+      margin-top: 4px;
+    }
+    .btn-primary:hover { background: var(--leaf); box-shadow: 0 4px 14px rgba(27,107,42,.28); }
+    .btn-primary:active { transform: translateY(1px); }
+
+    /* Divider */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 20px 0;
+      color: var(--sage);
+      font-size: .85rem;
+    }
+    .divider::before, .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* Switch link */
+    .switch-link {
+      text-align: center;
+      font-size: .9rem;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+    .switch-link a {
+      color: var(--forest);
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .switch-link a:hover { text-decoration: underline; }
+
+    /* Success message */
+    .success-msg {
+      display: none;
+      background: #EBF5ED;
+      border: 1.5px solid #A3D4AA;
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      text-align: center;
+      margin-top: 16px;
+    }
+    .success-msg .success-icon { font-size: 1.8rem; margin-bottom: 8px; }
+    .success-msg p { color: var(--forest); font-weight: 600; font-size: .97rem; }
+    .success-msg span { display: block; color: var(--muted); font-size: .88rem; margin-top: 4px; font-weight: 400; }
+
+    /* ── FEATURES SECTION ────────────────────────────── */
+    .features-section {
+      background: var(--cream);
+      padding: 64px 24px;
+    }
+    .features-section h2 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      color: var(--pine);
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .features-section .sub {
+      text-align: center;
+      color: var(--sage);
+      font-size: .97rem;
+      margin-bottom: 40px;
+    }
+    .features-grid {
+      max-width: 920px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+    .feature-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px 24px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(26,58,36,.07);
+      transition: box-shadow .25s, transform .25s;
+    }
+    .feature-card:hover {
+      box-shadow: 0 6px 22px rgba(26,58,36,.14);
+      transform: translateY(-3px);
+    }
+    .feature-icon {
+      width: 54px;
+      height: 54px;
+      background: linear-gradient(135deg, #E6F4E9, #C8E8CE);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+    }
+    .feature-icon svg { color: var(--forest); }
+    .feature-card h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--pine);
+      margin-bottom: 8px;
+    }
+    .feature-card p {
+      font-size: .9rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── BACKEND NOTICE ──────────────────────────────── */
+    .notice-section {
+      background: var(--cream);
+      padding: 0 24px 56px;
+    }
+    .notice-card {
+      max-width: 760px;
+      margin: 0 auto;
+      background: #FFFBEE;
+      border: 1.5px solid #E0C96A;
+      border-radius: 12px;
+      padding: 20px 24px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .notice-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
+    .notice-body p {
+      font-size: .92rem;
+      color: #5C4A00;
+      line-height: 1.65;
+    }
+    .notice-body strong { color: #3D3100; font-weight: 600; }
+
+    /* ── FOOTER ──────────────────────────────────────── */
+    footer {
+      background: var(--pine);
+      color: rgba(255,255,255,.75);
+      padding: 36px 24px;
+    }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .footer-logo { display: flex; align-items: center; }
+    .footer-copy { font-size: .87rem; }
+    .footer-copy a {
+      color: rgba(255,255,255,.65);
+      text-decoration: none;
+      margin-left: 16px;
+      font-size: .87rem;
+      transition: color .2s;
+    }
+    .footer-copy a:hover { color: #fff; }
+
+    /* ── RESPONSIVE ──────────────────────────────────── */
+    @media (max-width: 768px) {
+      .nav-links, .nav-phone { display: none; }
+      .hamburger { display: flex; }
+      .features-grid { grid-template-columns: 1fr; }
+      .auth-panel { padding: 24px 20px 20px; }
+      .form-row { grid-template-columns: 1fr; gap: 0; }
+    }
+    @media (max-width: 520px) {
+      .notice-card { flex-direction: column; gap: 8px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ──────────────────────────────────────────── -->
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="West TN Lawn &amp; Pest — Home">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 120" height="42" aria-hidden="true">
+        <defs><linearGradient id="navCG" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#2E9042"/><stop offset="100%" stop-color="#156A24"/></linearGradient></defs>
+        <circle cx="60" cy="60" r="55" fill="url(#navCG)" stroke="#1A3A24" stroke-width="4"/>
+        <circle cx="60" cy="60" r="48" fill="none" stroke="rgba(255,255,255,.25)" stroke-width="2"/>
+        <polygon points="60,19 64.4,31.9 78.1,32.1 67.1,40.3 71.2,53.4 60,45.5 48.8,53.4 52.9,40.3 41.9,32.1 55.6,31.9" fill="white"/>
+        <polygon points="41,56 45.4,68.9 59.1,69.1 48.1,77.3 52.2,90.4 41,82.5 29.8,90.4 33.9,77.3 22.9,69.1 36.6,68.9" fill="white"/>
+        <polygon points="79,56 83.4,68.9 97.1,69.1 86.1,77.3 90.2,90.4 79,82.5 67.8,90.4 71.9,77.3 60.9,69.1 74.6,68.9" fill="white"/>
+        <text x="128" y="74" font-family="'DM Sans',Arial,sans-serif" font-size="52" font-weight="700" font-style="italic" fill="white">West<tspan font-style="normal">TN</tspan></text>
+        <text x="131" y="98" font-family="'DM Sans',Arial,sans-serif" font-size="22" font-weight="500" fill="rgba(255,255,255,.80)" letter-spacing="1">Lawn &amp; Pest</text>
+      </svg>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services/weed-control.html">Services</a></li>
+      <li><a href="services/pest-control.html">Pest Control</a></li>
+      <li><a href="index.html#plans">Plans</a></li>
+      <li><a href="index.html#areas">Areas</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="book.html">Book</a></li>
+    </ul>
+    <a href="tel:7313137732" class="nav-phone" aria-label="Call us at 731-313-7732">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
+      731-313-7732
+    </a>
+    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" onclick="toggleMenu(this)">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="services/weed-control.html">Services</a>
+    <a href="services/pest-control.html">Pest Control</a>
+    <a href="index.html#plans">Plans</a>
+    <a href="index.html#areas">Areas</a>
+    <a href="faq.html">FAQ</a>
+    <a href="tel:7313137732">Call 731-313-7732</a>
+  </div>
+</nav>
+
+<!-- ── HERO STRIP ────────────────────────────────────── -->
+<section class="hero" aria-labelledby="heroHeading">
+  <h1 id="heroHeading">Customer Account Portal</h1>
+  <p>Access your service history, upcoming appointments, and billing.</p>
+</section>
+
+<!-- ── AUTH CARD ─────────────────────────────────────── -->
+<section class="auth-section" aria-label="Account authentication">
+  <div class="auth-card" role="region" aria-label="Sign in or create account">
+
+    <div class="auth-tabs" role="tablist">
+      <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="panel-signin" id="tab-signin" onclick="switchTab('signin')">Sign In</button>
+      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-register" id="tab-register" onclick="switchTab('register')">Create Account</button>
+    </div>
+
+    <!-- Sign In Panel -->
+    <div class="auth-panel active" id="panel-signin" role="tabpanel" aria-labelledby="tab-signin">
+      <form id="form-signin" novalidate onsubmit="handleSubmit(event, 'signin-success')">
+        <div class="form-group">
+          <label for="si-email">Email Address</label>
+          <input type="email" id="si-email" name="email" placeholder="you@example.com" autocomplete="email" required />
+        </div>
+        <div class="form-group">
+          <label for="si-password">Password</label>
+          <div class="pass-wrap">
+            <input type="password" id="si-password" name="password" placeholder="Enter your password" autocomplete="current-password" required />
+            <button type="button" class="toggle-pass" aria-label="Toggle password visibility" onclick="togglePass('si-password', this)">
+              <svg id="si-eye" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="meta-row">
+          <label class="remember-row">
+            <input type="checkbox" id="si-remember" name="remember" />
+            <span>Remember me</span>
+          </label>
+          <a href="#" class="forgot-link" onclick="showForgot(event)">Forgot password?</a>
+        </div>
+        <button type="submit" class="btn-primary">Sign In</button>
+        <div class="success-msg" id="signin-success">
+          <div class="success-icon">🌱</div>
+          <p>Coming Soon!</p>
+          <span>We're setting up our portal — backend integration is in progress. Check back soon!</span>
+        </div>
+        <div class="divider">— or —</div>
+        <p class="switch-link">Don't have an account? <a onclick="switchTab('register')">Create a new account</a></p>
+      </form>
+    </div>
+
+    <!-- Create Account Panel -->
+    <div class="auth-panel" id="panel-register" role="tabpanel" aria-labelledby="tab-register">
+      <form id="form-register" novalidate onsubmit="handleSubmit(event, 'register-success')">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="reg-first">First Name</label>
+            <input type="text" id="reg-first" name="first_name" placeholder="Jane" autocomplete="given-name" required />
+          </div>
+          <div class="form-group">
+            <label for="reg-last">Last Name</label>
+            <input type="text" id="reg-last" name="last_name" placeholder="Smith" autocomplete="family-name" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="reg-email">Email Address</label>
+          <input type="email" id="reg-email" name="email" placeholder="you@example.com" autocomplete="email" required />
+        </div>
+        <div class="form-group">
+          <label for="reg-phone">Phone Number</label>
+          <input type="tel" id="reg-phone" name="phone" placeholder="(731) 000-0000" autocomplete="tel" />
+        </div>
+        <div class="form-group">
+          <label for="reg-address">Service Address</label>
+          <input type="text" id="reg-address" name="address" placeholder="123 Main St, Jackson, TN 38301" autocomplete="street-address" />
+        </div>
+        <div class="form-group">
+          <label for="reg-password">Password</label>
+          <div class="pass-wrap">
+            <input type="password" id="reg-password" name="password" placeholder="Create a password" autocomplete="new-password" required oninput="checkStrength(this.value)" />
+            <button type="button" class="toggle-pass" aria-label="Toggle password visibility" onclick="togglePass('reg-password', this)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
+          <div class="strength-bar"><div class="strength-fill" id="strengthFill"></div></div>
+          <div class="strength-label" id="strengthLabel" style="color:var(--sage)"></div>
+          <span class="form-hint">Must be at least 8 characters and include 1 number.</span>
+        </div>
+        <div class="form-group">
+          <label for="reg-confirm">Confirm Password</label>
+          <div class="pass-wrap">
+            <input type="password" id="reg-confirm" name="confirm_password" placeholder="Repeat your password" autocomplete="new-password" required />
+            <button type="button" class="toggle-pass" aria-label="Toggle confirm password visibility" onclick="togglePass('reg-confirm', this)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
+        </div>
+        <label class="check-row">
+          <input type="checkbox" id="reg-terms" name="terms" required />
+          <span>I agree to the <a href="terms.html">Terms of Service</a> and <a href="privacy.html">Privacy Policy</a>.</span>
+        </label>
+        <button type="submit" class="btn-primary">Create Account</button>
+        <div class="success-msg" id="register-success">
+          <div class="success-icon">🌱</div>
+          <p>Coming Soon!</p>
+          <span>We're setting up our portal — backend integration is in progress. Check back soon!</span>
+        </div>
+        <p class="switch-link" style="margin-top:18px;">Already have an account? <a onclick="switchTab('signin')">Sign in</a></p>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── FEATURES SECTION ──────────────────────────────── -->
+<section class="features-section" aria-labelledby="featuresHeading">
+  <h2 id="featuresHeading">What You Can Do</h2>
+  <p class="sub">Once your account is active, you'll have full control from any device.</p>
+  <div class="features-grid">
+
+    <article class="feature-card">
+      <div class="feature-icon" aria-hidden="true">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+      </div>
+      <h3>View &amp; Pay Bills</h3>
+      <p>Access and pay your invoices securely online, anytime.</p>
+    </article>
+
+    <article class="feature-card">
+      <div class="feature-icon" aria-hidden="true">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      </div>
+      <h3>Service History</h3>
+      <p>See every treatment we've done on your property with full details.</p>
+    </article>
+
+    <article class="feature-card">
+      <div class="feature-icon" aria-hidden="true">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </div>
+      <h3>Upcoming Appointments</h3>
+      <p>View scheduled visits and get reminders before we arrive.</p>
+    </article>
+
+  </div>
+</section>
+
+<!-- ── BACKEND NOTICE ────────────────────────────────── -->
+<section class="notice-section" aria-label="Developer notice">
+  <div class="notice-card" role="note">
+    <div class="notice-icon" aria-hidden="true">🔧</div>
+    <div class="notice-body">
+      <p><strong>Backend Integration Required:</strong> This account portal requires server-side authentication. Contact your developer to connect a backend service — such as <strong>Stripe</strong> for billing or a field-service CRM like <strong>Jobber</strong> or <strong>ServiceTitan</strong> — to enable full functionality. The forms above are <em>frontend UI only</em> and do not currently submit or store data.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ────────────────────────────────────────── -->
+<footer role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <a href="index.html" aria-label="West TN Lawn &amp; Pest — Home">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 120" height="38" aria-hidden="true">
+          <defs><linearGradient id="footCG" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#2E9042"/><stop offset="100%" stop-color="#156A24"/></linearGradient></defs>
+          <circle cx="60" cy="60" r="55" fill="url(#footCG)" stroke="#1A3A24" stroke-width="4"/>
+          <circle cx="60" cy="60" r="48" fill="none" stroke="rgba(255,255,255,.25)" stroke-width="2"/>
+          <polygon points="60,19 64.4,31.9 78.1,32.1 67.1,40.3 71.2,53.4 60,45.5 48.8,53.4 52.9,40.3 41.9,32.1 55.6,31.9" fill="white"/>
+          <polygon points="41,56 45.4,68.9 59.1,69.1 48.1,77.3 52.2,90.4 41,82.5 29.8,90.4 33.9,77.3 22.9,69.1 36.6,68.9" fill="white"/>
+          <polygon points="79,56 83.4,68.9 97.1,69.1 86.1,77.3 90.2,90.4 79,82.5 67.8,90.4 71.9,77.3 60.9,69.1 74.6,68.9" fill="white"/>
+          <text x="128" y="74" font-family="'DM Sans',Arial,sans-serif" font-size="52" font-weight="700" font-style="italic" fill="white">West<tspan font-style="normal">TN</tspan></text>
+          <text x="131" y="98" font-family="'DM Sans',Arial,sans-serif" font-size="22" font-weight="500" fill="rgba(255,255,255,.80)" letter-spacing="1">Lawn &amp; Pest</text>
+        </svg>
+      </a>
+    </div>
+    <div class="footer-copy">
+      &copy; <span id="footYear"></span> West TN Lawn &amp; Pest &nbsp;·&nbsp;
+      <a href="tel:7313137732">731-313-7732</a> &nbsp;·&nbsp;
+      <a href="mailto:info@westtnlawnandpest.com">info@westtnlawnandpest.com</a> &nbsp;·&nbsp;
+      Jackson, TN &amp; Surrounding Areas
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* ── Tab switching ─────────────────────────────────── */
+  function switchTab(tab) {
+    const panels  = { signin: 'panel-signin',   register: 'panel-register'  };
+    const buttons = { signin: 'tab-signin',     register: 'tab-register'    };
+    Object.keys(panels).forEach(key => {
+      const panel = document.getElementById(panels[key]);
+      const btn   = document.getElementById(buttons[key]);
+      const isActive = key === tab;
+      panel.classList.toggle('active', isActive);
+      btn.classList.toggle('active', isActive);
+      btn.setAttribute('aria-selected', isActive);
+    });
+    // Hide any visible success messages when switching
+    document.querySelectorAll('.success-msg').forEach(m => m.style.display = 'none');
+  }
+
+  /* ── Password show/hide toggle ─────────────────────── */
+  function togglePass(inputId, btn) {
+    const input = document.getElementById(inputId);
+    const isText = input.type === 'text';
+    input.type = isText ? 'password' : 'text';
+    btn.setAttribute('aria-label', isText ? 'Show password' : 'Hide password');
+    // Swap icon between eye and eye-off
+    btn.innerHTML = isText
+      ? `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>`
+      : `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.94 17.94A10.07 10.07 0 0112 20c-7 0-11-8-11-8a18.45 18.45 0 015.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0112 4c7 0 11 8 11 8a18.5 18.5 0 01-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/></svg>`;
+  }
+
+  /* ── Password strength ─────────────────────────────── */
+  function checkStrength(val) {
+    const fill  = document.getElementById('strengthFill');
+    const label = document.getElementById('strengthLabel');
+    let score = 0;
+    if (val.length >= 8)                   score++;
+    if (/[0-9]/.test(val))                 score++;
+    if (/[A-Z]/.test(val))                 score++;
+    if (/[^A-Za-z0-9]/.test(val))          score++;
+
+    const levels = [
+      { pct: '0%',   color: 'transparent', text: '' },
+      { pct: '25%',  color: '#C0392B',     text: 'Weak' },
+      { pct: '50%',  color: '#E67E22',     text: 'Fair' },
+      { pct: '75%',  color: '#F1C40F',     text: 'Good' },
+      { pct: '100%', color: '#1B6B2A',     text: 'Strong' },
+    ];
+    const lvl = val.length === 0 ? levels[0] : levels[Math.max(1, score)];
+    fill.style.width    = lvl.pct;
+    fill.style.background = lvl.color;
+    label.textContent   = lvl.text;
+    label.style.color   = lvl.color;
+  }
+
+  /* ── Form submit handlers ──────────────────────────── */
+  function handleSubmit(e, successId) {
+    e.preventDefault();
+    const msgEl = document.getElementById(successId);
+    msgEl.style.display = 'block';
+    msgEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    // Optionally disable submit button briefly
+    const btn = e.target.querySelector('.btn-primary');
+    if (btn) { btn.disabled = true; btn.textContent = 'Please wait…'; }
+    setTimeout(() => {
+      if (btn) { btn.disabled = false; btn.textContent = btn.closest('#form-signin') ? 'Sign In' : 'Create Account'; }
+    }, 3000);
+  }
+
+  /* ── Forgot password stub ──────────────────────────── */
+  function showForgot(e) {
+    e.preventDefault();
+    alert('Password reset is coming soon!\n\nFor immediate help, call us at 731-313-7732 or email us from the contact page.');
+  }
+
+  /* ── Mobile menu toggle ────────────────────────────── */
+  function toggleMenu(btn) {
+    const menu    = document.getElementById('mobileMenu');
+    const isOpen  = menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', isOpen);
+  }
+
+  /* ── Footer year ───────────────────────────────────── */
+  document.getElementById('footYear').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

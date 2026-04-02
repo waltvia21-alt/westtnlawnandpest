@@ -1,0 +1,1225 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book a Service — West TN Lawn &amp; Pest | Jackson, TN</title>
+  <meta name="description" content="Book lawn care or pest control online with West TN Lawn &amp; Pest in Jackson, TN. Pick your plan and we'll confirm within one business day." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="canonical" href="https://westtnlawnandpest.com/book.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --forest: #1B6B2A; --pine: #1A3A24; --leaf: #22803A;
+      --sage: #6B7C6F; --cream: #F7F5F0; --gold: #C4A44A;
+      --gold-lt: #DFB85E; --white: #FFFFFF; --text: #1C2B1E;
+      --border: #DDD9D0; --green-100: #E5EFE6;
+      --r-sm: 6px; --r-md: 12px; --r-lg: 20px;
+      --sh-sm: 0 2px 8px rgba(0,0,0,.07);
+      --sh-md: 0 6px 24px rgba(0,0,0,.10);
+      --sh-lg: 0 16px 56px rgba(0,0,0,.15);
+      --ease: all .24s ease;
+    }
+
+    body { font-family: 'DM Sans', system-ui, sans-serif; color: var(--text); background: var(--white); -webkit-font-smoothing: antialiased; }
+    h1,h2,h3,h4 { font-family: 'DM Serif Display', Georgia, serif; line-height: 1.12; color: var(--pine); }
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+
+    /* ── Promo Banner ── */
+    .promo { background: var(--forest); color: #fff; text-align: center; padding: 10px 16px; font-size: 13px; font-weight: 500; }
+    .promo a { color: var(--gold-lt); text-decoration: none; font-weight: 600; }
+
+    /* ── Nav ── */
+    .nav { background: var(--pine); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,.25); }
+    .nav__inner { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .nav__logo { display: flex; align-items: center; text-decoration: none; gap: 10px; }
+    .nav__links { list-style: none; display: flex; align-items: center; gap: 4px; }
+    .nav__links a { color: rgba(255,255,255,.85); text-decoration: none; font-size: 14px; font-weight: 500; padding: 8px 14px; border-radius: var(--r-sm); transition: var(--ease); }
+    .nav__links a:hover, .nav__links a.active { color: #fff; background: rgba(255,255,255,.1); }
+    .nav__right { display: flex; align-items: center; gap: 16px; }
+    .nav__phone { display:flex; align-items:center; gap:7px; font-size:14px; font-weight:600; color:#fff; text-decoration:none; }
+    .nav__cta { background: var(--gold); color: var(--pine); font-weight: 700; font-size: 14px; padding: 10px 20px; border-radius: var(--r-sm); text-decoration: none; transition: var(--ease); }
+    .nav__cta:hover { background: var(--gold-lt); }
+    .nav__ham { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none; }
+    .nav__ham span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px; transition: var(--ease); }
+    @media(max-width:900px) {
+      .nav__ham { display: flex; }
+      .nav__links { display: none; position: absolute; top: 68px; left: 0; right: 0; background: var(--pine); flex-direction: column; align-items: flex-start; padding: 12px 24px 20px; gap: 4px; box-shadow: 0 8px 24px rgba(0,0,0,.2); }
+      .nav__links.nav__links--open { display: flex; }
+      .nav__links a { width: 100%; padding: 12px 0; border-radius: 0; border-bottom: 1px solid rgba(255,255,255,.08); }
+      .nav__right .nav__phone { display: none; }
+    }
+
+    /* ── Page Hero ── */
+    .page-hero {
+      background: linear-gradient(150deg, #0D2414 0%, #1A3A24 40%, #1B6B2A 100%);
+      padding: 56px 0 48px; text-align: center;
+    }
+    .page-hero__eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--gold-lt); background: rgba(196,164,74,.15);
+      border: 1px solid rgba(196,164,74,.3); border-radius: 100px;
+      padding: 7px 18px; margin-bottom: 20px;
+    }
+    .page-hero h1 { font-size: clamp(32px, 5vw, 50px); color: #fff; margin-bottom: 14px; }
+    .page-hero h1 em { font-style: italic; color: #A8D9A5; }
+    .page-hero p { color: rgba(255,255,255,.78); font-size: 16px; max-width: 500px; margin: 0 auto; line-height: 1.7; }
+
+    /* ── Progress Bar ── */
+    .progress-bar { background: var(--cream); border-bottom: 1px solid var(--border); padding: 24px 0; }
+    .progress-bar__inner { display: flex; align-items: center; justify-content: center; }
+    .pb-step { display: flex; align-items: center; gap: 10px; }
+    .pb-step__num {
+      width: 34px; height: 34px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; font-weight: 700; flex-shrink: 0;
+      background: var(--border); color: var(--sage);
+      transition: var(--ease);
+    }
+    .pb-step.active .pb-step__num { background: var(--forest); color: #fff; }
+    .pb-step.done .pb-step__num { background: var(--leaf); color: #fff; }
+    .pb-step__label { font-size: 13px; font-weight: 600; color: var(--sage); transition: var(--ease); }
+    .pb-step.active .pb-step__label { color: var(--pine); }
+    .pb-step.done .pb-step__label { color: var(--forest); }
+    .pb-divider { width: 48px; height: 2px; background: var(--border); margin: 0 10px; flex-shrink: 0; transition: background .3s; }
+    .pb-divider.done { background: var(--leaf); }
+    @media(max-width:600px) { .pb-step__label { display: none; } .pb-divider { width: 28px; margin: 0 6px; } }
+
+    /* ── Booking Shell ── */
+    .booking-section { padding: 56px 0 80px; }
+    .booking-shell { max-width: 720px; margin: 0 auto; }
+
+    /* ── Form Steps ── */
+    .form-step { display: none; animation: fadeSlide .32s ease; }
+    .form-step.active { display: block; }
+    @keyframes fadeSlide { from { opacity: 0; transform: translateX(18px); } to { opacity: 1; transform: translateX(0); } }
+
+    .step-heading { margin-bottom: 32px; }
+    .step-heading h2 { font-size: clamp(24px, 3.5vw, 32px); margin-bottom: 8px; }
+    .step-heading p { font-size: 15px; color: var(--sage); line-height: 1.6; }
+
+    /* ── Service Cards ── */
+    .plan-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 14px; }
+    .addon-cards { display: grid; grid-template-columns: 1fr; gap: 14px; margin-bottom: 28px; }
+    .custom-quote-note { font-size: 13px; color: var(--sage); background: var(--cream); border: 1px solid var(--border); border-radius: var(--r-sm); padding: 12px 16px; margin-bottom: 28px; line-height: 1.6; }
+    .custom-quote-note a { color: var(--forest); font-weight: 600; text-decoration: none; }
+    .custom-quote-note a:hover { text-decoration: underline; }
+    @media(max-width:700px) { .plan-cards { grid-template-columns: 1fr; } }
+
+    .service-card-label { cursor: pointer; display: block; }
+    .service-card-label input[type="radio"] { position: absolute; opacity: 0; width: 0; height: 0; }
+
+    .service-card-inner {
+      border: 2px solid var(--border); border-radius: var(--r-md);
+      padding: 22px 20px; background: var(--white);
+      transition: var(--ease); position: relative;
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .service-card-label:hover .service-card-inner { border-color: var(--leaf); box-shadow: var(--sh-sm); }
+    .service-card-label input:checked ~ .service-card-inner {
+      border-color: var(--forest); background: #F0F7F1;
+      box-shadow: 0 0 0 3px rgba(27,107,42,.12);
+    }
+    .service-card-inner__check {
+      position: absolute; top: 14px; right: 14px;
+      width: 22px; height: 22px; border-radius: 50%;
+      border: 2px solid var(--border); background: var(--white);
+      display: flex; align-items: center; justify-content: center;
+      transition: var(--ease);
+    }
+    .service-card-label input:checked ~ .service-card-inner .service-card-inner__check {
+      background: var(--forest); border-color: var(--forest);
+    }
+    .service-card-inner__check svg { display: none; }
+    .service-card-label input:checked ~ .service-card-inner .service-card-inner__check svg { display: block; }
+
+    .sc-icon {
+      width: 52px; height: 52px; border-radius: var(--r-sm);
+      background: linear-gradient(145deg, #E8F2E9 0%, #D4E9D7 100%);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .sc-name { font-size: 17px; font-weight: 700; color: var(--pine); font-family: 'DM Serif Display', Georgia, serif; }
+    .sc-count { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--forest); margin-top: -4px; }
+    .sc-desc { font-size: 13px; color: var(--sage); line-height: 1.55; }
+    .sc-list { list-style: none; display: flex; flex-direction: column; gap: 6px; margin-top: 2px; }
+    .sc-list li { display: flex; align-items: flex-start; gap: 7px; font-size: 12.5px; color: var(--text); line-height: 1.45; }
+    .sc-list li::before { content: ''; width: 14px; height: 14px; border-radius: 50%; background: var(--green-100); flex-shrink: 0; margin-top: 1px; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 24 24' fill='none' stroke='%231B6B2A' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: center; }
+    .sc-badge { display: inline-flex; align-items: center; gap: 5px; font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--forest); background: rgba(27,107,42,.1); border: 1px solid rgba(27,107,42,.2); border-radius: 100px; padding: 4px 10px; margin-bottom: 4px; }
+    .sc-addon-badge { display: inline-flex; align-items: center; gap: 5px; font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #7A5C1E; background: rgba(196,164,74,.12); border: 1px solid rgba(196,164,74,.3); border-radius: 100px; padding: 4px 10px; margin-bottom: 4px; }
+    .service-card-label--popular .service-card-inner { border-color: var(--forest); }
+    .service-card-label--popular input:checked ~ .service-card-inner { box-shadow: 0 0 0 3px rgba(27,107,42,.18); }
+    .sc-price { font-size: 12px; font-weight: 600; color: var(--forest); }
+
+    /* ── Form Fields ── */
+    .field-group { margin-bottom: 22px; }
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 22px; }
+    @media(max-width:560px) { .field-row { grid-template-columns: 1fr; } }
+
+    .field-group label,
+    .field-row .field-group { margin-bottom: 0; }
+
+    label.field-label {
+      display: block; font-size: 13px; font-weight: 600;
+      color: var(--pine); margin-bottom: 7px; letter-spacing: .2px;
+    }
+    label.field-label .req { color: var(--forest); margin-left: 2px; }
+    label.field-label .opt { color: var(--sage); font-weight: 400; font-size: 12px; margin-left: 4px; }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    select,
+    textarea {
+      width: 100%; padding: 13px 16px;
+      border: 1.5px solid var(--border); border-radius: var(--r-sm);
+      font-family: 'DM Sans', sans-serif; font-size: 16px; color: var(--text);
+      background: var(--white); outline: none;
+      transition: border-color .2s, box-shadow .2s;
+      appearance: none; -webkit-appearance: none;
+    }
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--forest);
+      box-shadow: 0 0 0 3px rgba(27,107,42,.10);
+    }
+    input::placeholder, textarea::placeholder { color: #B0B8B2; }
+    select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236B7C6F' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 40px; cursor: pointer; }
+    textarea { resize: vertical; min-height: 110px; line-height: 1.6; }
+
+    /* Time preference radio row */
+    .time-options { display: flex; gap: 10px; flex-wrap: wrap; }
+    .time-option { flex: 1; min-width: 120px; }
+    .time-option input[type="radio"] { position: absolute; opacity: 0; width: 0; height: 0; }
+    .time-option-inner {
+      display: flex; align-items: center; justify-content: center;
+      padding: 12px 10px; border: 1.5px solid var(--border); border-radius: var(--r-sm);
+      font-size: 14px; font-weight: 500; color: var(--sage); cursor: pointer;
+      transition: var(--ease); text-align: center; line-height: 1.35;
+    }
+    .time-option:hover .time-option-inner { border-color: var(--leaf); color: var(--pine); }
+    .time-option input:checked ~ .time-option-inner {
+      border-color: var(--forest); background: #F0F7F1; color: var(--forest); font-weight: 600;
+      box-shadow: 0 0 0 2px rgba(27,107,42,.12);
+    }
+
+    /* Field hint text */
+    .field-hint { font-size: 12px; color: var(--sage); margin-top: 5px; line-height: 1.5; }
+
+    /* ── Nav Buttons ── */
+    .form-nav { display: flex; gap: 12px; align-items: center; margin-top: 36px; padding-top: 28px; border-top: 1px solid var(--border); }
+    .btn-prev {
+      padding: 13px 24px; border: 1.5px solid var(--border); border-radius: var(--r-sm);
+      background: var(--white); color: var(--sage); font-family: 'DM Sans', sans-serif;
+      font-size: 15px; font-weight: 600; cursor: pointer; transition: var(--ease);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .btn-prev:hover { border-color: var(--sage); color: var(--pine); }
+    .btn-next {
+      flex: 1; padding: 15px 24px; border: none; border-radius: var(--r-sm);
+      background: var(--forest); color: #fff; font-family: 'DM Sans', sans-serif;
+      font-size: 15px; font-weight: 700; cursor: pointer; transition: var(--ease);
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+    }
+    .btn-next:hover { background: var(--pine); }
+    .btn-next:disabled { background: var(--border); color: var(--sage); cursor: not-allowed; }
+    .btn-submit {
+      flex: 1; padding: 16px 24px; border: none; border-radius: var(--r-sm);
+      background: var(--forest); color: #fff; font-family: 'DM Sans', sans-serif;
+      font-size: 16px; font-weight: 700; cursor: pointer; transition: var(--ease);
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+    }
+    .btn-submit:hover { background: var(--pine); }
+    .btn-submit:disabled { background: var(--border); color: var(--sage); cursor: not-allowed; }
+    @media(max-width:480px) { .btn-prev { display: none; } }
+
+    /* ── Trust Strip ── */
+    .trust-strip {
+      background: var(--cream); border: 1px solid var(--border); border-radius: var(--r-md);
+      padding: 18px 22px; display: flex; align-items: center; gap: 14px;
+      margin-top: 28px; flex-wrap: wrap;
+    }
+    .trust-strip__item { display: flex; align-items: center; gap: 7px; font-size: 13px; color: var(--sage); font-weight: 500; }
+    .trust-strip__item svg { color: var(--forest); flex-shrink: 0; }
+    .trust-strip__sep { width: 1px; height: 20px; background: var(--border); flex-shrink: 0; }
+    @media(max-width:560px) { .trust-strip__sep { display: none; } .trust-strip { gap: 10px; } }
+
+    /* ── Success Screen ── */
+    .success-screen { display: none; text-align: center; padding: 60px 24px; animation: fadeSlide .4s ease; }
+    .success-screen.visible { display: block; }
+    .success-icon {
+      width: 80px; height: 80px; border-radius: 50%;
+      background: linear-gradient(145deg, #E8F2E9, #C8E6CB);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 28px;
+      box-shadow: 0 0 0 12px rgba(27,107,42,.08);
+    }
+    .success-screen h2 { font-size: clamp(26px, 4vw, 36px); margin-bottom: 14px; }
+    .success-screen p { font-size: 16px; color: var(--sage); line-height: 1.7; max-width: 480px; margin: 0 auto 32px; }
+    .success-details {
+      display: inline-flex; flex-direction: column; gap: 12px;
+      background: var(--cream); border: 1px solid var(--border);
+      border-radius: var(--r-md); padding: 22px 28px; margin-bottom: 32px;
+      text-align: left; min-width: 280px;
+    }
+    .success-detail { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--text); }
+    .success-detail svg { color: var(--forest); flex-shrink: 0; }
+    .success-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-home {
+      padding: 13px 28px; border-radius: var(--r-sm);
+      background: var(--forest); color: #fff; text-decoration: none;
+      font-weight: 700; font-size: 15px; transition: var(--ease);
+    }
+    .btn-home:hover { background: var(--pine); }
+    .btn-call {
+      padding: 13px 28px; border-radius: var(--r-sm);
+      border: 1.5px solid var(--border); color: var(--pine);
+      text-decoration: none; font-weight: 600; font-size: 15px; transition: var(--ease);
+    }
+    .btn-call:hover { border-color: var(--forest); background: var(--cream); }
+
+    /* ── Footer ── */
+    .footer { background: var(--pine); color: rgba(255,255,255,.75); padding: 56px 0 32px; }
+    .footer__grid { display: grid; grid-template-columns: 1.6fr 1fr 1.4fr 1.2fr; gap: 48px; margin-bottom: 48px; }
+    .footer__brand p { font-size: 14px; line-height: 1.7; margin-top: 16px; color: rgba(255,255,255,.6); }
+    .footer__col h4 { color: #fff; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 16px; }
+    .footer__col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .footer__col ul li a { color: rgba(255,255,255,.65); text-decoration: none; font-size: 14px; transition: var(--ease); }
+    .footer__col ul li a:hover { color: var(--gold-lt); }
+    .footer__contact p { font-size: 14px; line-height: 1.9; color: rgba(255,255,255,.65); }
+    .footer__contact a { color: rgba(255,255,255,.65); text-decoration: none; transition: var(--ease); }
+    .footer__contact a:hover { color: var(--gold-lt); }
+    .footer__bottom { border-top: 1px solid rgba(255,255,255,.1); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .footer__bottom p, .footer__bottom a { font-size: 13px; color: rgba(255,255,255,.45); text-decoration: none; }
+    .footer__bottom a:hover { color: rgba(255,255,255,.8); }
+    @media(max-width:860px) { .footer__grid { grid-template-columns: 1fr 1fr; gap: 32px; } }
+    @media(max-width:480px) { .footer__grid { grid-template-columns: 1fr; } .footer__bottom { flex-direction: column; text-align: center; gap: 8px; } }
+
+    /* ── Responsive ── */
+    @media(max-width:768px) {
+      .container { padding: 0 18px; }
+      .page-hero { padding: 44px 0 36px; }
+      .booking-section { padding: 40px 0 60px; }
+    }
+    @media(max-width:480px) {
+      .container { padding: 0 16px; }
+      .page-hero { padding: 36px 0 28px; }
+      .booking-section { padding: 32px 0 48px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Promo Banner -->
+  <div class="promo">
+    Free lawn assessments for West Tennessee homeowners — <a href="tel:7313137732">call 731-313-7732</a>
+  </div>
+
+  <!-- ══ ANNOUNCEMENT BAR ══ -->
+  <div id="annBar" style="background:linear-gradient(90deg,#1A3A24 0%,#1B6B2A 100%);color:#fff;text-align:center;padding:10px 40px 10px 16px;font-size:12px;font-weight:500;position:relative;z-index:201;">
+    <span style="margin-right:6px;">🌿</span>
+    <strong style="color:#C4A44A;">Spring Special:</strong> Book now and get your first application <strong style="color:#fff;">40% off.</strong> Limited openings available.
+    <button onclick="document.getElementById('annBar').style.display='none';sessionStorage.setItem('annDismissed','1');" style="position:absolute;right:16px;top:50%;transform:translateY(-50%);background:none;border:none;color:rgba(255,255,255,.6);font-size:20px;cursor:pointer;line-height:1;padding:4px;" aria-label="Dismiss">×</button>
+  </div>
+  <script>if(sessionStorage.getItem('annDismissed')==='1'){var b=document.getElementById('annBar');if(b)b.style.display='none';}</script>
+
+  <!-- Nav -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="index.html" class="nav__logo" aria-label="West TN Lawn & Pest home">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 120" height="42" aria-hidden="true">
+            <defs>
+              <linearGradient id="navCG" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#2E9042"/>
+                <stop offset="100%" stop-color="#156A24"/>
+              </linearGradient>
+            </defs>
+            <circle cx="60" cy="60" r="55" fill="url(#navCG)" stroke="#1A3A24" stroke-width="4"/>
+            <circle cx="60" cy="60" r="48" fill="none" stroke="rgba(255,255,255,.25)" stroke-width="2"/>
+            <polygon points="60,19 64.4,31.9 78.1,32.1 67.1,40.3 71.2,53.4 60,45.5 48.8,53.4 52.9,40.3 41.9,32.1 55.6,31.9" fill="white"/>
+            <polygon points="41,56 45.4,68.9 59.1,69.1 48.1,77.3 52.2,90.4 41,82.5 29.8,90.4 33.9,77.3 22.9,69.1 36.6,68.9" fill="white"/>
+            <polygon points="79,56 83.4,68.9 97.1,69.1 86.1,77.3 90.2,90.4 79,82.5 67.8,90.4 71.9,77.3 60.9,69.1 74.6,68.9" fill="white"/>
+            <text x="128" y="74" font-family="'DM Sans',Arial,sans-serif" font-size="52" font-weight="700" font-style="italic" fill="white">West<tspan font-style="normal">TN</tspan></text>
+            <text x="131" y="98" font-family="'DM Sans',Arial,sans-serif" font-size="22" font-weight="500" fill="rgba(255,255,255,.80)" letter-spacing="1">Lawn &amp; Pest</text>
+          </svg>
+        </a>
+        <button class="nav__ham" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav__links" id="navLinks">
+          <li><a href="services/weed-control.html">Services</a></li>
+          <li><a href="services/pest-control.html">Pest Control</a></li>
+          <li><a href="index.html#plans">Plans</a></li>
+          <li><a href="index.html#areas">Areas</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="about.html">About</a></li>
+        <li><a href="account.html">Account</a></li>
+        </ul>
+        <div class="nav__right">
+          <a href="tel:7313137732" class="nav__phone"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.79 19.79 19.79 0 01.07 1.18 2 2 0 012.07 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>731-313-7732</a>
+          <a href="quote.html" class="nav__cta">Free Quote</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero__eyebrow">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Confirmation Within 24 Hours
+      </div>
+      <h1>Book Your Lawn Care or <em>Pest Control</em> Service</h1>
+      <p>Fill out the form below and we'll confirm your appointment within one business day. No obligation, no pressure.</p>
+    </div>
+  </section>
+
+  <!-- Progress Bar -->
+  <div class="progress-bar">
+    <div class="container">
+      <div class="progress-bar__inner">
+        <div class="pb-step active" id="pb1">
+          <div class="pb-step__num">1</div>
+          <div class="pb-step__label">Choose Service</div>
+        </div>
+        <div class="pb-divider" id="div1"></div>
+        <div class="pb-step" id="pb2">
+          <div class="pb-step__num">2</div>
+          <div class="pb-step__label">Your Property</div>
+        </div>
+        <div class="pb-divider" id="div2"></div>
+        <div class="pb-step" id="pb3">
+          <div class="pb-step__num">3</div>
+          <div class="pb-step__label">Contact &amp; Schedule</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Booking Form -->
+  <section class="booking-section">
+    <div class="container">
+      <div class="booking-shell">
+
+        <!-- ── STEP 1: Choose Service ── -->
+        <div class="form-step active" id="step1">
+
+          <!-- Urgency Banner -->
+          <div style="display:flex;align-items:center;gap:14px;background:linear-gradient(135deg,#1A3A24 0%,#1B6B2A 100%);border:1px solid rgba(196,164,74,.35);border-radius:12px;padding:16px 20px;margin-bottom:28px;">
+            <div style="flex-shrink:0;width:42px;height:42px;background:rgba(196,164,74,.18);border-radius:50%;display:flex;align-items:center;justify-content:center;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C4A44A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div style="flex:1;">
+              <p style="color:#C4A44A;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:3px;">Spring Special — Limited Openings</p>
+              <p style="color:#fff;font-size:15px;font-weight:600;margin-bottom:2px;">Book now and get your first application <span style="color:#C4A44A;">40% off.</span></p>
+              <p style="color:rgba(255,255,255,.6);font-size:12px;">Spring slots are filling fast. Lock in your discount before they're gone.</p>
+            </div>
+          </div>
+
+          <div class="step-heading">
+            <h2>What service do you need?</h2>
+            <p>Select the service you'd like to schedule. Not sure? Choose the one closest to your goal — we'll help refine on the call.</p>
+          </div>
+
+          <!-- Annual Programs — 3 across -->
+          <div class="plan-cards">
+
+            <!-- Essential -->
+            <label class="service-card-label">
+              <input type="radio" name="service" value="Essential Plan – 5 Treatments" />
+              <div class="service-card-inner">
+                <div class="service-card-inner__check">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <div class="sc-name">Essential</div>
+                <div class="sc-count">5 Treatments / Year</div>
+                <div class="sc-desc">A healthy, weed-free lawn all season long at our most economical rate.</div>
+                <ul class="sc-list">
+                  <li>2 Spring pre &amp; post-emergent weed treatments</li>
+                  <li>2 Summer weed control &amp; fertilization treatments</li>
+                  <li>1 Fall pre-emergent application</li>
+                </ul>
+              </div>
+            </label>
+
+            <!-- Enhanced — DEFAULT SELECTED -->
+            <label class="service-card-label service-card-label--popular">
+              <input type="radio" name="service" value="Enhanced Plan – 6 Treatments" checked />
+              <div class="service-card-inner">
+                <div class="service-card-inner__check">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <div class="sc-badge">★ Most Popular</div>
+                <div class="sc-name">Enhanced</div>
+                <div class="sc-count">6 Treatments / Year</div>
+                <div class="sc-desc">Comprehensive weed control combined with seasonal fertilization for visible, lasting results.</div>
+                <ul class="sc-list">
+                  <li>2 Spring pre &amp; post-emergent weed treatments</li>
+                  <li>2 Summer weed control &amp; fertilization treatments</li>
+                  <li>1 Fall pre-emergent application</li>
+                  <li>1 Cool-season lime application</li>
+                </ul>
+              </div>
+            </label>
+
+            <!-- Total Care -->
+            <label class="service-card-label">
+              <input type="radio" name="service" value="Total Care Plan – 7 Treatments" />
+              <div class="service-card-inner">
+                <div class="service-card-inner__check">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <div class="sc-name">Total Care</div>
+                <div class="sc-count">7 Treatments / Year</div>
+                <div class="sc-desc">The complete West TN Lawn & Pest experience — everything your lawn needs for peak health year-round.</div>
+                <ul class="sc-list">
+                  <li>2 Spring treatments (weed control + early fertilization)</li>
+                  <li>2 Summer weed control &amp; fertilization treatments</li>
+                  <li>1 Fall pre-emergent application</li>
+                  <li>1 Fall treatment to fortify before winter</li>
+                  <li>1 Winter lime &amp; soil conditioning treatment</li>
+                </ul>
+              </div>
+            </label>
+
+          </div>
+
+          <!-- Pest Control Add-Ons -->
+          <div class="addon-cards">
+
+            <!-- Flea & Tick Control -->
+            <label class="service-card-label">
+              <input type="checkbox" id="addon_flea_tick" name="addon_flea_tick" value="Yes" />
+              <div class="service-card-inner">
+                <div class="service-card-inner__check">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <div style="display:flex;align-items:flex-start;gap:16px;flex-wrap:wrap;">
+                  <div class="sc-icon" style="flex-shrink:0;">
+                    <svg width="28" height="28" viewBox="0 0 48 48" fill="none" stroke="#1B6B2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <ellipse cx="24" cy="26" rx="8" ry="10" fill="#22803A" fill-opacity=".2"/>
+                      <path d="M16 26c-4 0-8-2-10-6M32 26c4 0 8-2 10-6"/>
+                      <path d="M18 18c-3-3-6-4-9-3M30 18c3-3 6-4 9-3"/>
+                      <path d="M18 34c-2 3-5 5-8 5M30 34c2 3 5 5 8 5"/>
+                      <ellipse cx="24" cy="16" rx="5" ry="4" fill="#22803A" fill-opacity=".3"/>
+                      <circle cx="21" cy="14" r="1.2" fill="#1B6B2A"/>
+                      <circle cx="27" cy="14" r="1.2" fill="#1B6B2A"/>
+                    </svg>
+                  </div>
+                  <div style="flex:1;min-width:200px;">
+                    <div class="sc-addon-badge">Add-On Service</div>
+                    <div class="sc-name">Flea &amp; Tick Control</div>
+                    <div class="sc-desc" style="margin-top:6px;">Barrier treatments around your yard to eliminate fleas and ticks. Safe for family and pets when dry.</div>
+                  </div>
+                </div>
+              </div>
+            </label>
+
+            <!-- Mole Control -->
+            <label class="service-card-label">
+              <input type="checkbox" id="addon_mole" name="addon_mole" value="Yes" />
+              <div class="service-card-inner">
+                <div class="service-card-inner__check">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <div style="display:flex;align-items:flex-start;gap:16px;flex-wrap:wrap;">
+                  <div class="sc-icon" style="flex-shrink:0;">
+                    <svg width="28" height="28" viewBox="0 0 48 48" fill="none" stroke="#1B6B2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M8 34c0 0 4-10 16-10s16 10 16 10" fill="#22803A" fill-opacity=".2" stroke="#1B6B2A"/>
+                      <path d="M6 36h36" stroke="#1A3A24" stroke-width="2"/>
+                      <circle cx="20" cy="26" r="3" fill="#22803A" fill-opacity=".3"/>
+                      <path d="M18 24c-1-2-1-4 0-5M22 24c1-2 1-4 0-5"/>
+                      <path d="M14 36c0-4 2-8 6-10M34 36c0-4-2-8-6-10"/>
+                      <path d="M10 28c-2-1-3-3-2-5M28 22c2-3 5-3 7-1"/>
+                    </svg>
+                  </div>
+                  <div style="flex:1;min-width:200px;">
+                    <div class="sc-addon-badge">Add-On Service</div>
+                    <div class="sc-name">Mole Control</div>
+                    <div class="sc-desc" style="margin-top:6px;">Targeted mole elimination using proven bait and trap methods to stop tunnel damage in your lawn.</div>
+                  </div>
+                </div>
+              </div>
+            </label>
+
+            <!-- Armyworm Control -->
+            <label class="service-card-label">
+              <input type="checkbox" id="addon_armyworm" name="addon_armyworm" value="Yes" />
+              <div class="service-card-inner">
+                <div class="service-card-inner__check">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <div style="display:flex;align-items:flex-start;gap:16px;flex-wrap:wrap;">
+                  <div class="sc-icon" style="flex-shrink:0;">
+                    <svg width="28" height="28" viewBox="0 0 48 48" fill="none" stroke="#1B6B2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M8 28c2-2 4-2 6 0s4 2 6 0 4-2 6 0 4 2 6 0" fill="none"/>
+                      <path d="M8 32c2-2 4-2 6 0s4 2 6 0 4-2 6 0 4 2 6 0" fill="none"/>
+                      <circle cx="10" cy="26" r="3" fill="#22803A" fill-opacity=".3"/>
+                      <path d="M10 23v-3M8 22l-2-2M12 22l2-2"/>
+                      <path d="M38 26c1 1 1 3 0 4"/>
+                    </svg>
+                  </div>
+                  <div style="flex:1;min-width:200px;">
+                    <div class="sc-addon-badge">Add-On Service</div>
+                    <div class="sc-name">Armyworm Control</div>
+                    <div class="sc-desc" style="margin-top:6px;">Fast-acting insecticide applications to stop armyworm outbreaks before they strip your lawn bare.</div>
+                  </div>
+                </div>
+              </div>
+            </label>
+
+            <!-- Perimeter Pest Control -->
+            <label class="service-card-label">
+              <input type="checkbox" id="addon_perimeter" name="addon_perimeter" value="Yes" />
+              <div class="service-card-inner">
+                <div class="service-card-inner__check">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <div style="display:flex;align-items:flex-start;gap:16px;flex-wrap:wrap;">
+                  <div class="sc-icon" style="flex-shrink:0;">
+                    <svg width="28" height="28" viewBox="0 0 48 48" fill="none" stroke="#1B6B2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="10" y="10" width="28" height="28" rx="2" fill="#22803A" fill-opacity=".15"/>
+                      <rect x="16" y="16" width="16" height="16" rx="1" fill="#22803A" fill-opacity=".2"/>
+                      <path d="M10 24h6M32 24h6M24 10v6M24 32v6"/>
+                      <circle cx="10" cy="10" r="2" fill="#1B6B2A"/>
+                      <circle cx="38" cy="10" r="2" fill="#1B6B2A"/>
+                      <circle cx="10" cy="38" r="2" fill="#1B6B2A"/>
+                      <circle cx="38" cy="38" r="2" fill="#1B6B2A"/>
+                    </svg>
+                  </div>
+                  <div style="flex:1;min-width:200px;">
+                    <div class="sc-addon-badge">Add-On Service</div>
+                    <div class="sc-name">Perimeter Pest Control</div>
+                    <div class="sc-desc" style="margin-top:6px;">Creates a chemical barrier around your home's foundation to keep ants, spiders, roaches, and other pests out.</div>
+                  </div>
+                </div>
+              </div>
+            </label>
+
+          </div>
+
+          <!-- Custom quote note -->
+          <p class="custom-quote-note">
+            Need <strong>weed control only</strong> or <strong>fertilization only</strong>?
+            Those are available as custom one-time services —
+            <a href="tel:7313137732">call 731-313-7732</a> or <a href="mailto:info@westtnlawnandpest.com">email us</a> for a custom quote.
+          </p>
+
+          <div class="trust-strip">
+            <div class="trust-strip__item">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+              100% Satisfaction Guarantee
+            </div>
+            <div class="trust-strip__sep"></div>
+            <div class="trust-strip__item">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Confirmation within 24 hours
+            </div>
+            <div class="trust-strip__sep"></div>
+            <div class="trust-strip__item">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              No contracts required
+            </div>
+          </div>
+
+          <div class="form-nav">
+            <button class="btn-next" id="next1" onclick="goToStep(2)" disabled>
+              Continue — Choose Your Property
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- ── STEP 2: Property Details ── -->
+        <div class="form-step" id="step2">
+          <div class="step-heading">
+            <h2>Tell us about your property</h2>
+            <p>This helps us prepare the right equipment and products before we arrive.</p>
+          </div>
+
+          <div class="field-group">
+            <label class="field-label" for="address">
+              Service Address <span class="req">*</span>
+            </label>
+            <input type="text" id="address" name="address" placeholder="123 Oak Street" autocomplete="street-address" required />
+          </div>
+
+          <div class="field-row">
+            <div class="field-group">
+              <label class="field-label" for="city">
+                City <span class="req">*</span>
+              </label>
+              <select id="city" name="city" required>
+                <option value="" disabled selected>Select your city</option>
+                <option>Jackson</option>
+                <option>Humboldt</option>
+                <option>Medina</option>
+                <option>Milan</option>
+                <option>Three Way</option>
+                <option>Trenton</option>
+                <option>Alamo</option>
+                <option>Bells</option>
+                <option>Gadsden</option>
+                <option>Henderson</option>
+                <option>Other (West Tennessee)</option>
+              </select>
+            </div>
+            <div class="field-group">
+              <label class="field-label" for="zipcode">
+                ZIP Code <span class="req">*</span>
+              </label>
+              <input type="text" id="zipcode" name="zipcode" placeholder="38305" maxlength="10" inputmode="numeric" required />
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field-group">
+              <label class="field-label" for="lawn_size">
+                Approximate Lawn Size <span class="req">*</span>
+              </label>
+              <select id="lawn_size" name="lawn_size" required>
+                <option value="" disabled selected>Choose a range</option>
+                <option>Under 5,000 sq ft</option>
+                <option>5,000 – 10,000 sq ft</option>
+                <option>10,000 – 15,000 sq ft</option>
+                <option>15,000 – 20,000 sq ft</option>
+                <option>Over 20,000 sq ft</option>
+                <option>Not sure</option>
+              </select>
+              <div class="field-hint">Unsure? Use our <a href="quote.html" style="color:var(--forest);font-weight:600;">instant quote tool</a> to measure your lawn.</div>
+            </div>
+            <div class="field-group">
+              <label class="field-label" for="grass_type">
+                Grass Type <span class="opt">(optional)</span>
+              </label>
+              <select id="grass_type" name="grass_type">
+                <option value="" disabled selected>Select if known</option>
+                <option>Bermuda</option>
+                <option>Zoysia</option>
+                <option>Tall Fescue</option>
+                <option>St. Augustine</option>
+                <option>Centipede</option>
+                <option>Mixed</option>
+                <option>Not sure</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label class="field-label" for="property_notes">
+              Property Details <span class="opt">(optional)</span>
+            </label>
+            <textarea id="property_notes" name="property_notes" placeholder="Any details that help us prepare — gate codes, dog in yard, specific problem areas, slope conditions, etc."></textarea>
+          </div>
+
+          <div class="form-nav">
+            <button class="btn-prev" onclick="goToStep(1)">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+              Back
+            </button>
+            <button class="btn-next" id="next2" onclick="goToStep(3)">
+              Continue — Contact &amp; Schedule
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- ── STEP 3: Contact & Schedule ── -->
+        <div class="form-step" id="step3">
+          <div class="step-heading">
+            <h2>Contact &amp; scheduling preferences</h2>
+            <p>We'll reach out within 24 hours to confirm your exact appointment time.</p>
+          </div>
+
+          <form id="bookingForm" action="https://formspree.io/f/meepkwvg" method="POST" novalidate>
+
+            <!-- Hidden fields passed from previous steps -->
+            <input type="hidden" id="h_service" name="Service" />
+            <input type="hidden" id="h_addon_flea_tick" name="Flea &amp; Tick Control" />
+            <input type="hidden" id="h_addon_mole" name="Mole Control" />
+            <input type="hidden" id="h_addon_armyworm" name="Armyworm Control" />
+            <input type="hidden" id="h_addon_perimeter" name="Perimeter Pest Control" />
+            <input type="hidden" id="h_address" name="Address" />
+            <input type="hidden" id="h_city" name="City" />
+            <input type="hidden" id="h_zip" name="ZIP" />
+            <input type="hidden" id="h_size" name="Lawn Size" />
+            <input type="hidden" id="h_grass" name="Grass Type" />
+            <input type="hidden" id="h_prop_notes" name="Property Notes" />
+
+            <div class="field-row">
+              <div class="field-group">
+                <label class="field-label" for="first_name">
+                  First Name <span class="req">*</span>
+                </label>
+                <input type="text" id="first_name" name="first_name" placeholder="John" autocomplete="given-name" required />
+              </div>
+              <div class="field-group">
+                <label class="field-label" for="last_name">
+                  Last Name <span class="req">*</span>
+                </label>
+                <input type="text" id="last_name" name="last_name" placeholder="Smith" autocomplete="family-name" required />
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="field-group">
+                <label class="field-label" for="phone">
+                  Phone Number <span class="req">*</span>
+                </label>
+                <input type="tel" id="phone" name="phone" placeholder="(731) 555-0100" autocomplete="tel" inputmode="tel" required />
+              </div>
+              <div class="field-group">
+                <label class="field-label" for="email">
+                  Email Address <span class="req">*</span>
+                </label>
+                <input type="email" id="email" name="email" placeholder="john@email.com" autocomplete="email" required />
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="field-group">
+                <label class="field-label" for="preferred_date">
+                  Preferred Start Date <span class="req">*</span>
+                </label>
+                <input type="date" id="preferred_date" name="preferred_date" required />
+                <div class="field-hint">We'll do our best to match your schedule.</div>
+              </div>
+              <div class="field-group">
+                <label class="field-label" for="referral">
+                  How Did You Hear About Us? <span class="opt">(optional)</span>
+                </label>
+                <select id="referral" name="referral">
+                  <option value="" disabled selected>Select one</option>
+                  <option>Google Search</option>
+                  <option>Facebook / Instagram</option>
+                  <option>Friend or Neighbor Referral</option>
+                  <option>Drove By / Yard Sign</option>
+                  <option>Door Hanger / Flyer</option>
+                  <option>Returning Customer</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field-group">
+              <label class="field-label">
+                Preferred Time of Day <span class="req">*</span>
+              </label>
+              <div class="time-options">
+                <label class="time-option">
+                  <input type="radio" name="preferred_time" value="Morning (8am – 12pm)" required />
+                  <div class="time-option-inner">Morning<br><small>8am – 12pm</small></div>
+                </label>
+                <label class="time-option">
+                  <input type="radio" name="preferred_time" value="Afternoon (12pm – 5pm)" />
+                  <div class="time-option-inner">Afternoon<br><small>12pm – 5pm</small></div>
+                </label>
+                <label class="time-option">
+                  <input type="radio" name="preferred_time" value="Either / Flexible" />
+                  <div class="time-option-inner">Either<br><small>I'm flexible</small></div>
+                </label>
+              </div>
+            </div>
+
+            <div class="field-group">
+              <label class="field-label" for="notes">
+                Additional Notes <span class="opt">(optional)</span>
+              </label>
+              <textarea id="notes" name="notes" placeholder="Anything else we should know — specific concerns, questions about pricing, re-treat requests, etc."></textarea>
+            </div>
+
+            <!-- Discount Reminder -->
+            <div style="display:flex;align-items:center;gap:10px;background:#f0faf1;border:1px solid #b6debb;border-radius:8px;padding:12px 16px;margin-bottom:20px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1B6B2A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <p style="font-size:13px;color:#1A3A24;font-weight:600;margin:0;">Your <span style="color:#1B6B2A;">40% first-application discount</span> will be applied at time of service.</p>
+            </div>
+
+            <!-- SMS Consent -->
+            <div style="display:flex;flex-direction:column;gap:14px;margin-bottom:24px;padding:20px;background:#f7f5f0;border-radius:10px;border:1px solid #e0ddd6;">
+              <label style="display:flex;align-items:flex-start;gap:12px;cursor:pointer;">
+                <input type="checkbox" name="sms_transactional" value="Yes" style="margin-top:3px;flex-shrink:0;accent-color:#1B6B2A;width:16px;height:16px;" />
+                <span style="font-size:12px;color:#4a5568;line-height:1.6;">
+                  I agree to receive service-related text messages from West TN Lawn &amp; Pest, including appointment reminders and account notifications. Message frequency varies. Msg &amp; data rates may apply. Reply <strong>HELP</strong> for help or <strong>STOP</strong> to opt out. We never share your number with third parties.
+                </span>
+              </label>
+              <label style="display:flex;align-items:flex-start;gap:12px;cursor:pointer;">
+                <input type="checkbox" name="sms_marketing" value="Yes" style="margin-top:3px;flex-shrink:0;accent-color:#1B6B2A;width:16px;height:16px;" />
+                <span style="font-size:12px;color:#4a5568;line-height:1.6;">
+                  I'd like to receive occasional text messages from West TN Lawn &amp; Pest with seasonal tips, lawn alerts, and special offers. Message frequency varies. Msg &amp; data rates may apply. Reply <strong>STOP</strong> to cancel at any time.
+                </span>
+              </label>
+            </div>
+
+            <div class="form-nav">
+              <button type="button" class="btn-prev" onclick="goToStep(2)">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                Back
+              </button>
+              <button type="submit" class="btn-submit" id="submitBtn">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                Book My Service
+              </button>
+            </div>
+
+          </form>
+        </div>
+
+        <!-- ── SUCCESS SCREEN ── -->
+        <div class="success-screen" id="successScreen">
+          <div class="success-icon">
+            <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#1B6B2A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h2>You're on the schedule!</h2>
+          <p>We received your booking request and will confirm your appointment by phone or email within one business day.</p>
+          <div class="success-details">
+            <div class="success-detail">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Booking request submitted
+            </div>
+            <div class="success-detail">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Confirmation within 24 hours
+            </div>
+            <div class="success-detail">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.7A2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.36 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.16 6.16l1.27-1.27a2 2 0 012.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              Need urgent help? Call <strong><a href="tel:7313137732" style="color:inherit;text-decoration:none;">731-313-7732</a></strong>
+            </div>
+          </div>
+          <div class="success-btns">
+            <a href="index.html" class="btn-home">Back to Home</a>
+            <a href="tel:7313137732" class="btn-call">Call Us Now</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 120" height="36" aria-hidden="true">
+            <defs>
+              <linearGradient id="footCG" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#2E9042"/>
+                <stop offset="100%" stop-color="#156A24"/>
+              </linearGradient>
+            </defs>
+            <circle cx="60" cy="60" r="55" fill="url(#footCG)" stroke="#1A3A24" stroke-width="4"/>
+            <circle cx="60" cy="60" r="48" fill="none" stroke="rgba(255,255,255,.25)" stroke-width="2"/>
+            <polygon points="60,19 64.4,31.9 78.1,32.1 67.1,40.3 71.2,53.4 60,45.5 48.8,53.4 52.9,40.3 41.9,32.1 55.6,31.9" fill="white"/>
+            <polygon points="41,56 45.4,68.9 59.1,69.1 48.1,77.3 52.2,90.4 41,82.5 29.8,90.4 33.9,77.3 22.9,69.1 36.6,68.9" fill="white"/>
+            <polygon points="79,56 83.4,68.9 97.1,69.1 86.1,77.3 90.2,90.4 79,82.5 67.8,90.4 71.9,77.3 60.9,69.1 74.6,68.9" fill="white"/>
+            <text x="128" y="74" font-family="'DM Sans',Arial,sans-serif" font-size="52" font-weight="700" font-style="italic" fill="white">West<tspan font-style="normal">TN</tspan></text>
+            <text x="131" y="98" font-family="'DM Sans',Arial,sans-serif" font-size="22" font-weight="500" fill="rgba(255,255,255,.80)" letter-spacing="1">Lawn &amp; Pest</text>
+          </svg>
+          <p>Professional lawn care and outdoor pest control serving West Tennessee. Results guaranteed.</p>
+        </div>
+        <div class="footer__col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services/weed-control.html">Weed Control</a></li>
+            <li><a href="services/weed-control.html">Fertilization</a></li>
+            <li><a href="services/weed-control.html">Lime Application</a></li>
+            <li><a href="services/pest-control.html">Flea &amp; Tick</a></li>
+            <li><a href="services/pest-control.html">Mole Control</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Areas</h4>
+          <ul>
+            <li><a href="locations/jackson-tn.html">Jackson, TN</a></li>
+            <li><a href="locations/humboldt-tn.html">Humboldt, TN</a></li>
+            <li><a href="locations/medina-tn.html">Medina, TN</a></li>
+            <li><a href="locations/milan-tn.html">Milan, TN</a></li>
+            <li><a href="locations/three-way-tn.html">Three Way, TN</a></li>
+            <li><a href="locations/bells-tn.html">Bells, TN</a></li>
+            <li><a href="locations/gadsden-tn.html">Gadsden, TN</a></li>
+            <li><a href="locations/henderson-tn.html">Henderson, TN</a></li>
+            <li><a href="locations/trenton-tn.html">Trenton, TN</a></li>
+            <li><a href="locations/alamo-tn.html">Alamo, TN</a></li>
+          </ul>
+        </div>
+        <div class="footer__col footer__contact">
+          <h4>Contact</h4>
+          <p>
+            <a href="tel:7313137732"><a href="tel:7313137732" style="color:inherit;text-decoration:none;">731-313-7732</a></a><br>
+            <a href="mailto:info@westtnlawnandpest.com">info@westtnlawnandpest.com</a><br><br>
+            Serving West Tennessee<br>
+            Mon–Fri 7am–6pm<br>
+            Sat 8am–2pm
+          </p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2025 West TN Lawn &amp; Pest. All rights reserved.</p>
+        <div style="display:flex;gap:20px;">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* ── Nav hamburger ── */
+    const ham = document.querySelector('.nav__ham');
+    const navLinks = document.getElementById('navLinks');
+    ham.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('nav__links--open');
+      ham.setAttribute('aria-expanded', open);
+    });
+
+    /* ── Step state ── */
+    let currentStep = 1;
+
+    function goToStep(n) {
+      // Validate before advancing
+      if (n > currentStep && !validateStep(currentStep)) return;
+
+      // Sync hidden fields before step 3
+      if (n === 3) syncHiddenFields();
+
+      // Hide current, show next
+      document.getElementById('step' + currentStep).classList.remove('active');
+      document.getElementById('step' + n).classList.add('active');
+
+      // Update progress bar
+      updateProgress(n);
+
+      currentStep = n;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function updateProgress(n) {
+      for (let i = 1; i <= 3; i++) {
+        const pb = document.getElementById('pb' + i);
+        pb.classList.remove('active', 'done');
+        if (i < n) pb.classList.add('done');
+        if (i === n) pb.classList.add('active');
+      }
+      if (document.getElementById('div1')) {
+        document.getElementById('div1').classList.toggle('done', n > 1);
+      }
+      if (document.getElementById('div2')) {
+        document.getElementById('div2').classList.toggle('done', n > 2);
+      }
+    }
+
+    /* ── Validation ── */
+    function validateStep(step) {
+      if (step === 1) {
+        const chosen = document.querySelector('input[name="service"]:checked');
+        if (!chosen) {
+          alert('Please select a service to continue.');
+          return false;
+        }
+      }
+      if (step === 2) {
+        const addr = document.getElementById('address').value.trim();
+        const city = document.getElementById('city').value;
+        const zip  = document.getElementById('zipcode').value.trim();
+        const size = document.getElementById('lawn_size').value;
+        if (!addr || !city || !zip || !size) {
+          alert('Please fill in all required fields before continuing.');
+          return false;
+        }
+      }
+      return true;
+    }
+
+    /* ── Enable Step 1 next button — Enhanced is pre-selected so enable immediately ── */
+    document.getElementById('next1').disabled = false;
+    document.querySelectorAll('input[name="service"]').forEach(radio => {
+      radio.addEventListener('change', () => {
+        document.getElementById('next1').disabled = false;
+      });
+    });
+
+    /* ── Sync hidden fields ── */
+    function syncHiddenFields() {
+      const svc = document.querySelector('input[name="service"]:checked');
+      document.getElementById('h_service').value          = svc ? svc.value : '';
+      document.getElementById('h_addon_flea_tick').value  = document.getElementById('addon_flea_tick').checked  ? 'Yes' : 'No';
+      document.getElementById('h_addon_mole').value       = document.getElementById('addon_mole').checked       ? 'Yes' : 'No';
+      document.getElementById('h_addon_armyworm').value   = document.getElementById('addon_armyworm').checked   ? 'Yes' : 'No';
+      document.getElementById('h_addon_perimeter').value  = document.getElementById('addon_perimeter').checked  ? 'Yes' : 'No';
+      document.getElementById('h_address').value    = document.getElementById('address').value;
+      document.getElementById('h_city').value       = document.getElementById('city').value;
+      document.getElementById('h_zip').value        = document.getElementById('zipcode').value;
+      document.getElementById('h_size').value       = document.getElementById('lawn_size').value;
+      document.getElementById('h_grass').value      = document.getElementById('grass_type').value;
+      document.getElementById('h_prop_notes').value = document.getElementById('property_notes').value;
+    }
+
+    /* ── Set min date on date picker ── */
+    const datePicker = document.getElementById('preferred_date');
+    const today = new Date();
+    today.setDate(today.getDate() + 1); // Earliest = tomorrow
+    datePicker.min = today.toISOString().split('T')[0];
+
+    /* ── Form submission ── */
+    document.getElementById('bookingForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      const fname = document.getElementById('first_name').value.trim();
+      const lname = document.getElementById('last_name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const date  = document.getElementById('preferred_date').value;
+      const time  = document.querySelector('input[name="preferred_time"]:checked');
+
+      if (!fname || !lname || !phone || !email || !date || !time) {
+        alert('Please fill in all required fields and select a preferred time.');
+        return;
+      }
+
+      const btn = document.getElementById('submitBtn');
+      btn.disabled = true;
+      btn.innerHTML = '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Sending…';
+
+      try {
+        const data = new FormData(this);
+        const res  = await fetch(this.action, {
+          method: 'POST', body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (res.ok) {
+          // Hide form steps and progress bar, show success
+          document.getElementById('step3').classList.remove('active');
+          document.querySelector('.progress-bar').style.display = 'none';
+          document.getElementById('successScreen').classList.add('visible');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          btn.disabled = false;
+          btn.innerHTML = '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Book My Service';
+          alert('Something went wrong. Please try again or call us at 731-313-7732.');
+        }
+      } catch {
+        btn.disabled = false;
+        btn.innerHTML = '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Book My Service';
+        alert('Network error. Please try again or call us at 731-313-7732.');
+      }
+    });
+  </script>
+
+  <!-- Google Places Autocomplete for address field -->
+  <script>
+    function initPlaces() {
+      const addressInput = document.getElementById('address');
+      const ac = new google.maps.places.Autocomplete(addressInput, {
+        componentRestrictions: { country: 'us' },
+        fields: ['address_components', 'formatted_address'],
+        types: ['address']
+      });
+
+      ac.addListener('place_changed', function() {
+        const place = ac.getPlace();
+        if (!place.address_components) return;
+
+        let streetNumber = '', route = '', city = '', zip = '';
+        place.address_components.forEach(c => {
+          if (c.types.includes('street_number'))  streetNumber = c.long_name;
+          if (c.types.includes('route'))           route        = c.long_name;
+          if (c.types.includes('locality'))        city         = c.long_name;
+          if (c.types.includes('postal_code'))     zip          = c.long_name;
+        });
+
+        // Fill address field with street only (not full formatted address)
+        if (streetNumber && route) addressInput.value = streetNumber + ' ' + route;
+
+        // Auto-select city dropdown if it matches a service area
+        if (city) {
+          const citySelect = document.getElementById('city');
+          for (let i = 0; i < citySelect.options.length; i++) {
+            if (citySelect.options[i].text.toLowerCase() === city.toLowerCase()) {
+              citySelect.selectedIndex = i;
+              break;
+            }
+          }
+        }
+
+        // Fill ZIP
+        if (zip) document.getElementById('zipcode').value = zip;
+      });
+
+      // Pre-fill from URL param (?address=...)
+      const params = new URLSearchParams(window.location.search);
+      const prefill = params.get('address');
+      if (prefill) addressInput.value = prefill;
+    }
+  </script>
+
+  <!-- Email validation -->
+  <script>
+    (function() {
+      const emailField = document.getElementById('email');
+      if (!emailField) return;
+
+      // Common domain typo map
+      const typos = {
+        'gmai.com': 'gmail.com', 'gmial.com': 'gmail.com', 'gnail.com': 'gmail.com',
+        'gamil.com': 'gmail.com', 'gemail.com': 'gmail.com',
+        'yahooo.com': 'yahoo.com', 'yaho.com': 'yahoo.com', 'yahho.com': 'yahoo.com',
+        'hotmal.com': 'hotmail.com', 'hotmial.com': 'hotmail.com', 'hotmail.con': 'hotmail.com',
+        'outlok.com': 'outlook.com', 'outook.com': 'outlook.com', 'outlookk.com': 'outlook.com',
+        'iclod.com': 'icloud.com', 'icoud.com': 'icloud.com',
+      };
+
+      // Create feedback element
+      const hint = document.createElement('div');
+      hint.style.cssText = 'font-size:12px;margin-top:5px;line-height:1.5;display:none;';
+      emailField.parentNode.appendChild(hint);
+
+      function checkEmail() {
+        const val = emailField.value.trim();
+        if (!val) { hint.style.display = 'none'; emailField.style.borderColor = ''; return; }
+
+        const parts = val.split('@');
+        const valid = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(val);
+
+        if (parts.length === 2 && typos[parts[1].toLowerCase()]) {
+          const fix = parts[0] + '@' + typos[parts[1].toLowerCase()];
+          hint.style.display = 'block';
+          hint.style.color = '#9A5C00';
+          hint.innerHTML = `Did you mean <strong>${fix}</strong>? <a href="#" style="color:#1B6B2A;font-weight:600;" onclick="document.getElementById('email').value='${fix}';this.parentNode.style.display='none';document.getElementById('email').style.borderColor='#1B6B2A';return false;">Use this</a>`;
+          emailField.style.borderColor = '#C4A44A';
+        } else if (!valid) {
+          hint.style.display = 'block';
+          hint.style.color = '#B33A3A';
+          hint.innerHTML = 'Please enter a valid email address (e.g. name@example.com)';
+          emailField.style.borderColor = '#C05252';
+        } else {
+          hint.style.display = 'block';
+          hint.style.color = '#1B6B2A';
+          hint.innerHTML = '✓ Looks good';
+          emailField.style.borderColor = '#1B6B2A';
+        }
+      }
+
+      emailField.addEventListener('blur', checkEmail);
+      emailField.addEventListener('input', function() {
+        // Clear error state while typing, only re-validate on valid-looking input
+        if (/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(this.value.trim())) checkEmail();
+        else { hint.style.display = 'none'; emailField.style.borderColor = ''; }
+      });
+    })();
+  </script>
+
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7KenIZs3cLM9FaEJdze08owTK0WVmFTU&libraries=places&callback=initPlaces"
+    async defer>
+  </script>
+
+</body>
+</html>

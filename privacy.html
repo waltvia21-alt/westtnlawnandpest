@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — West TN Lawn &amp; Pest</title>
+  <meta name="description" content="Privacy Policy for West TN Lawn &amp; Pest. Learn how we collect, use, and protect your personal information." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="canonical" href="https://westtnlawnandpest.com/privacy.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    img { display: block; max-width: 100%; }
+
+    :root {
+      --forest:    #1B6B2A;
+      --pine:      #1A3A24;
+      --leaf:      #22803A;
+      --sage:      #6B7C6F;
+      --cream:     #F7F5F0;
+      --gold:      #C4A44A;
+      --gold-lt:   #DFB85E;
+      --white:     #FFFFFF;
+      --text:      #1C2B1E;
+      --border:    #DDD9D0;
+      --green-100: #E5EFE6;
+      --r-sm: 6px; --r-md: 12px; --r-lg: 20px;
+      --sh-sm: 0 2px 8px rgba(0,0,0,.07);
+      --ease: all .24s ease;
+    }
+
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      color: var(--text); background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+    h1,h2,h3,h4 { font-family: 'DM Serif Display', Georgia, serif; line-height: 1.12; color: var(--pine); }
+
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+
+    /* NAV */
+    .nav {
+      position: sticky; top: 0; z-index: 200;
+      background: var(--pine);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .nav__inner {
+      height: 70px; display: flex;
+      align-items: center; justify-content: space-between; gap: 24px;
+    }
+    .nav__logo { display: flex; align-items: center; flex-shrink: 0; }
+    .nav__logo svg { height: 42px; width: auto; }
+    .nav__links { display: flex; align-items: center; gap: 4px; list-style: none; }
+    .nav__links a {
+      font-size: 12.5px; font-weight: 500; letter-spacing: .3px;
+      text-transform: uppercase; color: rgba(255,255,255,.78);
+      text-decoration: none; transition: color .2s;
+      white-space: nowrap; padding: 6px 10px; border-radius: 4px;
+    }
+    .nav__links a:hover { color: #fff; background: rgba(255,255,255,.08); }
+    .nav__right { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
+    .nav__phone {
+      display: flex; align-items: center; gap: 7px;
+      font-size: 14px; font-weight: 600; color: #fff;
+      text-decoration: none; white-space: nowrap;
+    }
+    .nav__phone:hover { color: var(--gold-lt); }
+    .nav__ham { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+    .nav__ham span { width: 22px; height: 2px; background: #fff; border-radius: 2px; display: block; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 9px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px; font-weight: 600; letter-spacing: .2px;
+      padding: 14px 28px; border-radius: var(--r-sm);
+      border: 2px solid transparent; cursor: pointer;
+      text-decoration: none; transition: var(--ease);
+      white-space: nowrap;
+    }
+    .btn-gold { background: var(--gold); color: var(--pine); border-color: var(--gold); }
+    .btn-gold:hover { background: var(--gold-lt); border-color: var(--gold-lt); }
+
+    /* PAGE HERO */
+    .page-hero {
+      background: var(--pine);
+      padding: 64px 0 48px;
+      text-align: center;
+    }
+    .page-hero h1 { color: #fff; font-size: clamp(32px, 4vw, 48px); margin-bottom: 12px; }
+    .page-hero p { color: rgba(255,255,255,.65); font-size: 16px; }
+
+    /* CONTENT */
+    .legal-content {
+      max-width: 780px; margin: 0 auto;
+      padding: 64px 24px 80px;
+    }
+    .legal-content h2 {
+      font-size: 22px; margin-top: 48px; margin-bottom: 12px; color: var(--pine);
+    }
+    .legal-content h3 {
+      font-size: 17px; margin-top: 28px; margin-bottom: 8px; color: var(--pine);
+    }
+    .legal-content p { font-size: 15px; line-height: 1.75; color: #3A4A3C; margin-bottom: 14px; }
+    .legal-content ul { margin: 0 0 14px 24px; }
+    .legal-content ul li { font-size: 15px; line-height: 1.75; color: #3A4A3C; margin-bottom: 6px; }
+    .legal-content a { color: var(--forest); }
+    .legal-content .updated { font-size: 13px; color: var(--sage); margin-bottom: 40px; }
+
+    /* FOOTER */
+    .footer { background: var(--pine); padding: 72px 0 32px; }
+    .footer__grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px; margin-bottom: 48px;
+    }
+    .footer__brand p { font-size: 13.5px; color: rgba(255,255,255,.50); line-height: 1.7; max-width: 270px; margin-top: 16px; }
+    .footer__brand svg { height: 48px; }
+    .footer__col h4 {
+      font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: rgba(255,255,255,.45); margin-bottom: 18px;
+    }
+    .footer__col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer__col ul li a, .footer__col ul li {
+      font-size: 14px; color: rgba(255,255,255,.65);
+      text-decoration: none; transition: color .2s;
+    }
+    .footer__col ul li a:hover { color: #fff; }
+    .footer__contact-item {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 14px; color: rgba(255,255,255,.65);
+    }
+    .footer__contact-item svg { color: var(--gold-lt); flex-shrink: 0; margin-top: 2px; }
+    .footer__bottom {
+      border-top: 1px solid rgba(255,255,255,.10);
+      padding-top: 24px; display: flex;
+      justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+    }
+    .footer__bottom p { font-size: 12.5px; color: rgba(255,255,255,.32); }
+    .footer__bottom a { color: rgba(255,255,255,.42); text-decoration: none; }
+    .footer__bottom a:hover { color: rgba(255,255,255,.7); }
+
+    @media (max-width: 900px) {
+      .nav__links, .nav__right { display: none; }
+      .nav__ham { display: flex; }
+      .nav__links.open {
+        display: flex; flex-direction: column;
+        position: absolute; top: 70px; left: 0; right: 0;
+        background: var(--pine); padding: 16px 24px 24px;
+        border-bottom: 1px solid rgba(255,255,255,.10); gap: 4px;
+        z-index: 199;
+      }
+      .footer__grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      .footer__grid { grid-template-columns: 1fr; }
+      .footer__bottom { flex-direction: column; text-align: center; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="West TN Lawn &amp; Pest">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 120" height="42" aria-hidden="true">
+          <defs>
+            <linearGradient id="navCG" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#2E9042"/>
+              <stop offset="100%" stop-color="#156A24"/>
+            </linearGradient>
+          </defs>
+          <circle cx="60" cy="60" r="55" fill="url(#navCG)" stroke="#1A3A24" stroke-width="4"/>
+          <circle cx="60" cy="60" r="48" fill="none" stroke="rgba(255,255,255,.25)" stroke-width="2"/>
+          <polygon points="60,19 64.4,31.9 78.1,32.1 67.1,40.3 71.2,53.4 60,45.5 48.8,53.4 52.9,40.3 41.9,32.1 55.6,31.9" fill="white"/>
+          <polygon points="41,56 45.4,68.9 59.1,69.1 48.1,77.3 52.2,90.4 41,82.5 29.8,90.4 33.9,77.3 22.9,69.1 36.6,68.9" fill="white"/>
+          <polygon points="79,56 83.4,68.9 97.1,69.1 86.1,77.3 90.2,90.4 79,82.5 67.8,90.4 71.9,77.3 60.9,69.1 74.6,68.9" fill="white"/>
+          <text x="128" y="74" font-family="'DM Sans',Arial,sans-serif" font-size="52" font-weight="700" font-style="italic" fill="white">West<tspan font-style="normal">TN</tspan></text>
+          <text x="131" y="98" font-family="'DM Sans',Arial,sans-serif" font-size="22" font-weight="500" fill="rgba(255,255,255,.80)" letter-spacing="1">Lawn &amp; Pest</text>
+        </svg>
+      </a>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="services/weed-control.html">Lawn Services</a></li>
+        <li><a href="services/pest-control.html">Pest Control</a></li>
+        <li><a href="index.html#plans">Plans</a></li>
+        <li><a href="index.html#areas">Areas</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="book.html">Book</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="account.html">Account</a></li>
+      </ul>
+      <div class="nav__right">
+        <a href="tel:7313137732" class="nav__phone">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.79 19.79 19.79 0 01.07 1.18 2 2 0 012.07 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          731-313-7732
+        </a>
+        <a href="quote.html" class="btn btn-gold" style="padding:10px 20px;font-size:13px;">Free Quote</a>
+      </div>
+      <button class="nav__ham" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <h1>Privacy Policy</h1>
+    <p>How West TN Lawn &amp; Pest collects, uses, and protects your information</p>
+  </div>
+</div>
+
+<div class="legal-content">
+  <p class="updated">Last updated: January 1, 2025</p>
+
+  <p>West TN Lawn &amp; Pest ("we," "us," or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.</p>
+
+  <h2>Information We Collect</h2>
+  <h3>Information You Provide Directly</h3>
+  <ul>
+    <li>Name, address, phone number, and email address when you request a quote or schedule service</li>
+    <li>Payment information (processed securely through our payment processor — we do not store card numbers)</li>
+    <li>Messages or inquiries submitted through contact forms</li>
+    <li>Account login credentials if you create an account</li>
+  </ul>
+
+  <h3>Information Collected Automatically</h3>
+  <ul>
+    <li>IP address and browser type</li>
+    <li>Pages visited and time spent on each page</li>
+    <li>Referring website or search terms that led you to our site</li>
+    <li>Device type and operating system</li>
+  </ul>
+
+  <h2>How We Use Your Information</h2>
+  <p>We use the information we collect to:</p>
+  <ul>
+    <li>Provide, schedule, and invoice lawn care and pest control services</li>
+    <li>Communicate with you about your service, appointment reminders, and follow-ups</li>
+    <li>Send promotional offers or seasonal reminders (you may opt out at any time)</li>
+    <li>Improve our website and service offerings</li>
+    <li>Comply with legal obligations</li>
+  </ul>
+
+  <h2>SMS / Text Message Communications (TCPA)</h2>
+  <p>By providing your mobile phone number and opting in, you consent to receive recurring automated text messages from West TN Lawn &amp; Pest regarding service reminders, appointment confirmations, promotional offers, and account notifications. Message and data rates may apply. Message frequency varies.</p>
+  <p><strong>To opt out:</strong> Reply STOP to any text message at any time. You will receive one final confirmation message and no further texts will be sent. To opt back in, reply START.</p>
+  <p><strong>For help:</strong> Reply HELP to any message or contact us at <a href="mailto:info@westtnlawnandpest.com">info@westtnlawnandpest.com</a> or <a href="tel:7313137732">731-313-7732</a>.</p>
+  <p>We do not sell, rent, or share your mobile phone number with third parties for their marketing purposes.</p>
+
+  <h2>Sharing of Information</h2>
+  <p>We do not sell your personal information. We may share your information with:</p>
+  <ul>
+    <li><strong>Service providers:</strong> Third-party vendors who assist with payment processing, scheduling software, and email delivery — bound by confidentiality agreements</li>
+    <li><strong>Legal requirements:</strong> When required by law, court order, or governmental authority</li>
+    <li><strong>Business transfers:</strong> In connection with a merger, acquisition, or sale of assets</li>
+  </ul>
+
+  <h2>Cookies and Tracking Technologies</h2>
+  <p>We use cookies and similar technologies to enhance your browsing experience, analyze site traffic, and understand where visitors come from. You can control cookie settings through your browser preferences. Disabling cookies may affect some site functionality.</p>
+  <p>We may use Google Analytics to collect aggregated, anonymized data about website usage. Google's privacy policy governs how Google handles that data.</p>
+
+  <h2>Data Security</h2>
+  <p>We implement reasonable administrative, technical, and physical safeguards to protect your personal information. However, no method of transmission over the internet or electronic storage is 100% secure. We cannot guarantee absolute security.</p>
+
+  <h2>Data Retention</h2>
+  <p>We retain customer information for as long as necessary to provide services and comply with legal obligations, typically up to 7 years for billing records. You may request deletion of your personal data at any time (subject to legal retention requirements).</p>
+
+  <h2>Your Rights</h2>
+  <p>You have the right to:</p>
+  <ul>
+    <li>Access the personal information we hold about you</li>
+    <li>Request correction of inaccurate information</li>
+    <li>Request deletion of your personal information</li>
+    <li>Opt out of marketing communications at any time</li>
+  </ul>
+  <p>To exercise any of these rights, contact us at <a href="mailto:info@westtnlawnandpest.com">info@westtnlawnandpest.com</a>.</p>
+
+  <h2>Third-Party Links</h2>
+  <p>Our website may contain links to third-party websites. We are not responsible for the privacy practices of those sites and encourage you to review their privacy policies.</p>
+
+  <h2>Children's Privacy</h2>
+  <p>Our services are not directed to individuals under 18 years of age. We do not knowingly collect personal information from children. If you believe we have inadvertently collected such information, please contact us immediately.</p>
+
+  <h2>Changes to This Policy</h2>
+  <p>We may update this Privacy Policy from time to time. We will notify you of material changes by updating the "Last updated" date at the top of this page. Your continued use of our website after changes are posted constitutes acceptance of the updated policy.</p>
+
+  <h2>Contact Us</h2>
+  <p>If you have questions or concerns about this Privacy Policy or our data practices, please contact us:</p>
+  <ul>
+    <li><strong>West TN Lawn &amp; Pest</strong></li>
+    <li>Phone: <a href="tel:7313137732">731-313-7732</a></li>
+    <li>Email: <a href="mailto:info@westtnlawnandpest.com">info@westtnlawnandpest.com</a></li>
+    <li>Service Area: Jackson, TN &amp; Surrounding Areas</li>
+  </ul>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 120" height="48" aria-hidden="true">
+          <defs>
+            <linearGradient id="footCG" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#2E9042"/>
+              <stop offset="100%" stop-color="#156A24"/>
+            </linearGradient>
+          </defs>
+          <circle cx="60" cy="60" r="55" fill="url(#footCG)" stroke="#1A3A24" stroke-width="4"/>
+          <circle cx="60" cy="60" r="48" fill="none" stroke="rgba(255,255,255,.25)" stroke-width="2"/>
+          <polygon points="60,19 64.4,31.9 78.1,32.1 67.1,40.3 71.2,53.4 60,45.5 48.8,53.4 52.9,40.3 41.9,32.1 55.6,31.9" fill="white"/>
+          <polygon points="41,56 45.4,68.9 59.1,69.1 48.1,77.3 52.2,90.4 41,82.5 29.8,90.4 33.9,77.3 22.9,69.1 36.6,68.9" fill="white"/>
+          <polygon points="79,56 83.4,68.9 97.1,69.1 86.1,77.3 90.2,90.4 79,82.5 67.8,90.4 71.9,77.3 60.9,69.1 74.6,68.9" fill="white"/>
+          <text x="128" y="74" font-family="'DM Sans',Arial,sans-serif" font-size="52" font-weight="700" font-style="italic" fill="white">West<tspan font-style="normal">TN</tspan></text>
+          <text x="131" y="98" font-family="'DM Sans',Arial,sans-serif" font-size="22" font-weight="500" fill="rgba(255,255,255,.80)" letter-spacing="1">Lawn &amp; Pest</text>
+        </svg>
+        <p>Professional weed control and fertilization for homeowners across West Tennessee. Locally owned, locally committed.</p>
+      </div>
+
+      <div class="footer__col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services/weed-control.html">Weed Control</a></li>
+          <li><a href="services/weed-control.html">Lawn Fertilization</a></li>
+          <li><a href="index.html#plans">Annual Programs</a></li>
+          <li><a href="quote.html">Free Assessment</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="book.html">Book Service</a></li>
+          <li><a href="account.html">My Account</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <ul>
+          <li><div class="footer__contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.79 19.79 19.79 0 01.07 1.18 2 2 0 012.07 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg><a href="tel:7313137732" style="color:inherit;text-decoration:none;">731-313-7732</a></div></li>
+          <li><div class="footer__contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="mailto:info@westtnlawnandpest.com" style="color:inherit;text-decoration:none;">info@westtnlawnandpest.com</a></div></li>
+          <li><div class="footer__contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Jackson, TN &amp; Surrounding Areas</div></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>&copy; 2025 West TN Lawn &amp; Pest. All rights reserved.</p>
+      <p><a href="privacy.html">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="terms.html">Terms</a> &nbsp;&middot;&nbsp; <a href="sitemap.xml">Sitemap</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.querySelector('.nav__ham').addEventListener('click', function() {
+    var links = document.getElementById('navLinks');
+    var open = links.classList.toggle('open');
+    this.setAttribute('aria-expanded', open);
+  });
+</script>
+</body>
+</html>
