@@ -3,6 +3,10 @@
 CLAUDE.md
 .claude/
 
+# Internal business files
+CRM/
+images/*.pdf
+
 # Environment / secrets
 .env
 *.env
