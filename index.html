@@ -494,12 +494,8 @@
     /* ------------------------------------------
        WHY US
     ------------------------------------------ */
-    .why__inner {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 72px; align-items: center;
-    }
-    .why__img-wrap { position: relative; border-radius: var(--r-lg); overflow: hidden; }
-    .why__img-wrap img { width: 100%; aspect-ratio: 16/9; object-fit: cover; object-position: center 30%; }
+    .why__inner { max-width: 860px; margin: 0 auto; }
+    .why__img-wrap { display: none; }
     .why__img-badge {
       position: absolute; bottom: 24px; left: 24px;
       background: #fff; border-radius: var(--r-md); padding: 14px 20px;
@@ -515,7 +511,7 @@
     .why__img-badge strong { display: block; font-size: 18px; color: var(--pine); }
     .why__img-badge span { font-size: 12px; color: var(--sage); }
 
-    .why__features { display: flex; flex-direction: column; gap: 16px; margin-top: 36px; }
+    .why__features { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-top: 36px; }
     .why__feat {
       display: flex; gap: 16px; align-items: flex-start;
       padding: 20px 22px; border-radius: var(--r-md);
@@ -792,8 +788,7 @@
       .hero__card { max-width: 520px; width: 100%; margin: 0 auto; }
       .hero__h1 { font-size: clamp(38px, 5.5vw, 58px); }
       .stats__grid { grid-template-columns: repeat(2, 1fr); }
-      .why__inner { grid-template-columns: 1fr; }
-      .why__img-wrap img { max-height: 400px; width: 100%; object-fit: cover; }
+      .why__features { grid-template-columns: 1fr; }
       .footer__grid { grid-template-columns: 1fr 1fr; }
       .areas__grid { grid-template-columns: repeat(2, 1fr); }
     }
@@ -1158,11 +1153,11 @@
         </div>
       </div>
 
-      <div>
+      <div class="text-center">
         <div class="chip chip--green section-eyebrow">Why West TN Lawn &amp; Pest</div>
         <h2 class="section-title">We Treat Your Lawn Like It's Our Own</h2>
-        <div class="rule"></div>
-        <p class="section-body" style="margin-bottom:0;">We're a local, family-owned business that lives in the same neighborhoods we serve. That means we know West Tennessee soil, know the weeds that thrive here, and know what it actually takes to get results.</p>
+        <div class="rule rule--center"></div>
+        <p class="section-body section-body--center">We're a local, family-owned business that lives in the same neighborhoods we serve. That means we know West Tennessee soil, know the weeds that thrive here, and know what it actually takes to get results.</p>
         <div class="why__features">
           <div class="why__feat">
             <div class="why__feat-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
