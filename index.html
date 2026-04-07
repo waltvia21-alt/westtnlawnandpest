@@ -241,6 +241,7 @@
     .nav__logo { display: flex; align-items: center; flex-shrink: 0; }
     .nav__logo svg { height: 42px; width: auto; }
     .nav__links { display: flex; align-items: center; gap: 4px; list-style: none; }
+    .nav__mobile-cta { display: none; }
     .nav__links a {
       font-size: 12.5px; font-weight: 500; letter-spacing: .3px;
       text-transform: uppercase; color: rgba(255,255,255,.78);
@@ -778,6 +779,7 @@
       z-index: 199; box-shadow: 0 8px 24px rgba(0,0,0,.25);
     }
     .nav__links--open a { font-size: 15px; padding: 4px 0; }
+    .nav__links--open .nav__mobile-cta { display: block; }
 
     /* ------------------------------------------
        RESPONSIVE
@@ -903,6 +905,7 @@
         <li><a href="book.html">Book</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="account.html">Account</a></li>
+        <li class="nav__mobile-cta"><a href="quote.html" class="btn btn-gold" style="margin-top:8px;display:inline-block;">Free Quote</a></li>
       </ul>
 
       <div class="nav__right">
