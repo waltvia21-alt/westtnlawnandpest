@@ -1598,19 +1598,15 @@
     const btn = form.querySelector('button[type="submit"]');
     btn.disabled = true;
     btn.innerHTML = 'Sending…';
-    fetch('https://formspree.io/f/meepkwvg', {
+    fetch('https://script.google.com/macros/s/AKfycbzm7UzFKWQsM0ur8VSHeLnnq6kddefPyegBhqHiuth-219dr17u9A_twr-Hw7WoEP0/exec', {
       method: 'POST',
       body: new FormData(form),
-      headers: { 'Accept': 'application/json' }
-    }).then(r => {
-      if (r.ok) {
-        btn.innerHTML = '? Request Sent! We\'ll call you soon.';
-        btn.style.background = '#22803A';
-        form.querySelectorAll('input,select').forEach(el => el.disabled = true);
-      } else {
-        btn.innerHTML = 'Something went wrong — please call us';
-        btn.disabled = false;
-      }
+      mode: 'no-cors'
+    }).then(() => {
+      // no-cors gives an opaque response — assume success
+      btn.innerHTML = '✓ Request Sent! We\'ll call you soon.';
+      btn.style.background = '#22803A';
+      form.querySelectorAll('input,select').forEach(el => el.disabled = true);
     }).catch(() => {
       btn.innerHTML = 'Something went wrong — please call us';
       btn.disabled = false;
