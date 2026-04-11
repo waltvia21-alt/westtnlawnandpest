@@ -351,6 +351,36 @@
     gtag('js', new Date());
     gtag('config', 'G-X534JLS5SV');
   </script>
+  <style>
+    /* ---- Nav Dropdowns ---- */
+    .nav__dropdown { position: relative; }
+    .nav__dropdown-menu {
+      display: none; position: absolute; top: calc(100% + 6px); left: 0;
+      background: #1A3A24; border-radius: 6px; padding: 6px 0; min-width: 205px;
+      z-index: 300; box-shadow: 0 8px 24px rgba(0,0,0,.35);
+      border: 1px solid rgba(255,255,255,.1); list-style: none;
+    }
+    .nav__dropdown:hover .nav__dropdown-menu { display: block; }
+    .nav__dropdown-toggle { display: flex !important; align-items: center; gap: 5px; }
+    .dd-arrow { transition: transform .2s; }
+    .nav__dropdown:hover .dd-arrow { transform: rotate(180deg); }
+    .nav__dropdown-menu li a {
+      display: block; padding: 9px 16px; font-size: 12.5px; font-weight: 500;
+      letter-spacing: .3px; text-transform: uppercase; color: rgba(255,255,255,.78);
+      white-space: nowrap; text-decoration: none; border-radius: 0;
+    }
+    .nav__dropdown-menu li a:hover { color: #fff; background: rgba(255,255,255,.08); }
+    /* Mobile: show dropdown items inline when nav is open */
+    .nav__links--open .nav__dropdown-menu,
+    .nav__links.open .nav__dropdown-menu {
+      display: flex; flex-direction: column; position: static;
+      box-shadow: none; border: none; background: transparent;
+      border-left: 2px solid rgba(255,255,255,.2); padding: 2px 0 2px 10px;
+      margin: 2px 0 6px; min-width: 0; border-radius: 0;
+    }
+    .nav__links--open .nav__dropdown-menu li a,
+    .nav__links.open .nav__dropdown-menu li a { padding: 5px 0; font-size: 14px; }
+  </style>
 </head>
 <body>
 
@@ -390,7 +420,13 @@
         </button>
         <ul class="nav__links" id="navLinks">
           <li><a href="services/weed-control.html">Services</a></li>
-          <li><a href="services/pest-control.html">Pest Control</a></li>
+          <li class="nav__dropdown">
+          <a href="services/pest-control.html" class="nav__dropdown-toggle">Pest Control <svg class="dd-arrow" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a>
+          <ul class="nav__dropdown-menu">
+            <li><a href="services/pest-control.html">Pest Control</a></li>
+            <li><a href="services/perimeter-pest-control.html">Perimeter Pest Control</a></li>
+          </ul>
+        </li>
           <li><a href="index.html#plans">Plans</a></li>
           <li><a href="index.html#areas">Areas</a></li>
           <li><a href="faq.html">FAQ</a></li>

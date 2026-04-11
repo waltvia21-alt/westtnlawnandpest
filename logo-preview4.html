@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Logo Preview</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,500;0,700;1,700&display=swap" rel="stylesheet">
+<style>
+  body {
+    margin: 0;
+    display: flex;
+    gap: 60px;
+    padding: 60px;
+    background: #111;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+    font-family: 'DM Sans', Arial, sans-serif;
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  .card label {
+    color: #888;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .logo-wrap {
+    padding: 20px 28px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+  }
+  .on-green  { background: #1A3A24; } /* matches website nav --pine */
+  .on-white  { background: #ffffff; }
+  .on-forest { background: #1B6B2A; } /* --forest */
+</style>
+</head>
+<body>
+
+  <!-- On dark pine (website nav bg) -->
+  <div class="card">
+    <div class="logo-wrap on-green">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 120" height="56" aria-hidden="true">
+        <defs>
+          <linearGradient id="cg1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#2E9042"/>
+            <stop offset="100%" stop-color="#156A24"/>
+          </linearGradient>
+        </defs>
+        <circle cx="60" cy="60" r="55" fill="url(#cg1)" stroke="#0f2214" stroke-width="4"/>
+        <circle cx="60" cy="60" r="48" fill="none" stroke="rgba(255,255,255,.25)" stroke-width="2"/>
+        <polygon points="60,19 64.4,31.9 78.1,32.1 67.1,40.3 71.2,53.4 60,45.5 48.8,53.4 52.9,40.3 41.9,32.1 55.6,31.9" fill="white"/>
+        <polygon points="41,56 45.4,68.9 59.1,69.1 48.1,77.3 52.2,90.4 41,82.5 29.8,90.4 33.9,77.3 22.9,69.1 36.6,68.9" fill="white"/>
+        <polygon points="79,56 83.4,68.9 97.1,69.1 86.1,77.3 90.2,90.4 79,82.5 67.8,90.4 71.9,77.3 60.9,69.1 74.6,68.9" fill="white"/>
+        <text x="128" y="74" font-family="'DM Sans',Arial,sans-serif" font-size="52" font-weight="700" font-style="italic" fill="white">West<tspan font-style="normal">TN</tspan></text>
+        <text x="131" y="98" font-family="'DM Sans',Arial,sans-serif" font-size="22" font-weight="500" fill="rgba(255,255,255,.80)" letter-spacing="1">Lawn &amp; Pest</text>
+      </svg>
+    </div>
+    <label>Dark Pine (Nav)</label>
+  </div>
+
+  <!-- On forest green -->
+  <div class="card">
+    <div class="logo-wrap on-forest">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 120" height="56" aria-hidden="true">
+        <defs>
+          <linearGradient id="cg2" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#3aaa50"/>
+            <stop offset="100%" stop-color="#1B6B2A"/>
+          </linearGradient>
+        </defs>
+        <circle cx="60" cy="60" r="55" fill="url(#cg2)" stroke="rgba(0,0,0,.25)" stroke-width="4"/>
+        <circle cx="60" cy="60" r="48" fill="none" stroke="rgba(255,255,255,.25)" stroke-width="2"/>
+        <polygon points="60,19 64.4,31.9 78.1,32.1 67.1,40.3 71.2,53.4 60,45.5 48.8,53.4 52.9,40.3 41.9,32.1 55.6,31.9" fill="white"/>
+        <polygon points="41,56 45.4,68.9 59.1,69.1 48.1,77.3 52.2,90.4 41,82.5 29.8,90.4 33.9,77.3 22.9,69.1 36.6,68.9" fill="white"/>
+        <polygon points="79,56 83.4,68.9 97.1,69.1 86.1,77.3 90.2,90.4 79,82.5 67.8,90.4 71.9,77.3 60.9,69.1 74.6,68.9" fill="white"/>
+        <text x="128" y="74" font-family="'DM Sans',Arial,sans-serif" font-size="52" font-weight="700" font-style="italic" fill="white">West<tspan font-style="normal">TN</tspan></text>
+        <text x="131" y="98" font-family="'DM Sans',Arial,sans-serif" font-size="22" font-weight="500" fill="rgba(255,255,255,.80)" letter-spacing="1">Lawn &amp; Pest</text>
+      </svg>
+    </div>
+    <label>Forest Green</label>
+  </div>
+
+  <!-- On white -->
+  <div class="card">
+    <div class="logo-wrap on-white">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 120" height="56" aria-hidden="true">
+        <defs>
+          <linearGradient id="cg3" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#2E9042"/>
+            <stop offset="100%" stop-color="#156A24"/>
+          </linearGradient>
+        </defs>
+        <circle cx="60" cy="60" r="55" fill="url(#cg3)" stroke="#1A3A24" stroke-width="4"/>
+        <circle cx="60" cy="60" r="48" fill="none" stroke="rgba(255,255,255,.25)" stroke-width="2"/>
+        <polygon points="60,19 64.4,31.9 78.1,32.1 67.1,40.3 71.2,53.4 60,45.5 48.8,53.4 52.9,40.3 41.9,32.1 55.6,31.9" fill="white"/>
+        <polygon points="41,56 45.4,68.9 59.1,69.1 48.1,77.3 52.2,90.4 41,82.5 29.8,90.4 33.9,77.3 22.9,69.1 36.6,68.9" fill="white"/>
+        <polygon points="79,56 83.4,68.9 97.1,69.1 86.1,77.3 90.2,90.4 79,82.5 67.8,90.4 71.9,77.3 60.9,69.1 74.6,68.9" fill="white"/>
+        <text x="128" y="74" font-family="'DM Sans',Arial,sans-serif" font-size="52" font-weight="700" font-style="italic" fill="#1B6B2A">West<tspan fill="#156A24" font-style="normal">TN</tspan></text>
+        <text x="131" y="98" font-family="'DM Sans',Arial,sans-serif" font-size="22" font-weight="500" fill="#2E7D32" letter-spacing="1">Lawn &amp; Pest</text>
+      </svg>
+    </div>
+    <label>White Background</label>
+  </div>
+
+</body>
+</html>
