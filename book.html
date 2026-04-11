@@ -774,7 +774,7 @@
             <p>We'll reach out within 24 hours to confirm your exact appointment time.</p>
           </div>
 
-          <form id="bookingForm" action="https://script.google.com/macros/s/AKfycbzm7UzFKWQsM0ur8VSHeLnnq6kddefPyegBhqHiuth-219dr17u9A_twr-Hw7WoEP0/exec" method="POST" novalidate>
+          <form id="bookingForm" action="https://formspree.io/f/meepkwvg" method="POST" novalidate>
 
             <!-- Hidden fields passed from previous steps -->
             <input type="hidden" id="h_service" name="Service" />
@@ -1122,14 +1122,22 @@
 
       try {
         const data = new FormData(this);
-        await fetch(this.action, {
-          method: 'POST', body: data, mode: 'no-cors'
+        const res  = await fetch(this.action, {
+          method: 'POST', body: data,
+          headers: { 'Accept': 'application/json' }
         });
-        // no-cors gives an opaque response — assume success
-        document.getElementById('step3').classList.remove('active');
-        document.querySelector('.progress-bar').style.display = 'none';
-        document.getElementById('successScreen').classList.add('visible');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        if (res.ok) {
+          // Hide form steps and progress bar, show success
+          document.getElementById('step3').classList.remove('active');
+          document.querySelector('.progress-bar').style.display = 'none';
+          document.getElementById('successScreen').classList.add('visible');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          btn.disabled = false;
+          btn.innerHTML = '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Book My Service';
+          alert('Something went wrong. Please try again or call us at 731-313-7732.');
+        }
       } catch {
         btn.disabled = false;
         btn.innerHTML = '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Book My Service';

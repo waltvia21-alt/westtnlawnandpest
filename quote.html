@@ -481,7 +481,7 @@
             <div class="lead-capture">
               <div class="lead-capture__heading">Save your quote &amp; get a follow-up</div>
               <div class="lead-capture__sub">Drop your info and we'll reach out to get you scheduled — no obligation.</div>
-              <form id="quoteLeadForm" action="https://script.google.com/macros/s/AKfycbzm7UzFKWQsM0ur8VSHeLnnq6kddefPyegBhqHiuth-219dr17u9A_twr-Hw7WoEP0/exec" method="POST" novalidate>
+              <form id="quoteLeadForm" action="https://formspree.io/f/meepkwvg" method="POST" novalidate>
                 <input type="hidden" name="form_type" value="Quote Lead" />
                 <input type="hidden" name="quote_sqft" id="lead_sqft" value="" />
                 <input type="hidden" name="quote_price" id="lead_price" value="" />
@@ -745,12 +745,18 @@
       btn.disabled = true;
       btn.textContent = 'Sending…';
       try {
-        await fetch(this.action, {
-          method: 'POST', body: new FormData(this), mode: 'no-cors'
+        const res = await fetch(this.action, {
+          method: 'POST', body: new FormData(this),
+          headers: { 'Accept': 'application/json' }
         });
-        // no-cors gives an opaque response — assume success
-        this.style.display = 'none';
-        document.getElementById('leadSuccess').style.display = 'block';
+        if (res.ok) {
+          this.style.display = 'none';
+          document.getElementById('leadSuccess').style.display = 'block';
+        } else {
+          btn.disabled = false;
+          btn.textContent = 'Send Me This Quote';
+          alert('Something went wrong. Please call us at 731-313-7732.');
+        }
       } catch {
         btn.disabled = false;
         btn.textContent = 'Send Me This Quote';
