@@ -238,6 +238,33 @@
     .result-cta--outline:hover { background: var(--green-100); }
     .result-card__disclaimer { font-size: 11px; color: var(--sage); margin-top: 14px; line-height: 1.6; text-align: center; }
 
+    /* Lead capture form inside result card */
+    .lead-capture { margin: 18px 0 0; border-top: 1px solid var(--border); padding-top: 20px; }
+    .lead-capture__heading { font-size: 13px; font-weight: 700; color: var(--pine); margin-bottom: 4px; }
+    .lead-capture__sub { font-size: 12px; color: var(--sage); margin-bottom: 14px; line-height: 1.5; }
+    .lead-capture input {
+      display: block; width: 100%; box-sizing: border-box;
+      padding: 10px 13px; margin-bottom: 10px;
+      border: 1.5px solid var(--border); border-radius: var(--r-sm);
+      font-size: 14px; font-family: 'DM Sans', sans-serif; color: var(--pine);
+      background: #fff; transition: border-color .2s;
+    }
+    .lead-capture input:focus { outline: none; border-color: var(--forest); }
+    .lead-capture__btn {
+      display: block; width: 100%; padding: 13px;
+      background: var(--forest); color: #fff; text-align: center;
+      font-weight: 700; font-size: 14px; border-radius: var(--r-sm);
+      border: none; cursor: pointer; font-family: 'DM Sans', sans-serif;
+      transition: var(--ease);
+    }
+    .lead-capture__btn:hover { background: var(--pine); }
+    .lead-capture__btn:disabled { background: var(--border); color: var(--sage); cursor: not-allowed; }
+    .lead-capture__success {
+      display: none; background: #f0f7f1; border: 1.5px solid var(--forest);
+      border-radius: var(--r-sm); padding: 14px 16px; margin-top: 4px;
+      font-size: 13px; color: var(--forest); font-weight: 600; text-align: center;
+    }
+
     /* Guarantee banner */
     .guarantee-card {
       background: var(--pine); border-radius: var(--r-lg); padding: 24px;
@@ -450,7 +477,26 @@
             <div class="result-card__price" id="price">$0.00</div>
             <div class="result-card__per-app">Per treatment visit · minimum may apply</div>
 
-            <a href="book.html" class="result-cta" id="bookingLink">
+            <!-- Lead capture -->
+            <div class="lead-capture">
+              <div class="lead-capture__heading">Save your quote &amp; get a follow-up</div>
+              <div class="lead-capture__sub">Drop your info and we'll reach out to get you scheduled — no obligation.</div>
+              <form id="quoteLeadForm" action="https://formspree.io/f/meepkwvg" method="POST" novalidate>
+                <input type="hidden" name="form_type" value="Quote Lead" />
+                <input type="hidden" name="quote_sqft" id="lead_sqft" value="" />
+                <input type="hidden" name="quote_price" id="lead_price" value="" />
+                <input type="hidden" name="quote_address" id="lead_address" value="" />
+                <input type="text" name="name" placeholder="Your name" required autocomplete="name" />
+                <input type="tel" name="phone" placeholder="Phone number" required autocomplete="tel" />
+                <input type="email" name="email" placeholder="Email (optional)" autocomplete="email" />
+                <button type="submit" class="lead-capture__btn" id="leadSubmitBtn">Send Me This Quote</button>
+              </form>
+              <div class="lead-capture__success" id="leadSuccess">
+                ✓ Got it! We'll be in touch soon to get you scheduled.
+              </div>
+            </div>
+
+            <a href="book.html" class="result-cta" id="bookingLink" style="margin-top:18px;">
               Book My Service Online
             </a>
             <a href="tel:7313137732" class="result-cta--outline">
@@ -658,6 +704,11 @@
         count === 1 ? '1 section drawn' : `${count} sections drawn`;
       showResult();
 
+      // Populate lead capture hidden fields
+      document.getElementById('lead_sqft').value = totalSqFt.toLocaleString() + ' sq ft';
+      document.getElementById('lead_price').value = '$' + price.toFixed(2) + ' per visit';
+      document.getElementById('lead_address').value = document.getElementById('addressInput').value || '';
+
       const emailLink = document.querySelector('.result-cta--outline');
       emailLink.href = `mailto:info@westtnlawnandpest.com?subject=Quote Request&body=Hi, I used the online quote tool. My lawn is approximately ${totalSqFt.toLocaleString()} sq ft (${count} section${count > 1 ? 's' : ''}). My estimated price is $${price.toFixed(2)} per visit. Please contact me to schedule.`;
     }
@@ -686,6 +737,32 @@
         if (i === n) s.classList.add('active');
       }
     }
+
+    /* ── Quote lead form submission ── */
+    document.getElementById('quoteLeadForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = document.getElementById('leadSubmitBtn');
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+      try {
+        const res = await fetch(this.action, {
+          method: 'POST', body: new FormData(this),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          this.style.display = 'none';
+          document.getElementById('leadSuccess').style.display = 'block';
+        } else {
+          btn.disabled = false;
+          btn.textContent = 'Send Me This Quote';
+          alert('Something went wrong. Please call us at 731-313-7732.');
+        }
+      } catch {
+        btn.disabled = false;
+        btn.textContent = 'Send Me This Quote';
+        alert('Something went wrong. Please call us at 731-313-7732.');
+      }
+    });
 
     document.querySelector('.nav__ham').addEventListener('click', function() {
       document.getElementById('navLinks').classList.toggle('nav__links--open');
