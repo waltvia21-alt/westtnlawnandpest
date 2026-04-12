@@ -508,10 +508,14 @@
     /* ---- Nav Dropdowns ---- */
     .nav__dropdown { position: relative; }
     .nav__dropdown-menu {
-      display: none; position: absolute; top: calc(100% + 6px); left: 0;
-      background: #1A3A24; border-radius: 6px; padding: 6px 0; min-width: 205px;
+      display: none; position: absolute; top: 100%; left: 0;
+      background: #1A3A24; border-radius: 6px; padding-top: 8px; padding-bottom: 6px; min-width: 205px;
       z-index: 300; box-shadow: 0 8px 24px rgba(0,0,0,.35);
       border: 1px solid rgba(255,255,255,.1); list-style: none;
+      margin-top: 0;
+    }
+    .nav__dropdown-menu::before {
+      content: ""; position: absolute; top: -8px; left: 0; right: 0; height: 8px;
     }
     .nav__dropdown:hover .nav__dropdown-menu { display: block; }
     .nav__dropdown-toggle { display: flex !important; align-items: center; gap: 5px; }
@@ -831,53 +835,103 @@
           </div>
         </article>
 
-        <!-- Card 4: Perimeter Pest Control -->
+        <!-- Card 4: Fire Ant Control -->
         <article class="pest-card">
           <div class="pest-card__img">
             <div class="pest-card__img-bg">
               <svg width="140" height="140" viewBox="0 0 80 80" fill="none" stroke="#1B6B2A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                <!-- Perimeter Pest: house outline with barrier ring -->
-                <path d="M40 18L18 36V66H62V36L40 18Z" fill="#22803A" fill-opacity=".15" stroke="#1A3A24" stroke-width="2"/>
-                <rect x="32" y="50" width="16" height="16" rx="2" fill="#22803A" fill-opacity=".2" stroke="#1B6B2A" stroke-width="1.6"/>
-                <path d="M40 50v16" stroke="#1B6B2A" stroke-width="1.4"/>
-                <rect x="22" y="40" width="10" height="10" rx="1" fill="#22803A" fill-opacity=".2" stroke="#1B6B2A" stroke-width="1.4"/>
-                <rect x="48" y="40" width="10" height="10" rx="1" fill="#22803A" fill-opacity=".2" stroke="#1B6B2A" stroke-width="1.4"/>
-                <ellipse cx="40" cy="66" rx="30" ry="8" fill="none" stroke="#C4A44A" stroke-width="1.6" stroke-dasharray="3 3"/>
-                <ellipse cx="40" cy="66" rx="36" ry="11" fill="none" stroke="#C4A44A" stroke-width="1.2" stroke-dasharray="2 4" stroke-opacity=".6"/>
+                <!-- Fire ant: mound on lawn with ants -->
+                <path d="M10 62h60M10 68h60" stroke="#1A3A24" stroke-width="2"/>
+                <path d="M25 62C28 50 36 44 40 44C44 44 52 50 55 62" fill="#C4A44A" fill-opacity=".25" stroke="#C4A44A" stroke-width="1.8"/>
+                <circle cx="32" cy="56" r="2.5" fill="#C4A44A" fill-opacity=".7" stroke="#C4A44A" stroke-width="1.2"/>
+                <circle cx="48" cy="58" r="2" fill="#C4A44A" fill-opacity=".7" stroke="#C4A44A" stroke-width="1.2"/>
+                <circle cx="40" cy="52" r="2" fill="#C4A44A" fill-opacity=".7" stroke="#C4A44A" stroke-width="1.2"/>
+                <path d="M32 56l-4-3M32 56l-3 2M48 58l4-2M48 58l3 3M40 52l-3-4M40 52l4-3" stroke="#C4A44A" stroke-width="1.2"/>
+                <path d="M20 44l3 5M60 44l-3 5M18 38l5 4M62 38l-5 4" stroke="#22803A" stroke-width="1.4" stroke-dasharray="2 2"/>
               </svg>
             </div>
             <div class="pest-card__img-overlay"></div>
             <div class="pest-card__icon" aria-hidden="true">
-              <!-- Home/shield icon -->
               <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
-                <polyline points="9 22 9 12 15 12 15 22"/>
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
               </svg>
             </div>
           </div>
           <div class="pest-card__body">
-            <h3 class="pest-card__name">Perimeter Pest Control</h3>
-            <p class="pest-card__desc">Create a barrier around your home that keeps ants, spiders, roaches, and other crawling pests outside where they belong. Our perimeter treatment targets the exterior of your property.</p>
+            <h3 class="pest-card__name">Fire Ant Control</h3>
+            <p class="pest-card__desc">Fire ants are aggressive, their stings hurt, and their mounds multiply fast across West Tennessee lawns. We treat active mounds and apply broadcast treatments to eliminate colonies and prevent new ones from forming.</p>
             <ul class="pest-card__features" aria-label="Service features">
               <li>
                 <span class="check-circle" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-                Treatment of foundation, entry points &amp; eaves
+                Individual mound treatments
               </li>
               <li>
                 <span class="check-circle" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-                Targets ants, spiders, roaches, centipedes, and more
+                Broadcast lawn treatments to stop colony spread
               </li>
               <li>
                 <span class="check-circle" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-                Indoor pest prevention without indoor spraying
+                Targets queens to prevent re-infestation
               </li>
               <li>
                 <span class="check-circle" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-                Applied every 60–90 days for continuous protection
+                Safe for turf, family &amp; pets once dry
               </li>
               <li>
                 <span class="check-circle" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-                Child and pet safe when dry
+                Seasonal re-treatment available
+              </li>
+            </ul>
+            <a href="../book.html" class="btn btn-forest">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+              Schedule Treatment
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 5: Perimeter Pest Control -->
+        <article class="pest-card">
+          <div class="pest-card__img">
+            <div class="pest-card__img-bg">
+              <svg width="140" height="140" viewBox="0 0 80 80" fill="none" stroke="#1B6B2A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10 62h60M10 68h60" stroke="#1A3A24" stroke-width="2"/>
+                <ellipse cx="40" cy="62" rx="30" ry="8" fill="none" stroke="#C4A44A" stroke-width="1.6" stroke-dasharray="3 3"/>
+                <ellipse cx="40" cy="62" rx="36" ry="11" fill="none" stroke="#C4A44A" stroke-width="1.2" stroke-dasharray="2 4" stroke-opacity=".6"/>
+                <path d="M18 62V38M62 62V38M18 38C18 30 30 24 40 24C50 24 62 30 62 38" stroke="#22803A" stroke-width="1.8" fill="none"/>
+                <path d="M25 55C28 48 34 44 40 44C46 44 52 48 55 55" stroke="#1B6B2A" stroke-width="1.4" fill="none"/>
+              </svg>
+            </div>
+            <div class="pest-card__img-overlay"></div>
+            <div class="pest-card__icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 8v4M12 16h.01"/>
+              </svg>
+            </div>
+          </div>
+          <div class="pest-card__body">
+            <h3 class="pest-card__name">Yard Perimeter Treatment</h3>
+            <p class="pest-card__desc">A barrier applied around the exterior lawn and landscaped areas of your property discourages crawling insects from nesting in your yard. We target the ground-level pest pressure that builds up along property edges, beds, and turf borders.</p>
+            <ul class="pest-card__features" aria-label="Service features">
+              <li>
+                <span class="check-circle" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                Treats lawn edges, beds &amp; property borders
+              </li>
+              <li>
+                <span class="check-circle" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                Targets ants, spiders, and crawling yard pests
+              </li>
+              <li>
+                <span class="check-circle" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                Residual barrier lasts 60–90 days
+              </li>
+              <li>
+                <span class="check-circle" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                Applied to turf and landscape areas only
+              </li>
+              <li>
+                <span class="check-circle" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                Safe for family &amp; pets once dry
               </li>
             </ul>
             <a href="../book.html" class="btn btn-forest">

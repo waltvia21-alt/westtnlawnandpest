@@ -596,63 +596,21 @@
     }
 
     /* ── TESTIMONIALS ── */
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 24px;
-    }
+    
 
-    .testimonial-card {
-      background: #fff;
-      border-radius: 14px;
-      padding: 28px 26px;
-      box-shadow: var(--shadow);
-      border-top: 3px solid var(--gold);
-      transition: transform 0.25s;
-    }
+    
 
-    .testimonial-card:hover { transform: translateY(-4px); }
+    
 
-    .stars {
-      color: var(--gold);
-      font-size: 1rem;
-      margin-bottom: 14px;
-      letter-spacing: 2px;
-    }
+    
 
-    .testimonial-text {
-      font-size: 0.95rem;
-      color: var(--sage);
-      line-height: 1.7;
-      margin-bottom: 20px;
-      font-style: italic;
-    }
+    
 
-    .testimonial-author {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
+    
 
-    .author-avatar {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: var(--forest);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-weight: 700;
-      font-size: 1rem;
-      flex-shrink: 0;
-    }
+    
 
-    .author-name {
-      font-weight: 700;
-      font-size: 0.9rem;
-      color: var(--pine);
-    }
+    
 
     .author-loc {
       font-size: 0.78rem;
@@ -783,7 +741,7 @@
       .hero-inner { padding: 60px 24px; }
       .services-grid { grid-template-columns: 1fr 1fr; }
       .local-section { grid-template-columns: 1fr; gap: 40px; }
-      .testimonials-grid { grid-template-columns: 1fr 1fr; }
+      
       .footer-top { grid-template-columns: 1fr 1fr; }
     }
 
@@ -804,7 +762,7 @@
       .hamburger { display: flex; }
       .nav-phone { display: none; }
       .services-grid { grid-template-columns: 1fr; }
-      .testimonials-grid { grid-template-columns: 1fr; }
+      
       .trust-inner { justify-content: center; }
       .footer-top { grid-template-columns: 1fr; gap: 32px; }
       .footer-bottom { flex-direction: column; text-align: center; }
@@ -831,10 +789,14 @@
     /* ---- Nav Dropdowns ---- */
     .nav__dropdown { position: relative; }
     .nav__dropdown-menu {
-      display: none; position: absolute; top: calc(100% + 6px); left: 0;
-      background: #1A3A24; border-radius: 6px; padding: 6px 0; min-width: 205px;
+      display: none; position: absolute; top: 100%; left: 0;
+      background: #1A3A24; border-radius: 6px; padding-top: 8px; padding-bottom: 6px; min-width: 205px;
       z-index: 300; box-shadow: 0 8px 24px rgba(0,0,0,.35);
       border: 1px solid rgba(255,255,255,.1); list-style: none;
+      margin-top: 0;
+    }
+    .nav__dropdown-menu::before {
+      content: ""; position: absolute; top: -8px; left: 0; right: 0; height: 8px;
     }
     .nav__dropdown:hover .nav__dropdown-menu { display: block; }
     .nav__dropdown-toggle { display: flex !important; align-items: center; gap: 5px; }
@@ -1118,49 +1080,7 @@
     </div>
   </section>
 
-  <!-- TESTIMONIALS -->
-  <section class="section" id="reviews">
-    <div class="container">
-      <span class="section-label reveal">What Neighbors Say</span>
-      <h2 class="section-title reveal reveal-delay-1">Gadsden Homeowners Love Their Lawns</h2>
-      <p class="section-sub reveal reveal-delay-2">Real reviews from real Gadsden, TN and Crockett County customers.</p>
-      <div class="testimonials-grid">
-        <div class="testimonial-card reveal">
-          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testimonial-text">"I've got almost 3 acres of mixed Bermuda and Fescue and couldn't keep up with the weeds. West TN Lawn &amp; Pest put together a plan that actually fits my property. The difference after one season is remarkable."</p>
-          <div class="testimonial-author">
-            <div class="author-avatar">KJ</div>
-            <div>
-              <div class="author-name">Kevin J.</div>
-              <div class="author-loc">Gadsden, TN — Verified Customer</div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card reveal reveal-delay-1">
-          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testimonial-text">"Other companies wouldn't come out this far or charged outrageous rates for the drive. West TN Lawn &amp; Pest was fair, professional, and showed up every single time. My yard looks better than it has in years."</p>
-          <div class="testimonial-author">
-            <div class="author-avatar">SB</div>
-            <div>
-              <div class="author-name">Sandra B.</div>
-              <div class="author-loc">Gadsden, TN — Verified Customer</div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card reveal reveal-delay-2">
-          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testimonial-text">"They know the difference between Bermuda and Fescue and treat each one correctly. A lot of lawn care services don't bother. These guys are the real deal — knowledgeable, affordable, and reliable."</p>
-          <div class="testimonial-author">
-            <div class="author-avatar">LF</div>
-            <div>
-              <div class="author-name">Larry F.</div>
-              <div class="author-loc">Crockett County — Verified Customer</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  
 
   <!-- CTA -->
   <section class="cta-section">

@@ -852,10 +852,14 @@
     /* ---- Nav Dropdowns ---- */
     .nav__dropdown { position: relative; }
     .nav__dropdown-menu {
-      display: none; position: absolute; top: calc(100% + 6px); left: 0;
-      background: #1A3A24; border-radius: 6px; padding: 6px 0; min-width: 205px;
+      display: none; position: absolute; top: 100%; left: 0;
+      background: #1A3A24; border-radius: 6px; padding-top: 8px; padding-bottom: 6px; min-width: 205px;
       z-index: 300; box-shadow: 0 8px 24px rgba(0,0,0,.35);
       border: 1px solid rgba(255,255,255,.1); list-style: none;
+      margin-top: 0;
+    }
+    .nav__dropdown-menu::before {
+      content: ""; position: absolute; top: -8px; left: 0; right: 0; height: 8px;
     }
     .nav__dropdown:hover .nav__dropdown-menu { display: block; }
     .nav__dropdown-toggle { display: flex !important; align-items: center; gap: 5px; }
