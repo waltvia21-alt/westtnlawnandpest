@@ -222,16 +222,21 @@
       white-space: nowrap; text-decoration: none; border-radius: 0;
     }
     .nav__dropdown-menu li a:hover { color: #fff; background: rgba(255,255,255,.08); }
-    /* Mobile: show dropdown items inline when nav is open */
+    /* Mobile: dropdowns collapsed by default, open on tap */
     .nav__links--open .nav__dropdown-menu,
     .nav__links.open .nav__dropdown-menu {
-      display: flex; flex-direction: column; position: static;
+      display: none; flex-direction: column; position: static;
       box-shadow: none; border: none; background: transparent;
-      border-left: 2px solid rgba(255,255,255,.2); padding: 2px 0 2px 10px;
-      margin: 2px 0 6px; min-width: 0; border-radius: 0;
+      padding: 0 0 4px 16px; margin: 0 0 4px; min-width: 0; border-radius: 0;
     }
+    .nav__links--open .nav__dropdown.open .nav__dropdown-menu,
+    .nav__links.open .nav__dropdown.open .nav__dropdown-menu { display: flex; }
     .nav__links--open .nav__dropdown-menu li a,
-    .nav__links.open .nav__dropdown-menu li a { padding: 5px 0; font-size: 14px; }
+    .nav__links.open .nav__dropdown-menu li a {
+      padding: 5px 0; font-size: 13.5px; color: rgba(255,255,255,.65);
+    }
+    .nav__links--open .nav__dropdown.open .dd-arrow,
+    .nav__links.open .nav__dropdown.open .dd-arrow { transform: rotate(180deg); }
   </style>
 </head>
 <body>
@@ -415,6 +420,30 @@
     var open = links.classList.toggle('open');
     this.setAttribute('aria-expanded', open);
   });
+</script>
+<script>
+(function(){
+  // Mobile dropdown tap toggle â€” intercept on mobile widths
+  document.querySelectorAll('.nav__dropdown-toggle').forEach(function(t){
+    t.addEventListener('click',function(e){
+      if(window.innerWidth<=900){
+        e.preventDefault();
+        this.closest('.nav__dropdown').classList.toggle('open');
+      }
+    });
+  });
+  // Close dropdowns when mobile nav is closed
+  document.querySelectorAll('.nav__ham, #hamburgerBtn').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      setTimeout(function(){
+        var nl=document.getElementById('navLinks');
+        var mn=document.getElementById('mobileNav');
+        var closed=(!nl||(!nl.classList.contains('nav__links--open')&&!nl.classList.contains('open')))&&(!mn||!mn.classList.contains('open'));
+        if(closed) document.querySelectorAll('.nav__dropdown').forEach(function(d){d.classList.remove('open');});
+      },0);
+    });
+  });
+})();
 </script>
 </body>
 </html>

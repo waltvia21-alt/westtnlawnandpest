@@ -872,16 +872,21 @@
       white-space: nowrap; text-decoration: none; border-radius: 0;
     }
     .nav__dropdown-menu li a:hover { color: #fff; background: rgba(255,255,255,.08); }
-    /* Mobile: show dropdown items inline when nav is open */
+    /* Mobile: dropdowns collapsed by default, open on tap */
     .nav__links--open .nav__dropdown-menu,
     .nav__links.open .nav__dropdown-menu {
-      display: flex; flex-direction: column; position: static;
+      display: none; flex-direction: column; position: static;
       box-shadow: none; border: none; background: transparent;
-      border-left: 2px solid rgba(255,255,255,.2); padding: 2px 0 2px 10px;
-      margin: 2px 0 6px; min-width: 0; border-radius: 0;
+      padding: 0 0 4px 16px; margin: 0 0 4px; min-width: 0; border-radius: 0;
     }
+    .nav__links--open .nav__dropdown.open .nav__dropdown-menu,
+    .nav__links.open .nav__dropdown.open .nav__dropdown-menu { display: flex; }
     .nav__links--open .nav__dropdown-menu li a,
-    .nav__links.open .nav__dropdown-menu li a { padding: 5px 0; font-size: 14px; }
+    .nav__links.open .nav__dropdown-menu li a {
+      padding: 5px 0; font-size: 13.5px; color: rgba(255,255,255,.65);
+    }
+    .nav__links--open .nav__dropdown.open .dd-arrow,
+    .nav__links.open .nav__dropdown.open .dd-arrow { transform: rotate(180deg); }
   </style>
 </head>
 <body>
@@ -1616,7 +1621,7 @@
           <li><div class="footer__contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.79 19.79 19.79 0 01.07 1.18 2 2 0 012.07 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg><a href="tel:7313137732" style="color:inherit;text-decoration:none;">731-313-7732</a></div></li>
           <li><div class="footer__contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>info@westtnlawnandpest.com</div></li>
           <li><div class="footer__contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Jackson, TN &amp; Surrounding Areas</div></li>
-          <li><div class="footer__contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Mon–Fri 7am–6pm · Sat 8am–2pm</div></li>
+          <li><div class="footer__contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Mon–Fri 8am–5pm · Sat 9am–2pm · Sun Closed</div></li>
         </ul>
       </div>
     </div>
@@ -1631,17 +1636,29 @@
 <script>
   // Hamburger nav toggle
   document.querySelector('.nav__ham').addEventListener('click', function() {
-    document.getElementById('navLinks').classList.toggle('nav__links--open');
+    const navLinks = document.getElementById('navLinks');
+    navLinks.classList.toggle('nav__links--open');
+    const isOpen = navLinks.classList.contains('nav__links--open');
     const spans = this.querySelectorAll('span');
-    const isOpen = document.getElementById('navLinks').classList.contains('nav__links--open');
     spans[0].style.transform = isOpen ? 'rotate(45deg) translate(5px,5px)' : '';
     spans[1].style.opacity = isOpen ? '0' : '';
     spans[2].style.transform = isOpen ? 'rotate(-45deg) translate(5px,-5px)' : '';
+    if (!isOpen) document.querySelectorAll('.nav__dropdown').forEach(d => d.classList.remove('open'));
   });
-  // Close nav when a link is clicked
-  document.getElementById('navLinks').querySelectorAll('a').forEach(a => {
+  // Mobile dropdown toggles — tap parent to expand/collapse
+  document.querySelectorAll('.nav__dropdown-toggle').forEach(function(toggle) {
+    toggle.addEventListener('click', function(e) {
+      if (document.getElementById('navLinks').classList.contains('nav__links--open')) {
+        e.preventDefault();
+        this.closest('.nav__dropdown').classList.toggle('open');
+      }
+    });
+  });
+  // Close nav when a non-toggle link is clicked
+  document.getElementById('navLinks').querySelectorAll('a:not(.nav__dropdown-toggle)').forEach(a => {
     a.addEventListener('click', () => {
       document.getElementById('navLinks').classList.remove('nav__links--open');
+      document.querySelectorAll('.nav__dropdown').forEach(d => d.classList.remove('open'));
     });
   });
 
