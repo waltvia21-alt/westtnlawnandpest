@@ -636,7 +636,7 @@
   </footer>
 
   <script>
-    const PRICE_PER_1000 = 7.25;
+    const PRICE_PER_1000 = 8.50;
     const MIN_PRICE = 60.00;
     let map, drawingManager;
     let shapes = []; // supports multiple drawn areas
@@ -790,9 +790,21 @@
       btn.disabled = true;
       btn.textContent = 'Sending…';
       try {
-        const res = await fetch(this.action, {
-          method: 'POST', body: new FormData(this),
-          headers: { 'Accept': 'application/json' }
+        const fd = new FormData(this);
+        const sqft = document.getElementById('lead_sqft')?.value;
+        const price = document.getElementById('lead_price')?.value;
+        const address = document.getElementById('lead_address')?.value;
+        const res = await fetch('https://app.westtnlawnandpest.com/api/public/lead', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: fd.get('name'),
+            phone: fd.get('phone'),
+            email: fd.get('email'),
+            address: address || '',
+            yard_sqft: sqft ? parseFloat(sqft) : undefined,
+            message: price ? 'Quote price: $' + price : '',
+          })
         });
         if (res.ok) {
           this.style.display = 'none';

@@ -636,15 +636,38 @@
   </footer>
 
   <script>
-    function handleForm(e) {
+    async function handleForm(e) {
       e.preventDefault();
       const form = e.target;
       const btn = form.querySelector('button[type="submit"]');
+      const originalText = btn.textContent;
       btn.textContent = 'Sending...';
       btn.disabled = true;
-      setTimeout(() => {
-        form.innerHTML = '<div style="text-align:center;padding:24px 0;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#1B6B2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin:0 auto 16px;display:block;"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><h3 style="font-family:DM Serif Display,serif;color:#1A3A24;margin-bottom:8px;">Quote Request Received!</h3><p style="color:#6B7C6F;font-size:15px;">We\'ll be in touch within one business day.</p></div>';
-      }, 1200);
+      const fd = new FormData(form);
+      try {
+        const res = await fetch('https://app.westtnlawnandpest.com/api/public/lead', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: fd.get('name') || fd.get('Name'),
+            phone: fd.get('phone') || fd.get('Phone'),
+            email: fd.get('email') || fd.get('Email'),
+            address: fd.get('address') || fd.get('Address'),
+            message: fd.get('service') ? 'Service interest: ' + fd.get('service') : '',
+          })
+        });
+        if (res.ok) {
+          form.innerHTML = '<div style="text-align:center;padding:24px 0;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#1B6B2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin:0 auto 16px;display:block;"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><h3 style="font-family:DM Serif Display,serif;color:#1A3A24;margin-bottom:8px;">Quote Request Received!</h3><p style="color:#6B7C6F;font-size:15px;">We'll be in touch within one business day.</p></div>';
+        } else {
+          btn.textContent = originalText;
+          btn.disabled = false;
+          alert('Something went wrong. Please call us at 731-313-7732.');
+        }
+      } catch {
+        btn.textContent = originalText;
+        btn.disabled = false;
+        alert('Something went wrong. Please call us at 731-313-7732.');
+      }
     }
 
     const observer = new IntersectionObserver((entries) => {

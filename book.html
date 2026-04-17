@@ -1167,9 +1167,26 @@
 
       try {
         const data = new FormData(this);
-        const res  = await fetch(this.action, {
-          method: 'POST', body: data,
-          headers: { 'Accept': 'application/json' }
+        const msgParts = [
+          data.get('Service') ? 'Service: ' + data.get('Service') : '',
+          data.get('Lawn Size') ? 'Lawn size: ' + data.get('Lawn Size') : '',
+          data.get('Grass Type') ? 'Grass type: ' + data.get('Grass Type') : '',
+          data.get('preferred_date') ? 'Preferred date: ' + data.get('preferred_date') : '',
+          data.get('preferred_time') ? 'Preferred time: ' + data.get('preferred_time') : '',
+          data.get('Property Notes') ? 'Notes: ' + data.get('Property Notes') : '',
+        ].filter(Boolean).join('\n');
+        const res = await fetch('https://app.westtnlawnandpest.com/api/public/lead', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: (data.get('first_name') + ' ' + data.get('last_name')).trim(),
+            phone: data.get('phone'),
+            email: data.get('email'),
+            address: [data.get('Address'), data.get('City'), data.get('ZIP')].filter(Boolean).join(', '),
+            yard_sqft: data.get('Lawn Size') ? parseFloat(String(data.get('Lawn Size'))) : undefined,
+            grass_type: String(data.get('Grass Type') || ''),
+            message: msgParts,
+          })
         });
 
         if (res.ok) {

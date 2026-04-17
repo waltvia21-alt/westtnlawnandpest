@@ -1210,17 +1210,35 @@
     const quoteForm = document.getElementById('quoteForm');
     const formSuccess = document.getElementById('formSuccess');
 
-    quoteForm.addEventListener('submit', function(e) {
+    quoteForm.addEventListener('submit', async function(e) {
       e.preventDefault();
       const name = document.getElementById('name').value.trim();
       const phone = document.getElementById('phone').value.trim();
       const address = document.getElementById('address').value.trim();
+      const email = document.getElementById('email') ? document.getElementById('email').value.trim() : '';
+      const service = document.getElementById('service') ? document.getElementById('service').value : '';
       if (!name || !phone || !address) {
         const firstEmpty = [
           document.getElementById('name'),
           document.getElementById('phone'),
           document.getElementById('address')
         ].find(function(el) { return !el.value.trim(); });
+        if (firstEmpty) { firstEmpty.focus(); }
+        return;
+      }
+      try {
+        await fetch('https://app.westtnlawnandpest.com/api/public/lead', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: name, phone: phone, email: email, address: address,
+            message: service ? 'Service interest: ' + service : '',
+          })
+        });
+      } catch (err) { /* fail silently — still show success */ }
+      quoteForm.style.display = 'none';
+      formSuccess.style.display = 'block';
+    });
         if (firstEmpty) { firstEmpty.focus(); }
         return;
       }
