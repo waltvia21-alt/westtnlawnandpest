@@ -81,7 +81,7 @@ These are actual backlinks (not just citations) — harder to get but more valua
 | All business info complete (hours, services, description) | ☐ | |
 | 10+ photos uploaded (team, equipment, results) | ☐ | |
 | Before/after photos added | ☐ | Huge conversion driver |
-| Actively requesting reviews after every job | ☐ | Text/email customers a direct link |
+| Actively requesting reviews after every job | ☐ | Direct link: https://g.page/r/CYgwIiiiWhhEEBM/review |
 | Responding to every review (positive + negative) | ☐ | Google rewards engagement |
 | Weekly Google Posts (offers, updates, tips) | ☐ | Keeps profile active |
 | Q&A section populated with common questions | ☐ | You can post and answer your own |
