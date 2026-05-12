@@ -521,7 +521,7 @@
                 </div>
 
                 <div class="rf-group">
-                  <label class="rf-label">Friend's Phone Number</label>
+                  <label class="rf-label">Friend's Phone Number <span class="rf-req">*</span></label>
                   <input id="rf-friend-phone" class="rf-input" type="tel" placeholder="(731) 555-0200" />
                   <p class="rf-hint">We'll reach out to schedule their free estimate.</p>
                 </div>
@@ -572,6 +572,9 @@
             }
             if (!friendName) {
               return rfShowError("Please enter your friend's name.");
+            }
+            if (!friendPhone) {
+              return rfShowError("Please enter your friend's phone number so we can reach them.");
             }
 
             btn.disabled = true;
