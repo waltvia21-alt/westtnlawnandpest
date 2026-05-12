@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Refer a Friend | West TN Lawn &amp; Pest — Jackson, TN</title>
+  <meta name="description" content="Know someone who needs lawn care or pest control in Jackson, TN? Refer a friend to West TN Lawn & Pest and earn a free treatment when they complete their first service." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="canonical" href="https://westtnlawnandpest.com/referral.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://westtnlawnandpest.com/referral.html" />
+  <meta property="og:title" content="Refer a Friend | West TN Lawn &amp; Pest" />
+  <meta property="og:description" content="Refer a neighbor and earn a free treatment. West TN Lawn & Pest serving Jackson, TN and surrounding areas." />
+  <meta property="og:image" content="https://westtnlawnandpest.com/og-image.jpg" />
+  <style>
+    @font-face {
+      font-family: 'DM Sans';
+      font-style: normal;
+      font-weight: 300 700;
+      font-display: swap;
+      src: url('fonts/dm-sans-normal.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'DM Sans';
+      font-style: italic;
+      font-weight: 400;
+      font-display: swap;
+      src: url('fonts/dm-sans-italic.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'DM Serif Display';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url('fonts/dm-serif-normal.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'DM Serif Display';
+      font-style: italic;
+      font-weight: 400;
+      font-display: swap;
+      src: url('fonts/dm-serif-italic.woff2') format('woff2');
+    }
+  </style>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    img { display: block; max-width: 100%; }
+
+    :root {
+      --forest: #1B6B2A; --pine: #1A3A24; --leaf: #22803A;
+      --sage: #6B7C6F; --cream: #F7F5F0; --gold: #C4A44A;
+      --gold-lt: #DFB85E; --white: #FFFFFF; --text: #1C2B1E;
+      --border: #DDD9D0; --green-100: #E5EFE6;
+      --r-sm: 6px; --r-md: 12px; --r-lg: 20px;
+      --sh-sm: 0 2px 8px rgba(0,0,0,.07);
+      --sh-md: 0 6px 24px rgba(0,0,0,.10);
+      --sh-lg: 0 16px 48px rgba(0,0,0,.14);
+      --ease: all .24s ease;
+    }
+
+    body { font-family: 'DM Sans', system-ui, sans-serif; color: var(--text); background: var(--white); -webkit-font-smoothing: antialiased; }
+    h1,h2,h3,h4 { font-family: 'DM Serif Display', Georgia, serif; line-height: 1.12; color: var(--pine); }
+    a { color: inherit; text-decoration: none; }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* Promo bar */
+    .promo { background: var(--forest); color: rgba(255,255,255,.9); font-size: 13px; font-weight: 500; text-align: center; padding: 9px 16px; letter-spacing: .2px; }
+    .promo a { color: var(--gold-lt); text-decoration: underline; }
+
+    /* Nav */
+    .nav { background: var(--pine); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,.18); }
+    .nav__inner { display: flex; align-items: center; height: 64px; gap: 16px; max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    .nav__logo svg { display: block; }
+    .nav__links { display: flex; align-items: center; gap: 4px; list-style: none; margin-left: auto; }
+    .nav__links a { font-size: 12.5px; font-weight: 500; letter-spacing: .3px; color: rgba(255,255,255,.78); text-decoration: none; transition: var(--ease); white-space: nowrap; padding: 6px 10px; border-radius: 4px; }
+    .nav__links a:hover, .nav__links a.active { color: #fff; background: rgba(255,255,255,.08); }
+    .nav__right { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+    .nav__phone { display:flex; align-items:center; gap:7px; white-space:nowrap; font-size:14px; font-weight:600; color:#fff; text-decoration:none; }
+    .nav__cta { background: var(--gold); color: var(--pine); font-size: 13px; font-weight: 700; padding: 9px 18px; border-radius: var(--r-sm); white-space: nowrap; transition: var(--ease); }
+    .nav__cta:hover { background: var(--gold-lt); }
+    .nav__ham { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none; }
+    .nav__ham span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px; transition: var(--ease); }
+
+    /* Nav dropdowns */
+    .nav__dropdown { position: relative; }
+    .nav__dropdown-menu {
+      display: none; position: absolute; top: 100%; left: 0;
+      background: #1A3A24; border-radius: 6px; padding-top: 8px; padding-bottom: 6px; min-width: 205px;
+      z-index: 300; box-shadow: 0 8px 24px rgba(0,0,0,.35);
+      border: 1px solid rgba(255,255,255,.1); list-style: none; margin-top: 0;
+    }
+    .nav__dropdown-menu::before { content: ""; position: absolute; top: -8px; left: 0; right: 0; height: 8px; }
+    .nav__dropdown:hover .nav__dropdown-menu { display: block; }
+    .nav__dropdown-toggle { display: flex !important; align-items: center; gap: 5px; }
+    .dd-arrow { transition: transform .2s; }
+    .nav__dropdown:hover .dd-arrow { transform: rotate(180deg); }
+    .nav__dropdown-menu li a { display: block; padding: 9px 16px; font-size: 12.5px; font-weight: 500; letter-spacing: .3px; text-transform: uppercase; color: rgba(255,255,255,.78); white-space: nowrap; text-decoration: none; border-radius: 0; }
+    .nav__dropdown-menu li a:hover { color: #fff; background: rgba(255,255,255,.08); }
+    .nav__links.open .nav__dropdown-menu { display: none; flex-direction: column; position: static; box-shadow: none; border: none; background: transparent; padding: 0 0 4px 16px; margin: 0 0 4px; min-width: 0; border-radius: 0; }
+    .nav__links.open .nav__dropdown.open .nav__dropdown-menu { display: flex; }
+    .nav__links.open .nav__dropdown-menu li a { padding: 5px 0; font-size: 13.5px; color: rgba(255,255,255,.65); }
+    .nav__links.open .nav__dropdown.open .dd-arrow { transform: rotate(180deg); }
+
+    /* Page hero */
+    .page-hero { background: var(--pine); padding: 64px 0 56px; text-align: center; }
+    .page-hero__eyebrow { display: inline-flex; align-items: center; gap: 7px; font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; }
+    .page-hero h1 { font-size: clamp(36px, 5vw, 56px); color: #fff; margin-bottom: 14px; }
+    .page-hero p { font-size: 18px; color: rgba(255,255,255,.72); max-width: 540px; margin: 0 auto; line-height: 1.65; }
+
+    /* How it works */
+    .how { background: var(--cream); padding: 72px 0; }
+    .how__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+    .how__step { background: var(--white); border-radius: var(--r-lg); padding: 32px 28px; border: 1px solid var(--border); box-shadow: var(--sh-sm); text-align: center; }
+    .how__num { width: 48px; height: 48px; background: var(--forest); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; font-family: 'DM Serif Display', Georgia, serif; font-size: 22px; color: #fff; }
+    .how__step h3 { font-size: 19px; margin-bottom: 10px; }
+    .how__step p { font-size: 15px; color: var(--sage); line-height: 1.65; }
+
+    /* Form section */
+    .form-section { padding: 72px 0; }
+
+    /* Buttons */
+    .btn { display: inline-flex; align-items: center; gap: 8px; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 600; border-radius: var(--r-sm); padding: 13px 26px; cursor: pointer; border: none; text-decoration: none; transition: var(--ease); white-space: nowrap; }
+    .btn-gold { background: var(--gold); color: var(--pine); position: relative; overflow: hidden; }
+    .btn-gold:hover { background: var(--gold-lt); }
+    .btn-outline-white { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.45); }
+    .btn-outline-white:hover { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.7); }
+
+    /* CTA */
+    .ref-cta { background: var(--pine); padding: 72px 0; text-align: center; }
+    .ref-cta h2 { font-size: clamp(28px, 3.5vw, 44px); color: #fff; margin-bottom: 14px; }
+    .ref-cta p { font-size: 17px; color: rgba(255,255,255,.72); max-width: 520px; margin: 0 auto 36px; line-height: 1.65; }
+    .ref-cta__btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    /* Footer */
+    .footer { background: var(--pine); color: rgba(255,255,255,.7); padding: 56px 0 28px; }
+    .footer__grid { display: grid; grid-template-columns: 2fr 1.2fr 1.5fr 1.5fr; gap: 40px; margin-bottom: 40px; }
+    .footer__brand p { font-size: 14px; line-height: 1.7; margin-top: 16px; max-width: 280px; }
+    .footer__col h4 { font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+    .footer__col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer__col a { font-size: 14px; color: rgba(255,255,255,.65); transition: var(--ease); }
+    .footer__col a:hover { color: #fff; }
+    .footer__contact-item { display: flex; align-items: center; gap: 9px; font-size: 14px; color: rgba(255,255,255,.65); }
+    .footer__bottom { border-top: 1px solid rgba(255,255,255,.1); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: rgba(255,255,255,.4); flex-wrap: wrap; gap: 8px; }
+    .footer__bottom a { color: rgba(255,255,255,.5); }
+
+    /* Text helpers */
+    .section-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--forest); display: block; margin-bottom: 12px; }
+    .section-title { font-size: clamp(28px, 3.5vw, 42px); margin-bottom: 16px; }
+    .text-center { text-align: center; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .how__grid { grid-template-columns: 1fr; max-width: 420px; margin-left: auto; margin-right: auto; }
+      .footer__grid { grid-template-columns: 1fr 1fr; }
+      .nav__links, .nav__right { display: none; }
+      .nav__ham { display: flex; }
+      .nav__links.open { display: flex; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: var(--pine); padding: 16px 24px 24px; gap: 4px; z-index: 99; box-shadow: 0 8px 24px rgba(0,0,0,.25); }
+    }
+    @media (max-width: 580px) {
+      .footer__grid { grid-template-columns: 1fr; }
+      .ref-cta__btns { flex-direction: column; align-items: center; }
+    }
+
+    /* Override form font to match site */
+    #wtn-referral-form { font-family: 'DM Sans', system-ui, sans-serif !important; }
+    #wtn-referral-form .rf-wrap { max-width: 560px; }
+    #wtn-referral-form .rf-title { font-family: 'DM Serif Display', Georgia, serif; font-size: 26px; }
+    #wtn-referral-form .rf-btn { background: var(--forest); border-radius: var(--r-sm); font-family: 'DM Sans', sans-serif; font-size: 15px; letter-spacing: .01em; }
+    #wtn-referral-form .rf-btn:hover { background: var(--pine); }
+    #wtn-referral-form .rf-input:focus, #wtn-referral-form .rf-select:focus { border-color: var(--forest); box-shadow: 0 0 0 3px rgba(27,107,42,.12); }
+    #wtn-referral-form .rf-card { border-radius: var(--r-lg); box-shadow: var(--sh-md); }
+  </style>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-X534JLS5SV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-X534JLS5SV');
+  </script>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wjkb2uo0gd");
+  </script>
+</head>
+<body>
+
+  <div class="promo">
+    Free lawn inspections for West Tennessee homeowners — <a href="tel:7313137732">call 731-313-7732</a>
+  </div>
+
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="West TN Lawn & Pest home">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1912 535" height="42" aria-hidden="true">
+<path d="M692.353 281.534C680.464 310.493 668.767 339.123 656.934 367.695C656.453 368.857 654.688 370.24 653.513 370.248C631.186 370.396 608.858 370.357 586.53 370.327C585.902 370.326 585.274 369.991 584.938 369.895C579.33 275.47 573.735 181.271 568.102 86.4182C571.164 86.4182 573.781 86.4239 576.398 86.4172C592.895 86.3752 609.394 86.4276 625.888 86.2123C629.632 86.1634 630.746 87.4131 630.783 91.0708C631.412 153.22 632.164 215.368 632.849 277.517C632.956 287.171 632.864 296.828 633.673 306.829C634.286 305.661 635.017 304.54 635.494 303.32C648.089 271.071 660.512 238.754 673.276 206.572C684.13 179.207 695.368 151.995 706.443 124.718C711.141 113.149 715.757 101.545 720.687 90.0761C721.325 88.5926 723.613 86.8974 725.166 86.8681C744.656 86.4995 764.151 86.477 783.644 86.218C787.564 86.166 787.787 88.3762 787.845 91.3385C788.208 109.83 788.667 128.32 789.084 146.81C790.193 195.949 791.302 245.088 792.388 294.228C792.48 298.382 792.401 302.539 792.401 307.141C793.036 306.41 793.689 305.963 793.916 305.357C809.13 264.682 824.142 223.929 839.549 183.327C851.235 152.532 863.471 121.947 875.302 91.2066C876.478 88.1523 877.727 86.6782 881.229 86.7066C900.34 86.8618 919.452 86.7804 939.224 86.7804C936.214 93.9571 933.377 100.987 930.336 107.928C911.161 151.685 891.947 195.425 872.734 239.166C856.939 275.126 841.115 311.074 825.338 347.042C822.464 353.596 819.522 360.138 817.081 366.855C815.993 369.848 814.386 370.478 811.567 370.474C791.237 370.444 770.905 370.402 750.578 370.683C746.037 370.746 745.054 369.13 744.975 364.934C743.721 298.141 742.319 231.35 740.954 164.559C740.934 163.604 740.951 162.648 740.951 161.775C724.801 201.599 708.661 241.396 692.353 281.534Z" fill="white"/>
+<path d="M1904.05 123.289C1900.66 141.702 1897.43 159.713 1894.07 177.7C1890.08 199.098 1885.91 220.463 1881.94 241.866C1876.85 269.368 1871.89 296.896 1866.84 324.408C1864.27 338.488 1861.58 352.547 1859.09 366.642C1858.62 369.301 1857.49 370.33 1854.84 370.33C1832.68 370.332 1810.51 370.453 1788.35 370.342C1787.06 370.335 1785.02 368.898 1784.59 367.678C1771.9 332.348 1759.2 297.022 1746.88 261.566C1734.89 227.065 1723.31 192.422 1711.84 158.696C1711 164.906 1710.21 172.337 1708.98 179.696C1705.61 199.881 1702.11 220.046 1698.55 240.2C1695.03 260.191 1691.46 280.176 1687.75 300.134C1684.13 319.588 1680.31 339.005 1676.58 358.438C1676.51 358.763 1676.38 359.075 1676.32 359.4C1674.33 370.317 1674.33 370.318 1663.44 370.369C1650.94 370.427 1638.44 370.49 1625.95 370.527C1624.32 370.532 1622.69 370.395 1620.17 370.285C1637.58 275.785 1654.9 181.782 1672.31 87.2331C1676.09 87.0507 1680.02 86.7265 1683.94 86.695C1703.27 86.5402 1722.6 86.5428 1741.93 86.2985C1746.34 86.2428 1748.61 87.5782 1750.15 92.1008C1761.02 123.875 1772.47 155.45 1783.29 187.239C1794.16 219.178 1804.56 251.278 1815.06 283.341C1816.53 287.804 1817.4 292.46 1819.01 296.988C1827.83 226.327 1843.38 156.98 1855.67 86.7094C1874.1 86.7094 1892.02 86.7094 1911.18 86.7094C1908.8 98.9335 1906.48 110.905 1904.05 123.289Z" fill="white"/>
+<path d="M977.167 328.13C997.688 335.082 1017.66 332.418 1037.51 326.931C1044.21 325.076 1050.72 322.509 1058.02 320.029C1059.54 331.175 1061.34 342.128 1062.44 353.152C1063.41 362.872 1065.42 361.242 1055.36 364.528C1029.02 373.125 1002.1 378.038 974.3 375.144C960.207 373.678 946.389 370.739 933.804 363.603C913.953 352.348 903.004 334.649 899.559 312.861C894.559 281.241 900.366 251.12 916.675 223.42C936.024 190.557 964.411 170.083 1002.16 163.552C1020.43 160.392 1038.7 161.207 1056.39 167.444C1083.67 177.063 1096.89 200.053 1092.75 229.174C1089.6 251.359 1075.47 264.451 1056.87 273.854C1040.93 281.909 1023.61 285.704 1006.04 287.716C990.845 289.455 975.515 290.127 960.225 290.92C955.967 291.141 954.366 292.205 954.81 296.732C956.246 311.398 962.89 322.204 977.167 328.13ZM970.552 250.73C981.795 249.712 993.108 249.172 1004.26 247.534C1014.48 246.034 1024.46 243.155 1032.32 235.719C1041.2 227.315 1040.94 213.84 1031.64 207.464C1025.71 203.395 1018.92 201.623 1011.77 202.3C992.557 204.123 978.605 214.305 969.122 230.646C965.628 236.667 963.401 243.423 960.204 250.74C964.303 250.74 966.946 250.74 970.552 250.73Z" fill="white"/>
+<path d="M1447 133.83C1433.21 133.83 1419.91 133.83 1406.14 133.83C1408.95 117.868 1411.64 102.542 1414.42 86.7578C1489.19 86.7578 1563.77 86.7578 1639.07 86.7578C1637.65 94.4918 1636.32 101.95 1634.9 109.391C1633.65 115.934 1632.03 122.42 1631.11 129.005C1630.59 132.712 1628.91 133.561 1625.55 133.56C1608.05 133.558 1590.56 133.727 1573.07 133.831C1566.07 133.872 1559.07 133.973 1552.07 133.899C1549.47 133.871 1548.36 134.67 1547.87 137.451C1542.77 166.437 1537.4 195.375 1532.31 224.362C1525.66 262.206 1519.23 300.085 1512.66 337.943C1511.04 347.288 1509.26 356.606 1507.58 365.941C1507.15 368.362 1506.64 370.478 1503.41 370.456C1485.25 370.33 1467.09 370.295 1448.93 370.2C1448.48 370.197 1448.02 369.862 1446.43 369.232C1460.45 291.292 1474.51 213.165 1488.78 133.831C1474.91 133.831 1461.2 133.831 1447 133.83Z" fill="white"/>
+<path d="M1127.9 262.1C1109.73 243.511 1113.41 208.43 1132.61 189.239C1147.06 174.799 1164.8 167.65 1184.32 164.103C1205.77 160.204 1227.09 161.207 1056.39 167.444C1083.67 177.063 1096.89 200.053 1092.75 229.174C1089.6 251.359 1075.47 264.451 1056.87 273.854C1040.93 281.909 1023.61 285.704 1006.04 287.716C990.845 289.455 975.515 290.127 960.225 290.92C955.967 291.141 954.366 292.205 954.81 296.732C956.246 311.398 962.89 322.204 977.167 328.13ZM970.552 250.73C981.795 249.712 993.108 249.172 1004.26 247.534C1014.48 246.034 1024.46 243.155 1032.32 235.719C1041.2 227.315 1040.94 213.84 1031.64 207.464C1025.71 203.395 1018.92 201.623 1011.77 202.3C992.557 204.123 978.605 214.305 969.122 230.646C965.628 236.667 963.401 243.423 960.204 250.74C964.303 250.74 966.946 250.74 970.552 250.73Z" fill="white"/>
+<path d="M251.149 27C375.496 27.0002 476.298 127.803 476.298 252.149C476.298 376.495 375.495 477.298 251.149 477.298C126.803 477.298 26.0002 376.496 26 252.149C26 127.803 126.803 27 251.149 27ZM201.369 314.843L134.444 293.053L175.232 351.701L132.942 411.339L200.44 387.947L241.229 446.595L242.157 373.49L309.656 350.099L242.731 328.31L243.659 255.204L201.369 314.843ZM318.997 212.855L255.767 249.559L326.885 256.296L339.648 326.583L370.839 260.46L441.957 267.197L390.115 219.593L421.306 153.47L358.075 190.172L306.233 142.568L318.997 212.855ZM148.917 143.896L76.3359 152.676L139.028 186.924L123.027 256.546L177.774 208.091L240.466 242.339L211.609 178.144L266.356 129.688L193.775 138.469L164.918 74.2734L148.917 143.896Z" fill="white"/>
+<circle cx="251.5" cy="251.5" r="244.939" fill="none" stroke="white" stroke-width="13.1217"/>
+</svg>
+      </a>
+      <button class="nav__ham" id="hamburgerBtn" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links" id="navLinks">
+        <li class="nav__dropdown">
+          <a href="services/jackson-tn-weed-control.html" class="nav__dropdown-toggle">Lawn Services <svg class="dd-arrow" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a>
+          <ul class="nav__dropdown-menu">
+            <li><a href="services/jackson-tn-weed-control.html">Weed Control</a></li>
+            <li><a href="services/jackson-tn-lawn-fertilization.html">Lawn Fertilization</a></li>
+          </ul>
+        </li>
+        <li class="nav__dropdown">
+          <a href="services/jackson-tn-pest-control.html" class="nav__dropdown-toggle">Pest Control <svg class="dd-arrow" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a>
+          <ul class="nav__dropdown-menu">
+            <li><a href="services/jackson-tn-pest-control.html">Pest Control</a></li>
+            <li><a href="services/jackson-tn-perimeter-pest-control.html">Perimeter Pest Control</a></li>
+            <li><a href="services/jackson-tn-flea-tick-control.html">Flea &amp; Tick Control</a></li>
+            <li><a href="services/jackson-tn-mole-control.html">Mole Control</a></li>
+            <li><a href="services/jackson-tn-armyworm-control.html">Armyworm Control</a></li>
+            <li><a href="services/jackson-tn-mosquito-control.html">Mosquito Control</a></li>
+          </ul>
+        </li>
+        <li><a href="index.html#plans">Plans</a></li>
+        <li><a href="index.html#areas">Areas</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="book.html">Book</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="referral.html" class="active">Refer a Friend</a></li>
+      </ul>
+      <div class="nav__right">
+        <a href="tel:7313137732" class="nav__phone"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.79 19.79 19.79 0 01.07 1.18 2 2 0 012.07 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>731-313-7732</a>
+        <a href="quote.html" class="nav__cta">Calculate My Price</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="page-hero__eyebrow">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          Referral Program
+        </div>
+        <h1>Spread the Word,<br/><em>Earn a Free Treatment</em></h1>
+        <p>Know a neighbor who needs a healthier lawn or pest-free home? Send them our way — when they complete their first service, you get your next one on us.</p>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how">
+      <div class="container">
+        <div class="text-center">
+          <span class="section-eyebrow">How It Works</span>
+          <h2 class="section-title">Three Simple Steps</h2>
+        </div>
+        <div class="how__grid">
+          <div class="how__step">
+            <div class="how__num">1</div>
+            <h3>Submit the Form</h3>
+            <p>Enter your phone number and your friend's info below. Takes less than a minute.</p>
+          </div>
+          <div class="how__step">
+            <div class="how__num">2</div>
+            <h3>Friend Completes First Service</h3>
+            <p>We'll reach out to schedule their free estimate. Once they complete their first treatment, your credit is triggered.</p>
+          </div>
+          <div class="how__step">
+            <div class="how__num">3</div>
+            <h3>You Get a Free Treatment</h3>
+            <p>A free treatment credit is applied to your account and used on your next scheduled service — automatically.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Referral Form -->
+    <section class="form-section">
+      <div class="container">
+        <div class="text-center" style="margin-bottom:40px;">
+          <span class="section-eyebrow">Submit a Referral</span>
+          <h2 class="section-title">Refer a Friend Below</h2>
+          <p style="color:var(--sage);font-size:16px;max-width:480px;margin:0 auto;line-height:1.65;">No limit on referrals — every friend who signs up earns you another free treatment.</p>
+        </div>
+
+        <!--
+          West TN Lawn & Pest — Referral Form Embed
+          Paste this entire block wherever you want the form to appear on your website.
+          No dependencies required — pure HTML, CSS, and vanilla JavaScript.
+        -->
+
+        <div id="wtn-referral-form">
+          <style>
+            #wtn-referral-form * {
+              box-sizing: border-box;
+              margin: 0;
+              padding: 0;
+            }
+            #wtn-referral-form .rf-wrap {
+              max-width: 520px;
+              margin: 0 auto;
+              font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            }
+            #wtn-referral-form .rf-card {
+              background: #ffffff;
+              border: 1px solid #e5e7eb;
+              border-radius: 12px;
+              padding: 32px;
+              box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            }
+            #wtn-referral-form .rf-header {
+              text-align: center;
+              margin-bottom: 28px;
+            }
+            #wtn-referral-form .rf-icon {
+              font-size: 40px;
+              margin-bottom: 12px;
+            }
+            #wtn-referral-form .rf-title {
+              font-size: 22px;
+              font-weight: 700;
+              color: #111111;
+              margin-bottom: 8px;
+            }
+            #wtn-referral-form .rf-subtitle {
+              font-size: 14px;
+              color: #555555;
+              line-height: 1.5;
+            }
+            #wtn-referral-form .rf-perk {
+              background: #f0fdf4;
+              border: 1px solid #bbf7d0;
+              border-radius: 8px;
+              padding: 12px 16px;
+              font-size: 13px;
+              color: #15803d;
+              text-align: center;
+              margin-bottom: 24px;
+              font-weight: 500;
+            }
+            #wtn-referral-form .rf-divider {
+              font-size: 11px;
+              font-weight: 700;
+              text-transform: uppercase;
+              letter-spacing: 0.08em;
+              color: #9ca3af;
+              margin: 20px 0 16px;
+              display: flex;
+              align-items: center;
+              gap: 10px;
+            }
+            #wtn-referral-form .rf-divider::before,
+            #wtn-referral-form .rf-divider::after {
+              content: '';
+              flex: 1;
+              height: 1px;
+              background: #e5e7eb;
+            }
+            #wtn-referral-form .rf-group {
+              margin-bottom: 16px;
+            }
+            #wtn-referral-form .rf-label {
+              display: block;
+              font-size: 13px;
+              font-weight: 600;
+              color: #374151;
+              margin-bottom: 6px;
+            }
+            #wtn-referral-form .rf-label .rf-req {
+              color: #dc2626;
+              margin-left: 2px;
+            }
+            #wtn-referral-form .rf-input,
+            #wtn-referral-form .rf-select {
+              width: 100%;
+              border: 1.5px solid #d1d5db;
+              border-radius: 8px;
+              padding: 11px 14px;
+              font-size: 15px;
+              color: #111111;
+              background: #ffffff;
+              outline: none;
+              transition: border-color 0.15s;
+              appearance: none;
+              -webkit-appearance: none;
+            }
+            #wtn-referral-form .rf-input:focus,
+            #wtn-referral-form .rf-select:focus {
+              border-color: #15803d;
+              box-shadow: 0 0 0 3px rgba(21,128,61,0.12);
+            }
+            #wtn-referral-form .rf-input::placeholder {
+              color: #9ca3af;
+            }
+            #wtn-referral-form .rf-hint {
+              font-size: 12px;
+              color: #9ca3af;
+              margin-top: 5px;
+            }
+            #wtn-referral-form .rf-btn {
+              width: 100%;
+              background: #15803d;
+              color: #ffffff;
+              border: none;
+              border-radius: 8px;
+              padding: 14px;
+              font-size: 16px;
+              font-weight: 700;
+              cursor: pointer;
+              margin-top: 8px;
+              transition: background 0.15s, opacity 0.15s;
+              letter-spacing: 0.01em;
+            }
+            #wtn-referral-form .rf-btn:hover {
+              background: #166534;
+            }
+            #wtn-referral-form .rf-btn:disabled {
+              opacity: 0.55;
+              cursor: not-allowed;
+            }
+            #wtn-referral-form .rf-error {
+              background: #fef2f2;
+              border: 1px solid #fecaca;
+              border-radius: 8px;
+              padding: 12px 14px;
+              font-size: 13px;
+              color: #dc2626;
+              margin-top: 12px;
+            }
+            #wtn-referral-form .rf-success {
+              text-align: center;
+              padding: 20px 0;
+            }
+            #wtn-referral-form .rf-success-icon {
+              font-size: 52px;
+              margin-bottom: 16px;
+            }
+            #wtn-referral-form .rf-success-title {
+              font-size: 22px;
+              font-weight: 700;
+              color: #111111;
+              margin-bottom: 10px;
+            }
+            #wtn-referral-form .rf-success-text {
+              font-size: 14px;
+              color: #555555;
+              line-height: 1.6;
+              margin-bottom: 20px;
+            }
+            #wtn-referral-form .rf-another {
+              background: none;
+              border: 1.5px solid #15803d;
+              color: #15803d;
+              border-radius: 8px;
+              padding: 10px 24px;
+              font-size: 14px;
+              font-weight: 600;
+              cursor: pointer;
+              transition: background 0.15s;
+            }
+            #wtn-referral-form .rf-another:hover {
+              background: #f0fdf4;
+            }
+          </style>
+
+          <div class="rf-wrap">
+            <div class="rf-card">
+
+              <!-- Success state (hidden by default) -->
+              <div id="rf-success" class="rf-success" style="display:none;">
+                <div class="rf-success-icon">🎉</div>
+                <div class="rf-success-title">Referral Sent!</div>
+                <p class="rf-success-text">
+                  Thanks for spreading the word! Once your friend completes their first service,
+                  you'll earn a <strong>free treatment credit</strong> on your account.
+                </p>
+                <button class="rf-another" onclick="rfReset()">Refer Another Friend →</button>
+              </div>
+
+              <!-- Form (shown by default) -->
+              <div id="rf-form-body">
+                <div class="rf-header">
+                  <div class="rf-icon">🌿</div>
+                  <div class="rf-title">Refer a Friend</div>
+                  <p class="rf-subtitle">
+                    Know someone who needs lawn care or pest control?
+                    Send them our way and earn a reward when they sign up.
+                  </p>
+                </div>
+
+                <div class="rf-perk">
+                  ★ &nbsp;You earn a <strong>free treatment</strong> every time a friend completes their first service
+                </div>
+
+                <!-- Your info -->
+                <div class="rf-divider">Your Information</div>
+
+                <div class="rf-group">
+                  <label class="rf-label">Your Phone Number <span class="rf-req">*</span></label>
+                  <input id="rf-your-phone" class="rf-input" type="tel" placeholder="(731) 555-0100" />
+                  <p class="rf-hint">We use this to find your account and apply your credit.</p>
+                </div>
+
+                <!-- Friend's info -->
+                <div class="rf-divider">Friend's Information</div>
+
+                <div class="rf-group">
+                  <label class="rf-label">Friend's Name <span class="rf-req">*</span></label>
+                  <input id="rf-friend-name" class="rf-input" type="text" placeholder="Jane Smith" />
+                </div>
+
+                <div class="rf-group">
+                  <label class="rf-label">Friend's Phone Number</label>
+                  <input id="rf-friend-phone" class="rf-input" type="tel" placeholder="(731) 555-0200" />
+                  <p class="rf-hint">We'll reach out to schedule their free estimate.</p>
+                </div>
+
+                <div class="rf-group">
+                  <label class="rf-label">Friend's Address</label>
+                  <input id="rf-friend-address" class="rf-input" type="text" placeholder="123 Oak St, Jackson, TN" />
+                </div>
+
+                <div class="rf-group">
+                  <label class="rf-label">What are they interested in?</label>
+                  <select id="rf-interest" class="rf-select">
+                    <option value="">— Select if known —</option>
+                    <option value="Lawn care">Lawn care</option>
+                    <option value="Pest control">Pest control</option>
+                    <option value="Lawn care & pest control">Both — lawn care &amp; pest control</option>
+                  </select>
+                </div>
+
+                <div id="rf-error" class="rf-error" style="display:none;"></div>
+
+                <button id="rf-submit-btn" class="rf-btn" onclick="rfSubmit()">
+                  Submit Referral
+                </button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <script>
+        (function() {
+          var API = 'https://app.westtnlawnandpest.com/api/public/referral';
+
+          window.rfSubmit = function() {
+            var yourPhone   = document.getElementById('rf-your-phone').value.trim();
+            var friendName  = document.getElementById('rf-friend-name').value.trim();
+            var friendPhone = document.getElementById('rf-friend-phone').value.trim();
+            var address     = document.getElementById('rf-friend-address').value.trim();
+            var interest    = document.getElementById('rf-interest').value;
+            var errEl       = document.getElementById('rf-error');
+            var btn         = document.getElementById('rf-submit-btn');
+
+            errEl.style.display = 'none';
+
+            if (!yourPhone) {
+              return rfShowError('Please enter your phone number so we can find your account.');
+            }
+            if (!friendName) {
+              return rfShowError("Please enter your friend's name.");
+            }
+
+            btn.disabled = true;
+            btn.textContent = 'Submitting…';
+
+            fetch(API, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                referrer_phone:   yourPhone,
+                referred_name:    friendName,
+                referred_phone:   friendPhone || undefined,
+                referred_address: address     || undefined,
+                service_interest: interest    || undefined,
+              })
+            })
+            .then(function(res) { return res.json().then(function(d) { return { ok: res.ok, data: d }; }); })
+            .then(function(r) {
+              if (!r.ok) {
+                rfShowError(r.data.error || 'Something went wrong. Please try again.');
+                btn.disabled = false;
+                btn.textContent = 'Submit Referral';
+              } else {
+                document.getElementById('rf-form-body').style.display = 'none';
+                document.getElementById('rf-success').style.display = 'block';
+              }
+            })
+            .catch(function() {
+              rfShowError('Network error. Please check your connection and try again.');
+              btn.disabled = false;
+              btn.textContent = 'Submit Referral';
+            });
+          };
+
+          window.rfReset = function() {
+            document.getElementById('rf-your-phone').value    = '';
+            document.getElementById('rf-friend-name').value   = '';
+            document.getElementById('rf-friend-phone').value  = '';
+            document.getElementById('rf-friend-address').value = '';
+            document.getElementById('rf-interest').value      = '';
+            document.getElementById('rf-error').style.display = 'none';
+            document.getElementById('rf-submit-btn').disabled = false;
+            document.getElementById('rf-submit-btn').textContent = 'Submit Referral';
+            document.getElementById('rf-form-body').style.display = 'block';
+            document.getElementById('rf-success').style.display   = 'none';
+          };
+
+          function rfShowError(msg) {
+            var el = document.getElementById('rf-error');
+            el.textContent = msg;
+            el.style.display = 'block';
+          }
+        })();
+        </script>
+
+      </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <section class="ref-cta">
+      <div class="container">
+        <h2>Not a Customer Yet?</h2>
+        <p>Get a free estimate today and see why West Tennessee homeowners trust us with their lawns and homes.</p>
+        <div class="ref-cta__btns">
+          <a href="quote.html" class="btn btn-gold">Get Free Estimate</a>
+          <a href="tel:7313137732" class="btn btn-outline-white">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.79 19.79 19.79 0 01.07 1.18 2 2 0 012.07 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            Call 731-313-7732
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1912 535" height="48" aria-hidden="true">
+<path d="M692.353 281.534C680.464 310.493 668.767 339.123 656.934 367.695C656.453 368.857 654.688 370.24 653.513 370.248C631.186 370.396 608.858 370.357 586.53 370.327C585.902 370.326 585.274 369.991 584.938 369.895C579.33 275.47 573.735 181.271 568.102 86.4182C571.164 86.4182 573.781 86.4239 576.398 86.4172C592.895 86.3752 609.394 86.4276 625.888 86.2123C629.632 86.1634 630.746 87.4131 630.783 91.0708C631.412 153.22 632.164 215.368 632.849 277.517C632.956 287.171 632.864 296.828 633.673 306.829C634.286 305.661 635.017 304.54 635.494 303.32C648.089 271.071 660.512 238.754 673.276 206.572C684.13 179.207 695.368 151.995 706.443 124.718C711.141 113.149 715.757 101.545 720.687 90.0761C721.325 88.5926 723.613 86.8974 725.166 86.8681C744.656 86.4995 764.151 86.477 783.644 86.218C787.564 86.166 787.787 88.3762 787.845 91.3385C788.208 109.83 788.667 128.32 789.084 146.81C790.193 195.949 791.302 245.088 792.388 294.228C792.48 298.382 792.401 302.539 792.401 307.141C793.036 306.41 793.689 305.963 793.916 305.357C809.13 264.682 824.142 223.929 839.549 183.327C851.235 152.532 863.471 121.947 875.302 91.2066C876.478 88.1523 877.727 86.6782 881.229 86.7066C900.34 86.8618 919.452 86.7804 939.224 86.7804C936.214 93.9571 933.377 100.987 930.336 107.928C911.161 151.685 891.947 195.425 872.734 239.166C856.939 275.126 841.115 311.074 825.338 347.042C822.464 353.596 819.522 360.138 817.081 366.855C815.993 369.848 814.386 370.478 811.567 370.474C791.237 370.444 770.905 370.402 750.578 370.683C746.037 370.746 745.054 369.13 744.975 364.934C743.721 298.141 742.319 231.35 740.954 164.559C740.934 163.604 740.951 162.648 740.951 161.775C724.801 201.599 708.661 241.396 692.353 281.534Z" fill="white"/>
+<path d="M251.149 27C375.496 27.0002 476.298 127.803 476.298 252.149C476.298 376.495 375.495 477.298 251.149 477.298C126.803 477.298 26.0002 376.496 26 252.149C26 127.803 126.803 27 251.149 27ZM201.369 314.843L134.444 293.053L175.232 351.701L132.942 411.339L200.44 387.947L241.229 446.595L242.157 373.49L309.656 350.099L242.731 328.31L243.659 255.204L201.369 314.843ZM318.997 212.855L255.767 249.559L326.885 256.296L339.648 326.583L370.839 260.46L441.957 267.197L390.115 219.593L421.306 153.47L358.075 190.172L306.233 142.568L318.997 212.855ZM148.917 143.896L76.3359 152.676L139.028 186.924L123.027 256.546L177.774 208.091L240.466 242.339L211.609 178.144L266.356 129.688L193.775 138.469L164.918 74.2734L148.917 143.896Z" fill="white"/>
+<circle cx="251.5" cy="251.5" r="244.939" fill="none" stroke="white" stroke-width="13.1217"/>
+</svg>
+          <p>Professional weed control and fertilization for homeowners across West Tennessee. Locally owned, locally committed.</p>
+        </div>
+        <div class="footer__col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services/jackson-tn-weed-control.html">Weed Control</a></li>
+            <li><a href="services/jackson-tn-lawn-fertilization.html">Lawn Fertilization</a></li>
+            <li><a href="services/jackson-tn-pest-control.html">Pest Control</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="referral.html">Refer a Friend</a></li>
+            <li><a href="book.html">Book</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Areas</h4>
+          <ul>
+            <li><a href="index.html">Jackson, TN</a></li>
+            <li><a href="locations/humboldt-tn.html">Humboldt, TN</a></li>
+            <li><a href="locations/medina-tn.html">Medina, TN</a></li>
+            <li><a href="locations/milan-tn.html">Milan, TN</a></li>
+            <li><a href="locations/three-way-tn.html">Three Way, TN</a></li>
+            <li><a href="locations/bells-tn.html">Bells, TN</a></li>
+            <li><a href="locations/henderson-tn.html">Henderson, TN</a></li>
+            <li><a href="locations/trenton-tn.html">Trenton, TN</a></li>
+            <li><a href="locations/alamo-tn.html">Alamo, TN</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Contact</h4>
+          <ul>
+            <li><div class="footer__contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.79 19.79 19.79 0 01.07 1.18 2 2 0 012.07 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg><a href="tel:7313137732" style="color:inherit;text-decoration:none;">731-313-7732</a></div></li>
+            <li><div class="footer__contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="mailto:info@westtnlawnandpest.com">info@westtnlawnandpest.com</a></div></li>
+            <li><div class="footer__contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Jackson, TN &amp; Surrounding Areas</div></li>
+            <li><div class="footer__contact-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Mon–Fri 8am–5pm · Sat 9am–2pm</div></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 West TN Lawn &amp; Pest. All rights reserved.</p>
+        <p><a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="terms.html">Terms</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    var btn = document.getElementById('hamburgerBtn');
+    var nav = document.getElementById('navLinks');
+    btn.addEventListener('click', function() {
+      var open = nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open);
+    });
+    nav.querySelectorAll('.nav__dropdown-toggle').forEach(function(toggle) {
+      toggle.addEventListener('click', function(e) {
+        if (window.innerWidth <= 900) {
+          e.preventDefault();
+          toggle.closest('.nav__dropdown').classList.toggle('open');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
