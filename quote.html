@@ -818,7 +818,7 @@
       }
 
       const polygon = new google.maps.Polygon({
-        paths: currentPath,
+        path: currentPath,
         fillColor: '#22803A',
         fillOpacity: 0.30,
         strokeWeight: 2.5,
@@ -865,7 +865,9 @@
     function updateTotals() {
       const totalSqFt = Math.round(
         shapes.reduce((sum, polygon) => {
-          return sum + google.maps.geometry.spherical.computeArea(polygon.getPath()) * 10.7639;
+          const path = polygon.getPath();
+          const coords = path.getArray ? path.getArray() : path;
+          return sum + google.maps.geometry.spherical.computeArea(coords) * 10.7639;
         }, 0)
       );
       const price = Math.max((totalSqFt / 1000) * PRICE_PER_1000, MIN_PRICE);
@@ -962,7 +964,7 @@
 
   <!-- Load Google Maps with Drawing + Geometry + Places libraries -->
   <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7KenIZs3cLM9FaEJdze08owTK0WVmFTU&libraries=geometry,places&callback=initMap"
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7KenIZs3cLM9FaEJdze08owTK0WVmFTU&libraries=geometry,places&callback=initMap&loading=async"
     async defer>
   </script>
 
