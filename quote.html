@@ -804,16 +804,20 @@
       if (currentPolyline) { currentPolyline.setMap(null); currentPolyline = null; }
       if (currentPath.length < 2) return;
 
+      // Closed polyline (not Polygon) so it never blocks map clicks
+      const previewPath = currentPath.length >= 3
+        ? [...currentPath, currentPath[0]]
+        : currentPath;
+
+      currentPolyline = new google.maps.Polyline({
+        path: previewPath,
+        strokeColor: '#C4A44A',
+        strokeWeight: 3,
+        strokeOpacity: 1,
+        map: map
+      });
+
       if (currentPath.length >= 3) {
-        currentPolyline = new google.maps.Polygon({
-          path: currentPath,
-          fillColor: '#22803A',
-          fillOpacity: 0.25,
-          strokeWeight: 3,
-          strokeColor: '#C4A44A',
-          clickable: false,
-          map: map
-        });
         const sqFt = Math.round(computeAreaSqFt(currentPath));
         const price = Math.max((sqFt / 1000) * PRICE_PER_1000, MIN_PRICE);
         document.getElementById('sqft').textContent = sqFt.toLocaleString();
@@ -821,33 +825,21 @@
         document.getElementById('discountPrice').textContent = '$' + (price / 2).toFixed(2);
         document.getElementById('areaCount').textContent = 'click Finish when done tracing';
         showResult();
-      } else {
-        currentPolyline = new google.maps.Polyline({
-          path: currentPath,
-          strokeColor: '#C4A44A',
-          strokeWeight: 3,
-          strokeOpacity: 1,
-          map: map
-        });
       }
     }
 
     function computeAreaSqFt(latLngs) {
-      if (!latLngs || latLngs.length < 3) return 0;
-      // Use Google geometry library if available
-      if (google.maps.geometry && google.maps.geometry.spherical) {
-        return google.maps.geometry.spherical.computeArea(latLngs) * 10.7639;
-      }
-      // Fallback: spherical excess formula
+      const n = latLngs ? latLngs.length : 0;
+      if (n < 3) return 0;
       const R = 6371000;
-      const toLat = p => (typeof p.lat === 'function' ? p.lat() : p.lat) * Math.PI / 180;
-      const toLng = p => (typeof p.lng === 'function' ? p.lng() : p.lng) * Math.PI / 180;
-      const n = latLngs.length;
+      const toRad = d => d * Math.PI / 180;
+      const toLat = p => toRad(typeof p.lat === 'function' ? p.lat() : p.lat);
+      const toLng = p => toRad(typeof p.lng === 'function' ? p.lng() : p.lng);
       let area = 0;
       for (let i = 0; i < n; i++) {
         const j = (i + 1) % n;
-        const dLng = toLng(latLngs[j]) - toLng(latLngs[i]);
-        area += dLng * (2 + Math.sin(toLat(latLngs[i])) + Math.sin(toLat(latLngs[j])));
+        area += (toLng(latLngs[j]) - toLng(latLngs[i])) *
+                (2 + Math.sin(toLat(latLngs[i])) + Math.sin(toLat(latLngs[j])));
       }
       return Math.abs(area * R * R / 2) * 10.7639;
     }
