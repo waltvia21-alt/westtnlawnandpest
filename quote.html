@@ -545,6 +545,10 @@
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
               Draw Lawn Area
             </button>
+            <button class="map-btn" id="finishBtn" onclick="finishPolygon()" style="display:none;background:#22803A;color:#fff;font-weight:700;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Finish Drawing
+            </button>
             <button class="map-btn map-btn--clear" onclick="clearShape()">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6M14 11v6"/></svg>
               Clear
@@ -565,7 +569,7 @@
               </li>
               <li>
                 <div class="num">2</div>
-                <p>Click <strong>"Draw Lawn Area"</strong> and trace around one grass section. Double-click to finish. <strong>Skip over</strong> the house, driveway, and beds.</p>
+                <p>Click <strong>"Draw Lawn Area"</strong> and trace around one grass section. Click each corner, then press <strong>"Finish Drawing"</strong>. <strong>Skip over</strong> the house, driveway, and beds.</p>
               </li>
               <li>
                 <div class="num">3</div>
@@ -719,7 +723,6 @@
     let currentPath = [];
     let currentPolyline = null;
     let clickListener = null;
-    let dblclickListener = null;
 
     function initMap() {
       map = new google.maps.Map(document.getElementById('map'), {
@@ -775,18 +778,14 @@
       currentPath = [];
       if (currentPolyline) { currentPolyline.setMap(null); currentPolyline = null; }
 
-      map.setOptions({ draggableCursor: 'crosshair', disableDoubleClickZoom: true });
-      document.getElementById('drawBtn').classList.add('active');
-      document.getElementById('mapHint').textContent = 'Click to place points · Double-click to finish';
+      map.setOptions({ draggableCursor: 'crosshair' });
+      document.getElementById('drawBtn').style.display = 'none';
+      document.getElementById('finishBtn').style.display = 'inline-flex';
+      document.getElementById('mapHint').textContent = 'Click to place points · Press Finish when done';
 
       clickListener = google.maps.event.addListener(map, 'click', function(e) {
         currentPath.push(e.latLng);
         updateDrawingPreview();
-      });
-
-      dblclickListener = google.maps.event.addListener(map, 'dblclick', function(e) {
-        if (currentPath.length > 0) currentPath.pop();
-        finishPolygon();
       });
     }
 
@@ -824,12 +823,12 @@
 
     function finishPolygon() {
       if (clickListener) { google.maps.event.removeListener(clickListener); clickListener = null; }
-      if (dblclickListener) { google.maps.event.removeListener(dblclickListener); dblclickListener = null; }
       if (currentPolyline) { currentPolyline.setMap(null); currentPolyline = null; }
 
       isDrawing = false;
-      map.setOptions({ draggableCursor: null, disableDoubleClickZoom: false });
-      document.getElementById('drawBtn').classList.remove('active');
+      map.setOptions({ draggableCursor: null });
+      document.getElementById('drawBtn').style.display = 'inline-flex';
+      document.getElementById('finishBtn').style.display = 'none';
 
       if (currentPath.length < 3) {
         document.getElementById('mapHint').textContent = 'Need at least 3 points — try again';
@@ -869,12 +868,12 @@
 
     function cancelDrawing() {
       if (clickListener) { google.maps.event.removeListener(clickListener); clickListener = null; }
-      if (dblclickListener) { google.maps.event.removeListener(dblclickListener); dblclickListener = null; }
       if (currentPolyline) { currentPolyline.setMap(null); currentPolyline = null; }
       currentPath = [];
       isDrawing = false;
-      map.setOptions({ draggableCursor: null, disableDoubleClickZoom: false });
-      document.getElementById('drawBtn').classList.remove('active');
+      map.setOptions({ draggableCursor: null });
+      document.getElementById('drawBtn').style.display = 'inline-flex';
+      document.getElementById('finishBtn').style.display = 'none';
       document.getElementById('mapHint').textContent = 'Click "Draw Lawn Area" to start';
     }
 
