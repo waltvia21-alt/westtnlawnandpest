@@ -713,8 +713,13 @@
   <script>
     const PRICE_PER_1000 = 8.50;
     const MIN_PRICE = 60.00;
-    let map, drawingManager;
-    let shapes = []; // supports multiple drawn areas
+    let map;
+    let shapes = [];
+    let isDrawing = false;
+    let currentPath = [];
+    let currentPolyline = null;
+    let clickListener = null;
+    let dblclickListener = null;
 
     function initMap() {
       map = new google.maps.Map(document.getElementById('map'), {
@@ -728,7 +733,6 @@
         zoomControlOptions: { position: google.maps.ControlPosition.RIGHT_CENTER }
       });
 
-      // Address autocomplete via Places API
       const autocomplete = new google.maps.places.Autocomplete(
         document.getElementById('addressInput'),
         { componentRestrictions: { country: 'us' }, fields: ['geometry'] }
@@ -746,36 +750,8 @@
         if (e.key === 'Enter') { e.preventDefault(); searchAddress(); }
       });
 
-      drawingManager = new google.maps.drawing.DrawingManager({
-        drawingMode: null,
-        drawingControl: false,
-        polygonOptions: {
-          fillColor: '#22803A',
-          fillOpacity: 0.30,
-          strokeWeight: 2.5,
-          strokeColor: '#C4A44A',
-          editable: true,
-          draggable: true
-        }
-      });
-      drawingManager.setMap(map);
-
-      google.maps.event.addListener(drawingManager, 'polygoncomplete', function(polygon) {
-        drawingManager.setDrawingMode(null);
-        document.getElementById('drawBtn').classList.remove('active');
-
-        shapes.push(polygon);
-        updateTotals();
-        advanceStep(3);
-
-        const count = shapes.length;
-        document.getElementById('mapHint').textContent =
-          count === 1 ? '1 area drawn · Add more or adjust points' : `${count} areas drawn · Add more or clear all`;
-
-        // Recompute on any edit to this polygon
-        ['set_at', 'insert_at', 'remove_at'].forEach(ev => {
-          google.maps.event.addListener(polygon.getPath(), ev, updateTotals);
-        });
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && isDrawing) cancelDrawing();
       });
     }
 
@@ -794,17 +770,93 @@
     }
 
     function startDrawing() {
-      if (!drawingManager) return;
-      drawingManager.setDrawingMode('polygon');
+      if (isDrawing) return;
+      isDrawing = true;
+      currentPath = [];
+      if (currentPolyline) { currentPolyline.setMap(null); currentPolyline = null; }
+
+      map.setOptions({ draggableCursor: 'crosshair', disableDoubleClickZoom: true });
       document.getElementById('drawBtn').classList.add('active');
       document.getElementById('mapHint').textContent = 'Click to place points · Double-click to finish';
+
+      clickListener = google.maps.event.addListener(map, 'click', function(e) {
+        currentPath.push(e.latLng);
+        updateDrawingPreview();
+      });
+
+      dblclickListener = google.maps.event.addListener(map, 'dblclick', function(e) {
+        if (currentPath.length > 0) currentPath.pop();
+        finishPolygon();
+      });
+    }
+
+    function updateDrawingPreview() {
+      if (currentPolyline) currentPolyline.setMap(null);
+      if (currentPath.length < 2) return;
+      currentPolyline = new google.maps.Polyline({
+        path: currentPath,
+        strokeColor: '#C4A44A',
+        strokeWeight: 2,
+        strokeOpacity: 0.8,
+        map: map
+      });
+    }
+
+    function finishPolygon() {
+      if (clickListener) { google.maps.event.removeListener(clickListener); clickListener = null; }
+      if (dblclickListener) { google.maps.event.removeListener(dblclickListener); dblclickListener = null; }
+      if (currentPolyline) { currentPolyline.setMap(null); currentPolyline = null; }
+
+      isDrawing = false;
+      map.setOptions({ draggableCursor: null, disableDoubleClickZoom: false });
+      document.getElementById('drawBtn').classList.remove('active');
+
+      if (currentPath.length < 3) {
+        document.getElementById('mapHint').textContent = 'Need at least 3 points — try again';
+        currentPath = [];
+        return;
+      }
+
+      const polygon = new google.maps.Polygon({
+        paths: currentPath,
+        fillColor: '#22803A',
+        fillOpacity: 0.30,
+        strokeWeight: 2.5,
+        strokeColor: '#C4A44A',
+        editable: true,
+        draggable: true,
+        map: map
+      });
+
+      currentPath = [];
+      shapes.push(polygon);
+      updateTotals();
+      advanceStep(3);
+
+      const count = shapes.length;
+      document.getElementById('mapHint').textContent =
+        count === 1 ? '1 area drawn · Add more or adjust points' : `${count} areas drawn · Add more or clear all`;
+
+      ['set_at', 'insert_at', 'remove_at'].forEach(ev => {
+        google.maps.event.addListener(polygon.getPath(), ev, updateTotals);
+      });
+    }
+
+    function cancelDrawing() {
+      if (clickListener) { google.maps.event.removeListener(clickListener); clickListener = null; }
+      if (dblclickListener) { google.maps.event.removeListener(dblclickListener); dblclickListener = null; }
+      if (currentPolyline) { currentPolyline.setMap(null); currentPolyline = null; }
+      currentPath = [];
+      isDrawing = false;
+      map.setOptions({ draggableCursor: null, disableDoubleClickZoom: false });
+      document.getElementById('drawBtn').classList.remove('active');
+      document.getElementById('mapHint').textContent = 'Click "Draw Lawn Area" to start';
     }
 
     function clearShape() {
+      if (isDrawing) cancelDrawing();
       shapes.forEach(s => s.setMap(null));
       shapes = [];
-      drawingManager.setDrawingMode(null);
-      document.getElementById('drawBtn').classList.remove('active');
       document.getElementById('mapHint').textContent = 'Click "Draw Lawn Area" to start';
       hideResult();
       advanceStep(2);
@@ -910,7 +962,7 @@
 
   <!-- Load Google Maps with Drawing + Geometry + Places libraries -->
   <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7KenIZs3cLM9FaEJdze08owTK0WVmFTU&libraries=drawing,geometry,places&callback=initMap&v=3.55"
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7KenIZs3cLM9FaEJdze08owTK0WVmFTU&libraries=geometry,places&callback=initMap"
     async defer>
   </script>
 
