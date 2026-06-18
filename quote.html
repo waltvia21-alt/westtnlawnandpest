@@ -802,6 +802,26 @@
       });
     }
 
+    function computeAreaSqFt(latLngs) {
+      if (!latLngs || latLngs.length < 3) return 0;
+      // Use Google geometry library if available
+      if (google.maps.geometry && google.maps.geometry.spherical) {
+        return google.maps.geometry.spherical.computeArea(latLngs) * 10.7639;
+      }
+      // Fallback: spherical excess formula
+      const R = 6371000;
+      const toLat = p => (typeof p.lat === 'function' ? p.lat() : p.lat) * Math.PI / 180;
+      const toLng = p => (typeof p.lng === 'function' ? p.lng() : p.lng) * Math.PI / 180;
+      const n = latLngs.length;
+      let area = 0;
+      for (let i = 0; i < n; i++) {
+        const j = (i + 1) % n;
+        const dLng = toLng(latLngs[j]) - toLng(latLngs[i]);
+        area += dLng * (2 + Math.sin(toLat(latLngs[i])) + Math.sin(toLat(latLngs[j])));
+      }
+      return Math.abs(area * R * R / 2) * 10.7639;
+    }
+
     function finishPolygon() {
       if (clickListener) { google.maps.event.removeListener(clickListener); clickListener = null; }
       if (dblclickListener) { google.maps.event.removeListener(dblclickListener); dblclickListener = null; }
@@ -817,8 +837,9 @@
         return;
       }
 
+      const savedPath = currentPath.slice();
       const polygon = new google.maps.Polygon({
-        path: currentPath,
+        path: savedPath,
         fillColor: '#22803A',
         fillOpacity: 0.30,
         strokeWeight: 2.5,
@@ -827,6 +848,7 @@
         draggable: true,
         map: map
       });
+      polygon._coords = savedPath;
 
       currentPath = [];
       shapes.push(polygon);
@@ -838,7 +860,10 @@
         count === 1 ? '1 area drawn · Add more or adjust points' : `${count} areas drawn · Add more or clear all`;
 
       ['set_at', 'insert_at', 'remove_at'].forEach(ev => {
-        google.maps.event.addListener(polygon.getPath(), ev, updateTotals);
+        google.maps.event.addListener(polygon.getPath(), ev, function() {
+          polygon._coords = polygon.getPath().getArray();
+          updateTotals();
+        });
       });
     }
 
@@ -865,9 +890,7 @@
     function updateTotals() {
       const totalSqFt = Math.round(
         shapes.reduce((sum, polygon) => {
-          const path = polygon.getPath();
-          const coords = path.getArray ? path.getArray() : path;
-          return sum + google.maps.geometry.spherical.computeArea(coords) * 10.7639;
+          return sum + computeAreaSqFt(polygon._coords || []);
         }, 0)
       );
       const price = Math.max((totalSqFt / 1000) * PRICE_PER_1000, MIN_PRICE);
@@ -964,7 +987,7 @@
 
   <!-- Load Google Maps with Drawing + Geometry + Places libraries -->
   <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7KenIZs3cLM9FaEJdze08owTK0WVmFTU&libraries=geometry,places&callback=initMap&loading=async"
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7KenIZs3cLM9FaEJdze08owTK0WVmFTU&libraries=geometry,places&callback=initMap"
     async defer>
   </script>
 
