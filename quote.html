@@ -790,15 +790,36 @@
     }
 
     function updateDrawingPreview() {
-      if (currentPolyline) currentPolyline.setMap(null);
+      if (currentPolyline) { currentPolyline.setMap(null); currentPolyline = null; }
       if (currentPath.length < 2) return;
-      currentPolyline = new google.maps.Polyline({
-        path: currentPath,
-        strokeColor: '#C4A44A',
-        strokeWeight: 2,
-        strokeOpacity: 0.8,
-        map: map
-      });
+
+      if (currentPath.length >= 3) {
+        // Closed polygon preview — shows fill and live area
+        currentPolyline = new google.maps.Polygon({
+          path: currentPath,
+          fillColor: '#22803A',
+          fillOpacity: 0.25,
+          strokeWeight: 2.5,
+          strokeColor: '#C4A44A',
+          clickable: false,
+          map: map
+        });
+        const sqFt = Math.round(computeAreaSqFt(currentPath));
+        const price = Math.max((sqFt / 1000) * PRICE_PER_1000, MIN_PRICE);
+        document.getElementById('sqft').textContent = sqFt.toLocaleString();
+        document.getElementById('price').textContent = '$' + price.toFixed(2);
+        document.getElementById('discountPrice').textContent = '$' + (price / 2).toFixed(2);
+        document.getElementById('areaCount').textContent = 'keep tracing or press Finish';
+        showResult();
+      } else {
+        currentPolyline = new google.maps.Polyline({
+          path: currentPath,
+          strokeColor: '#C4A44A',
+          strokeWeight: 2,
+          strokeOpacity: 0.8,
+          map: map
+        });
+      }
     }
 
     function computeAreaSqFt(latLngs) {
