@@ -794,7 +794,8 @@
     }
 
     function startDrawing() {
-      drawingManager.setDrawingMode(google.maps.drawing.OverlayType.POLYGON);
+      if (!drawingManager) return;
+      drawingManager.setDrawingMode('polygon');
       document.getElementById('drawBtn').classList.add('active');
       document.getElementById('mapHint').textContent = 'Click to place points · Double-click to finish';
     }
