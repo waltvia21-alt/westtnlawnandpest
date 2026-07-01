@@ -774,6 +774,7 @@
       currentPath = [];
       if (currentPolyline) { currentPolyline.setMap(null); currentPolyline = null; }
 
+      shapes.forEach(s => s.setOptions({ clickable: false, draggable: false, editable: false }));
       map.setOptions({ draggableCursor: 'crosshair' });
       document.getElementById('drawBtn').classList.add('active');
       document.getElementById('mapHint').textContent = 'Click each corner of your lawn — click the first point again to close';
@@ -855,6 +856,7 @@
       if (currentPolyline) { currentPolyline.setMap(null); currentPolyline = null; }
 
       isDrawing = false;
+      shapes.forEach(s => s.setOptions({ clickable: true, draggable: true, editable: true }));
       map.setOptions({ draggableCursor: null });
       document.getElementById('drawBtn').classList.remove('active');
 
@@ -899,6 +901,7 @@
       if (currentPolyline) { currentPolyline.setMap(null); currentPolyline = null; }
       currentPath = [];
       isDrawing = false;
+      shapes.forEach(s => s.setOptions({ clickable: true, draggable: true, editable: true }));
       map.setOptions({ draggableCursor: null });
       document.getElementById('drawBtn').classList.remove('active');
       document.getElementById('mapHint').textContent = 'Click "Draw Lawn Area" to start';
