@@ -541,9 +541,9 @@
           <div id="map"></div>
 
           <div class="map-panel__bottombar">
-            <button class="map-btn map-btn--draw" id="drawBtn" onclick="startDrawing()">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
-              Draw Lawn Area
+            <button class="map-btn map-btn--draw" id="drawBtn" onclick="toggleDraw()">
+              <svg id="drawBtnIcon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+              <span id="drawBtnLabel">Draw Lawn Area</span>
             </button>
             <button class="map-btn map-btn--clear" onclick="clearShape()">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6M14 11v6"/></svg>
@@ -770,6 +770,11 @@
       });
     }
 
+    function toggleDraw() {
+      if (isDrawing) finishPolygon();
+      else startDrawing();
+    }
+
     function startDrawing() {
       if (isDrawing) return;
       isDrawing = true;
@@ -777,34 +782,28 @@
       if (currentPolyline) { currentPolyline.setMap(null); currentPolyline = null; }
 
       map.setOptions({ draggableCursor: 'crosshair' });
-      document.getElementById('drawBtn').classList.add('active');
-      document.getElementById('mapHint').textContent = 'Click each corner of your lawn — click the first point again to close';
+      const btn = document.getElementById('drawBtn');
+      btn.style.background = '#22803A';
+      btn.style.color = '#fff';
+      document.getElementById('drawBtnIcon').innerHTML = '<polyline points="20 6 9 17 4 12"/>';
+      document.getElementById('drawBtnLabel').textContent = 'Finish Drawing';
+      document.getElementById('mapHint').textContent = 'Click each corner of your lawn — press Finish Drawing when done';
 
       clickHandler = function(e) {
-        if (currentPath.length >= 3 && isNearFirstPoint(e.latLng)) {
-          finishPolygon();
-          return;
-        }
         currentPath.push(e.latLng);
         updateDrawingPreview();
       };
 
       clickListener = google.maps.event.addListener(map, 'click', clickHandler);
-      // Route clicks on existing polygons through the same handler
       polygonClickListeners = shapes.map(s => google.maps.event.addListener(s, 'click', clickHandler));
     }
 
-    function isNearFirstPoint(latLng) {
-      try {
-        const proj = map.getProjection();
-        if (!proj) return false;
-        const scale = Math.pow(2, map.getZoom());
-        const p1 = proj.fromLatLngToPoint(currentPath[0]);
-        const p2 = proj.fromLatLngToPoint(latLng);
-        const dx = (p1.x - p2.x) * scale;
-        const dy = (p1.y - p2.y) * scale;
-        return Math.sqrt(dx * dx + dy * dy) < 20;
-      } catch(err) { return false; }
+    function resetDrawBtn() {
+      const btn = document.getElementById('drawBtn');
+      btn.style.background = '';
+      btn.style.color = '';
+      document.getElementById('drawBtnIcon').innerHTML = '<polygon points="3 11 22 2 13 21 11 13 3 11"/>';
+      document.getElementById('drawBtnLabel').textContent = 'Draw Lawn Area';
     }
 
     function updateDrawingPreview() {
@@ -835,7 +834,7 @@
         document.getElementById('sqft').textContent = totalSqFt.toLocaleString();
         document.getElementById('price').textContent = '$' + price.toFixed(2);
         document.getElementById('discountPrice').textContent = '$' + (price / 2).toFixed(2);
-        document.getElementById('areaCount').textContent = count === 1 ? 'click the first point to close' : `${count} sections — click first point to close`;
+        document.getElementById('areaCount').textContent = count === 1 ? 'drawing section 1' : `drawing section ${count}`;
         showResult();
       }
     }
@@ -865,7 +864,7 @@
 
       isDrawing = false;
       map.setOptions({ draggableCursor: null });
-      document.getElementById('drawBtn').classList.remove('active');
+      resetDrawBtn();
 
       if (currentPath.length < 3) {
         document.getElementById('mapHint').textContent = 'Need at least 3 points — try again';
@@ -912,7 +911,7 @@
       currentPath = [];
       isDrawing = false;
       map.setOptions({ draggableCursor: null });
-      document.getElementById('drawBtn').classList.remove('active');
+      resetDrawBtn();
       document.getElementById('mapHint').textContent = 'Click "Draw Lawn Area" to start';
     }
 
