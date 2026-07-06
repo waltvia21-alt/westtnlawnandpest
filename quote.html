@@ -719,6 +719,8 @@
     let currentPath = [];
     let currentPolyline = null;
     let clickListener = null;
+    let clickHandler = null;
+    let polygonClickListeners = [];
 
     function initMap() {
       map = new google.maps.Map(document.getElementById('map'), {
@@ -774,19 +776,22 @@
       currentPath = [];
       if (currentPolyline) { currentPolyline.setMap(null); currentPolyline = null; }
 
-      shapes.forEach(s => s.setOptions({ clickable: false, draggable: false, editable: false }));
       map.setOptions({ draggableCursor: 'crosshair' });
       document.getElementById('drawBtn').classList.add('active');
       document.getElementById('mapHint').textContent = 'Click each corner of your lawn — click the first point again to close';
 
-      clickListener = google.maps.event.addListener(map, 'click', function(e) {
+      clickHandler = function(e) {
         if (currentPath.length >= 3 && isNearFirstPoint(e.latLng)) {
           finishPolygon();
           return;
         }
         currentPath.push(e.latLng);
         updateDrawingPreview();
-      });
+      };
+
+      clickListener = google.maps.event.addListener(map, 'click', clickHandler);
+      // Route clicks on existing polygons through the same handler
+      polygonClickListeners = shapes.map(s => google.maps.event.addListener(s, 'click', clickHandler));
     }
 
     function isNearFirstPoint(latLng) {
@@ -853,10 +858,12 @@
 
     function finishPolygon() {
       if (clickListener) { google.maps.event.removeListener(clickListener); clickListener = null; }
+      polygonClickListeners.forEach(l => google.maps.event.removeListener(l));
+      polygonClickListeners = [];
+      clickHandler = null;
       if (currentPolyline) { currentPolyline.setMap(null); currentPolyline = null; }
 
       isDrawing = false;
-      shapes.forEach(s => s.setOptions({ clickable: true, draggable: true, editable: true }));
       map.setOptions({ draggableCursor: null });
       document.getElementById('drawBtn').classList.remove('active');
 
@@ -898,10 +905,12 @@
 
     function cancelDrawing() {
       if (clickListener) { google.maps.event.removeListener(clickListener); clickListener = null; }
+      polygonClickListeners.forEach(l => google.maps.event.removeListener(l));
+      polygonClickListeners = [];
+      clickHandler = null;
       if (currentPolyline) { currentPolyline.setMap(null); currentPolyline = null; }
       currentPath = [];
       isDrawing = false;
-      shapes.forEach(s => s.setOptions({ clickable: true, draggable: true, editable: true }));
       map.setOptions({ draggableCursor: null });
       document.getElementById('drawBtn').classList.remove('active');
       document.getElementById('mapHint').textContent = 'Click "Draw Lawn Area" to start';
