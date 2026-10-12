@@ -20,3 +20,7 @@ Thumbs.db
 # Editor
 .vscode/
 *.swp
+
+# Private business docs (keep local only)
+backlinks/
+Chemicals & Rates/
