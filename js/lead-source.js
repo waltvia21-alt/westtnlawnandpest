@@ -218,7 +218,36 @@
     return v;
   }
 
+  // Dropdown answer -> the CRM's canonical lead-source label (westttn-crm
+  // lib/leadSources.ts), so the Marketing page groups them without mapping.
+  // Answers with no CRM equivalent (Google Maps, Yelp, Mailer) are sent as-is;
+  // the CRM keeps unknown labels as their own row.
+  var CRM_SOURCE = {
+    'Friend or family referral': 'Referral',
+    'Neighbor uses you': 'Referral',
+    'Google search': 'Google Search',
+    'Facebook': 'Facebook / Instagram',
+    'Yard sign': 'Yard Sign',
+    'Saw your truck/trailer': 'Truck / Vehicle',
+    'Door hanger': 'Door Hanger / Flyer',
+    'Returning customer': 'Repeat Customer'
+  };
+
   window.LeadSource = {
+    /**
+     * Value for the CRM's lead_source field. The visitor's own answer wins;
+     * with no answer, an ad click ID stands in. Free text ("Other" details,
+     * campaign codes) stays in the message via note().
+     */
+    source: function (form) {
+      var s = form && form.querySelector('[name="Heard About Us"]');
+      var v = s && s.value;
+      if (v) return CRM_SOURCE[v] || v;
+      if (attr.google_ad) return 'Google Ads';
+      if (attr.facebook_click) return 'Facebook / Instagram';
+      return undefined;
+    },
+
     /** Text to append to the lead message. sep defaults to ' | '. */
     note: function (form, sep) {
       var parts = [];

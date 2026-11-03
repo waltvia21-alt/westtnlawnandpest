@@ -1795,6 +1795,7 @@
         phone: fd.get('Phone'),
         email: fd.get('Email'),
         address: fd.get('Address'),
+        lead_source: window.LeadSource ? LeadSource.source(form) : undefined,
         message: [
           fd.get('Lawn Condition') ? 'Lawn condition: ' + fd.get('Lawn Condition') : '',
           window.LeadSource ? LeadSource.note(form) : '',

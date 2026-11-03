@@ -724,6 +724,7 @@
             phone: fd.get('phone') || fd.get('Phone'),
             email: fd.get('email') || fd.get('Email'),
             address: fd.get('address') || fd.get('Address'),
+            lead_source: window.LeadSource ? LeadSource.source(form) : undefined,
             message: [fd.get('service') ? 'Service interest: ' + fd.get('service') : '', window.LeadSource ? LeadSource.note(form) : ''].filter(Boolean).join(' | '),
           })
         });

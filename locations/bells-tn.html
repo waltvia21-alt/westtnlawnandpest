@@ -1252,6 +1252,7 @@
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             name: name, phone: phone, email: email, address: address,
+            lead_source: window.LeadSource ? LeadSource.source(quoteForm) : undefined,
             message: [service ? 'Service interest: ' + service : '', window.LeadSource ? LeadSource.note(quoteForm) : ''].filter(Boolean).join(' | '),
           })
         });

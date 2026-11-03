@@ -1288,6 +1288,7 @@
             address: [data.get('Address'), data.get('City'), data.get('ZIP')].filter(Boolean).join(', '),
             yard_sqft: data.get('Lawn Size') ? parseFloat(String(data.get('Lawn Size'))) : undefined,
             grass_type: String(data.get('Grass Type') || ''),
+            lead_source: window.LeadSource ? LeadSource.source(this) : undefined,
             message: msgParts,
           })
         });

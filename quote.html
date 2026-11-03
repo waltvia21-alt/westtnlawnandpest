@@ -995,6 +995,7 @@
             email: fd.get('email'),
             address: address || '',
             yard_sqft: sqft ? parseFloat(sqft) : undefined,
+            lead_source: window.LeadSource ? LeadSource.source(this) : undefined,
             message: [price ? 'Quote price: $' + price : '', window.LeadSource ? LeadSource.note(this) : ''].filter(Boolean).join(' | '),
           })
         });
