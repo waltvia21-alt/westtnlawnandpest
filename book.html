@@ -983,17 +983,11 @@
               </div>
               <div class="field-group">
                 <label class="field-label" for="referral">
-                  How Did You Hear About Us? <span class="opt">(optional)</span>
+                  How Did You Hear About Us?
                 </label>
-                <select id="referral" name="referral">
+                <!-- Options are filled in by js/lead-source.js -->
+                <select id="referral" name="Heard About Us" required>
                   <option value="" disabled selected>Select one</option>
-                  <option>Google Search</option>
-                  <option>Facebook / Instagram</option>
-                  <option>Friend or Neighbor Referral</option>
-                  <option>Drove By / Yard Sign</option>
-                  <option>Door Hanger / Flyer</option>
-                  <option>Returning Customer</option>
-                  <option>Other</option>
                 </select>
               </div>
             </div>
@@ -1266,6 +1260,7 @@
         alert('Please fill in all required fields and select a preferred time.');
         return;
       }
+      if (window.LeadSource && !LeadSource.check(this)) return;
 
       const btn = document.getElementById('submitBtn');
       btn.disabled = true;
@@ -1280,6 +1275,8 @@
           data.get('preferred_date') ? 'Preferred date: ' + data.get('preferred_date') : '',
           data.get('preferred_time') ? 'Preferred time: ' + data.get('preferred_time') : '',
           data.get('Property Notes') ? 'Notes: ' + data.get('Property Notes') : '',
+          data.get('notes') ? 'Other notes: ' + data.get('notes') : '',
+          window.LeadSource ? LeadSource.note(this, '\n') : '',
         ].filter(Boolean).join('\n');
         const res = await fetch('https://app.westtnlawnandpest.com/api/public/lead', {
           method: 'POST',
@@ -1296,6 +1293,7 @@
         });
 
         if (res.ok) {
+          if (window.LeadSource) LeadSource.trackLead(this);
           // Hide form steps and progress bar, show success
           document.getElementById('step3').classList.remove('active');
           document.querySelector('.progress-bar').style.display = 'none';
@@ -1491,5 +1489,6 @@
   });
 })();
 </script>
+  <script src="js/lead-source.js"></script>
 </body>
 </html>

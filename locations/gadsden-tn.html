@@ -967,7 +967,7 @@
       <div class="quote-form" id="quote">
         <h3>Get Your Free Estimate</h3>
         <p class="form-sub">No obligation. We'll assess your Gadsden property &amp; build a custom plan.</p>
-        <form id="quoteForm" novalidate>
+        <form id="quoteForm" data-lead-source="group" novalidate>
           <div class="form-group">
             <label for="name">Full Name</label>
             <input type="text" id="name" name="name" placeholder="John Smith" required>
@@ -1256,22 +1256,18 @@
         if (firstEmpty) { firstEmpty.focus(); }
         return;
       }
+      if (window.LeadSource && !LeadSource.check(quoteForm)) return;
       try {
         await fetch('https://app.westtnlawnandpest.com/api/public/lead', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             name: name, phone: phone, email: email, address: address,
-            message: service ? 'Service interest: ' + service : '',
+            message: [service ? 'Service interest: ' + service : '', window.LeadSource ? LeadSource.note(quoteForm) : ''].filter(Boolean).join(' | '),
           })
         });
       } catch (err) { /* fail silently — still show success */ }
-      quoteForm.style.display = 'none';
-      formSuccess.style.display = 'block';
-    });
-        if (firstEmpty) { firstEmpty.focus(); }
-        return;
-      }
+      if (window.LeadSource) LeadSource.trackLead(quoteForm);
       quoteForm.style.display = 'none';
       formSuccess.style.display = 'block';
     });
@@ -1359,5 +1355,6 @@
   });
 })();
 </script>
+  <script src="../js/lead-source.js"></script>
 </body>
 </html>

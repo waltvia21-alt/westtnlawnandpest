@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preload" as="image" href="images/jenkins-lawn-jackson-tn.webp" fetchpriority="high" />
   <title>Lawn Care &amp; Weed Control — West TN Lawn &amp; Pest | Jackson, TN</title>
   <meta name="description" content="Professional lawn weed control & fertilization in Jackson, TN. West TN Lawn & Pest delivers thick, green, weed-free lawns — satisfaction guaranteed or we retreat for free." />
   <!-- Favicon -->
@@ -270,7 +271,7 @@
       min-height: 92vh;
       background:
         linear-gradient(150deg, rgba(15,30,17,.85) 0%, rgba(27,107,42,.50) 55%, rgba(15,30,17,.88) 100%),
-        url('images/jenkins-lawn-jackson-tn.jpg') center/cover no-repeat;
+        url('images/jenkins-lawn-jackson-tn.webp') center/cover no-repeat;
       display: flex; align-items: center;
       padding: 60px 0 80px;
     }
@@ -664,7 +665,7 @@
     .cta-section {
       background:
         linear-gradient(135deg, rgba(15,30,17,.92) 0%, rgba(27,107,42,.78) 100%),
-        url('images/aaron-lawn-green-up-jackson-tn.jpg') center/cover no-repeat;
+        url('images/aaron-lawn-green-up-jackson-tn.webp') center/cover no-repeat;
       padding: 96px 0; text-align: center;
     }
     .cta-section h2 {
@@ -1066,7 +1067,7 @@
         <div class="hero__card">
           <h2 style="font-size:1.35rem;font-weight:700;margin-bottom:4px;">Get Your Free Lawn Assessment</h2>
           <p class="hero__card-sub">No obligation &mdash; we'll respond within one business day.</p>
-          <form class="hero__form" onsubmit="handleForm(event)">
+          <form class="hero__form" data-lead-source onsubmit="handleForm(event)">
             <input type="hidden" name="Form Source" value="Free Assessment — Homepage" />
             <input type="text" name="Name" placeholder="Your Name" required autocomplete="name" />
             <input type="tel" name="Phone" placeholder="Phone Number" required autocomplete="tel" />
@@ -1080,6 +1081,7 @@
               <option>Good shape — want it great</option>
               <option>New lawn, starting from scratch</option>
             </select>
+            <span data-lead-source-slot hidden></span><!-- "How did you hear about us?" is added here by js/lead-source.js -->
             <div style="display:flex;flex-direction:column;gap:10px;text-align:left;">
               <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer;">
                 <input type="checkbox" name="sms_transactional" value="Yes" style="margin-top:3px;flex-shrink:0;accent-color:#1B6B2A;width:15px;height:15px;" />
@@ -1793,10 +1795,14 @@
         phone: fd.get('Phone'),
         email: fd.get('Email'),
         address: fd.get('Address'),
-        message: fd.get('Lawn Condition') ? 'Lawn condition: ' + fd.get('Lawn Condition') : '',
+        message: [
+          fd.get('Lawn Condition') ? 'Lawn condition: ' + fd.get('Lawn Condition') : '',
+          window.LeadSource ? LeadSource.note(form) : '',
+        ].filter(Boolean).join(' | '),
       })
     }).then(r => {
       if (r.ok) {
+        if (window.LeadSource) LeadSource.trackLead(form);
         btn.innerHTML = '✓ Request Sent! We\'ll call you soon.';
         btn.style.background = '#22803A';
         form.querySelectorAll('input,select').forEach(el => el.disabled = true);
@@ -1928,5 +1934,6 @@
   document.head.appendChild(s);
 })();
 </script>
+  <script src="js/lead-source.js"></script>
 </body>
 </html>
