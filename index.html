@@ -1063,9 +1063,9 @@
         </div>
       </div>
 
-      <div id="quote">
+      <div id="quote" style="scroll-margin-top:96px;">
         <div class="hero__card">
-          <h2 style="font-size:1.35rem;font-weight:700;margin-bottom:4px;">Get Your Free Lawn Assessment</h2>
+          <h2 id="quoteHeading" style="font-size:1.35rem;font-weight:700;margin-bottom:4px;">Get Your Free Lawn Assessment</h2>
           <p class="hero__card-sub">No obligation &mdash; we'll respond within one business day.</p>
           <form class="hero__form" data-lead-source onsubmit="handleForm(event)">
             <input type="hidden" name="Form Source" value="Free Assessment — Homepage" />
@@ -1780,6 +1780,18 @@
     });
   });
 
+  // Location pages link here as /?town=Humboldt#quote. Show the town on the
+  // form and note it on the lead. Only plain town names are accepted.
+  const quoteTown = (function () {
+    const t = (new URLSearchParams(location.search).get('town') || '').trim();
+    if (!/^[A-Za-z][A-Za-z .'-]{0,39}$/.test(t)) return '';
+    const heading = document.getElementById('quoteHeading');
+    if (heading) heading.textContent = 'Get Your Free Lawn Assessment in ' + t;
+    const addr = document.querySelector('#quote [name="Address"]');
+    if (addr) addr.placeholder = 'Street Address in ' + t + ', TN';
+    return t;
+  })();
+
   function handleForm(e) {
     e.preventDefault();
     const form = e.target;
@@ -1798,6 +1810,9 @@
         lead_source: window.LeadSource ? LeadSource.source(form) : undefined,
         message: [
           fd.get('Lawn Condition') ? 'Lawn condition: ' + fd.get('Lawn Condition') : '',
+          quoteTown ? 'Came from: ' + quoteTown + ' page' : '',
+          'Service texts OK: ' + (fd.get('sms_transactional') ? 'Yes' : 'No'),
+          'Marketing texts OK: ' + (fd.get('sms_marketing') ? 'Yes' : 'No'),
           window.LeadSource ? LeadSource.note(form) : '',
         ].filter(Boolean).join(' | '),
       })

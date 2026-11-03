@@ -942,7 +942,7 @@
       </ul>
       <div class="nav-right">
         <a href="tel:7313137732" class="nav-phone">731-313-7732</a>
-        <a href="#quote" class="btn-nav">Free Quote</a>
+        <a href="/?town=Bells#quote" class="btn-nav">Free Quote</a>
         <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -967,37 +967,9 @@
       <div class="quote-form" id="quote">
         <h3>Get Your Free Estimate</h3>
         <p class="form-sub">No obligation. We'll assess your Bells lawn &amp; give you a custom quote.</p>
-        <form id="quoteForm" data-lead-source="group" novalidate>
-          <div class="form-group">
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" placeholder="John Smith" required>
-          </div>
-          <div class="form-group">
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" placeholder="(731) 555-0000" required>
-          </div>
-          <div class="form-group">
-            <label for="address">Property Address in Bells</label>
-            <input type="text" id="address" name="address" placeholder="123 Main St, Bells, TN" required>
-          </div>
-          <div class="form-group">
-            <label for="service">Service Interest</label>
-            <select id="service" name="service">
-              <option value="">Select a service...</option>
-              <option>Weed Control Program</option>
-              <option>Lawn Fertilization</option>
-              <option>Annual Treatment Program</option>
-              <option>Not sure — need advice</option>
-            </select>
-          </div>
-          <button type="submit" class="btn-primary">Get My Free Assessment &#8250;</button>
-          <p class="form-note">We typically respond within 1 business day</p>
-        </form>
-        <div class="form-success" id="formSuccess">
-          <div class="check">&#10003;</div>
-          <h4>Request Received!</h4>
-          <p>Thanks! We'll reach out within 1 business day to schedule your free Bells lawn assessment.</p>
-        </div>
+        <a href="/?town=Bells#quote" class="btn-primary" style="display:block;text-align:center;text-decoration:none;">Get My Free Assessment &#8250;</a>
+        <a href="tel:+17313137732" class="btn-primary" style="display:block;text-align:center;text-decoration:none;margin-top:12px;background:transparent;border:2px solid currentColor;color:inherit;">Call (731) 313-7732</a>
+        <p class="form-note">Takes about 30 seconds. We typically respond within 1 business day.</p>
       </div>
     </div>
   </section>
@@ -1133,7 +1105,7 @@
       <h2 class="reveal">Ready for a Weed-Free<br>Bells Lawn?</h2>
       <p class="reveal reveal-delay-1">Take advantage of our Fall Special and get a free, no-obligation lawn assessment. Our team will visit your Bells property, evaluate your lawn, and recommend the best treatment plan.</p>
       <div class="cta-btns reveal reveal-delay-2">
-        <a href="#quote" class="btn-cta-primary">Get Free Assessment</a>
+        <a href="/?town=Bells#quote" class="btn-cta-primary">Get Free Assessment</a>
         <a href="tel:7313137732" class="btn-cta-secondary">Call 731-313-7732</a>
       </div>
     </div>
@@ -1165,7 +1137,7 @@
             <li><a href="../index.html#plans">Treatment Plans</a></li>
             <li><a href="../index.html#about">About Us</a></li>
             <li><a href="../index.html#reviews">Reviews</a></li>
-            <li><a href="#quote">Get a Quote</a></li>
+            <li><a href="/?town=Bells#quote">Get a Quote</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -1223,43 +1195,6 @@
         navLinks.classList.remove('open');
         hamburger.setAttribute('aria-expanded', 'false');
       });
-    });
-
-    // Quote form handler
-    const quoteForm = document.getElementById('quoteForm');
-    const formSuccess = document.getElementById('formSuccess');
-
-    quoteForm.addEventListener('submit', async function(e) {
-      e.preventDefault();
-      const name = document.getElementById('name').value.trim();
-      const phone = document.getElementById('phone').value.trim();
-      const address = document.getElementById('address').value.trim();
-      const email = document.getElementById('email') ? document.getElementById('email').value.trim() : '';
-      const service = document.getElementById('service') ? document.getElementById('service').value : '';
-      if (!name || !phone || !address) {
-        const firstEmpty = [
-          document.getElementById('name'),
-          document.getElementById('phone'),
-          document.getElementById('address')
-        ].find(function(el) { return !el.value.trim(); });
-        if (firstEmpty) { firstEmpty.focus(); }
-        return;
-      }
-      if (window.LeadSource && !LeadSource.check(quoteForm)) return;
-      try {
-        await fetch('https://app.westtnlawnandpest.com/api/public/lead', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            name: name, phone: phone, email: email, address: address,
-            lead_source: window.LeadSource ? LeadSource.source(quoteForm) : undefined,
-            message: [service ? 'Service interest: ' + service : '', window.LeadSource ? LeadSource.note(quoteForm) : ''].filter(Boolean).join(' | '),
-          })
-        });
-      } catch (err) { /* fail silently — still show success */ }
-      if (window.LeadSource) LeadSource.trackLead(quoteForm);
-      quoteForm.style.display = 'none';
-      formSuccess.style.display = 'block';
     });
 
     // Scroll reveal
