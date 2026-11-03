@@ -1289,6 +1289,8 @@
             yard_sqft: data.get('Lawn Size') ? parseFloat(String(data.get('Lawn Size'))) : undefined,
             grass_type: String(data.get('Grass Type') || ''),
             lead_source: window.LeadSource ? LeadSource.source(this) : undefined,
+            sms_consent: !!data.get('sms_transactional'),
+            sms_marketing_consent: !!data.get('sms_marketing'),
             message: msgParts,
           })
         });

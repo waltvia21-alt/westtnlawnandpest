@@ -611,6 +611,16 @@
                 <input type="tel" name="phone" placeholder="Phone number" required autocomplete="tel" />
                 <input type="email" name="email" placeholder="Email (optional)" autocomplete="email" />
                 <!-- "How did you hear about us?" is added here by js/lead-source.js -->
+                <div style="display:flex;flex-direction:column;gap:10px;margin:4px 0 14px;text-align:left;">
+                  <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer;">
+                    <input type="checkbox" name="sms_transactional" value="Yes" style="width:16px;height:16px;min-width:16px;margin:2px 0 0;padding:0;flex-shrink:0;accent-color:#1B6B2A;" />
+                    <span style="font-size:11px;color:var(--sage);line-height:1.55;">I agree to receive service-related texts from West TN Lawn &amp; Pest (appointment reminders, notifications). Msg &amp; data rates may apply. Reply <strong>STOP</strong> to opt out.</span>
+                  </label>
+                  <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer;">
+                    <input type="checkbox" name="sms_marketing" value="Yes" style="width:16px;height:16px;min-width:16px;margin:2px 0 0;padding:0;flex-shrink:0;accent-color:#1B6B2A;" />
+                    <span style="font-size:11px;color:var(--sage);line-height:1.55;">I'd like occasional texts with seasonal tips and offers from West TN Lawn &amp; Pest. Reply <strong>STOP</strong> to cancel.</span>
+                  </label>
+                </div>
                 <button type="submit" class="lead-capture__btn" id="leadSubmitBtn">Send Me This Quote</button>
               </form>
               <div class="lead-capture__success" id="leadSuccess">
@@ -996,6 +1006,8 @@
             address: address || '',
             yard_sqft: sqft ? parseFloat(sqft) : undefined,
             lead_source: window.LeadSource ? LeadSource.source(this) : undefined,
+            sms_consent: !!fd.get('sms_transactional'),
+            sms_marketing_consent: !!fd.get('sms_marketing'),
             message: [price ? 'Quote price: $' + price : '', window.LeadSource ? LeadSource.note(this) : ''].filter(Boolean).join(' | '),
           })
         });

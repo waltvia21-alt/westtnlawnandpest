@@ -1808,11 +1808,11 @@
         email: fd.get('Email'),
         address: fd.get('Address'),
         lead_source: window.LeadSource ? LeadSource.source(form) : undefined,
+        sms_consent: !!fd.get('sms_transactional'),
+        sms_marketing_consent: !!fd.get('sms_marketing'),
         message: [
           fd.get('Lawn Condition') ? 'Lawn condition: ' + fd.get('Lawn Condition') : '',
           quoteTown ? 'Came from: ' + quoteTown + ' page' : '',
-          'Service texts OK: ' + (fd.get('sms_transactional') ? 'Yes' : 'No'),
-          'Marketing texts OK: ' + (fd.get('sms_marketing') ? 'Yes' : 'No'),
           window.LeadSource ? LeadSource.note(form) : '',
         ].filter(Boolean).join(' | '),
       })
