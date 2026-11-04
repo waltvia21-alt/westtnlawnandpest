@@ -220,7 +220,7 @@
 
   // Dropdown answer -> the CRM's canonical lead-source label (westttn-crm
   // lib/leadSources.ts), so the Marketing page groups them without mapping.
-  // Answers with no CRM equivalent (Google Maps, Yelp, Mailer) are sent as-is;
+  // Google Maps, Yelp, Mailer and Nextdoor already match CRM labels and are sent as-is;
   // the CRM keeps unknown labels as their own row.
   var CRM_SOURCE = {
     'Friend or family referral': 'Referral',

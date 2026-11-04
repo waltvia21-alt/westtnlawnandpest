@@ -1,0 +1,32 @@
+# Cloudflare Pages redirects (permanent, so search engines move rankings over).
+# Dropped service-area towns -> home page
+/locations/beech-bluff-tn  /  301
+/locations/beech-bluff-tn.html  /  301
+/locations/bemis-tn  /  301
+/locations/bemis-tn.html  /  301
+/locations/dyer-tn  /  301
+/locations/dyer-tn.html  /  301
+/locations/gibson-tn  /  301
+/locations/gibson-tn.html  /  301
+/locations/henderson-tn  /  301
+/locations/henderson-tn.html  /  301
+/locations/trenton-tn  /  301
+/locations/trenton-tn.html  /  301
+
+# Old service URLs -> Jackson service pages
+/services/armyworm-control  /services/jackson-tn-armyworm-control  301
+/services/armyworm-control.html  /services/jackson-tn-armyworm-control  301
+/services/flea-tick-control  /services/jackson-tn-flea-tick-control  301
+/services/flea-tick-control.html  /services/jackson-tn-flea-tick-control  301
+/services/lawn-fertilization  /services/jackson-tn-lawn-fertilization  301
+/services/lawn-fertilization.html  /services/jackson-tn-lawn-fertilization  301
+/services/mole-control  /services/jackson-tn-mole-control  301
+/services/mole-control.html  /services/jackson-tn-mole-control  301
+/services/mosquito-control  /services/jackson-tn-mosquito-control  301
+/services/mosquito-control.html  /services/jackson-tn-mosquito-control  301
+/services/perimeter-pest-control  /services/jackson-tn-perimeter-pest-control  301
+/services/perimeter-pest-control.html  /services/jackson-tn-perimeter-pest-control  301
+/services/pest-control  /services/jackson-tn-pest-control  301
+/services/pest-control.html  /services/jackson-tn-pest-control  301
+/services/weed-control  /services/jackson-tn-weed-control  301
+/services/weed-control.html  /services/jackson-tn-weed-control  301
