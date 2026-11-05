@@ -115,7 +115,9 @@
         node.appendChild(visuallyHidden(label));
         node.appendChild(control);
       }
-      form.insertBefore(node, anchor);
+      // The slot may sit inside a wrapper (e.g. a form step), not directly in the form
+      if (anchor) anchor.parentNode.insertBefore(node, anchor);
+      else form.appendChild(node);
       return grouped ? control.parentNode : control;
     }
 
