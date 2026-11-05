@@ -412,7 +412,27 @@
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "wjkb2uo0gd");
   </script>
-  <style>@media (min-width: 961px) and (max-width: 1452px){.nav-calc{display:none!important}}</style>
+
+  <style id="nav-fit">
+    /* Let the menu bar use more of wide screens than the page content does */
+    nav .container, .nav__inner, .nav-inner { max-width: 1440px; }
+    @media (max-width: 1440px) {
+      .nav__links > li > a, .nav-links > li > a { padding-left: 7px; padding-right: 7px; }
+    }
+    @media (max-width: 1320px) {
+      .nav__phone, .nav-phone { font-size: 0; gap: 0; }
+    }
+    @media (max-width: 1168px) {
+      .nav__links { display: none; }
+      .nav__phone { display: none; }
+      .nav__ham { display: flex; }
+    }
+    @media (max-width: 480px) {
+      .nav__inner, .nav-inner { gap: 10px; }
+      .nav__right, .nav-right { gap: 8px; }
+      .nav__right .btn, .nav-right .btn { padding: 8px 12px; font-size: 12px; white-space: nowrap; }
+    }
+  </style>
 </head>
 <body>
 
