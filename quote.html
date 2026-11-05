@@ -435,7 +435,7 @@
 
   <!-- Promo Banner -->
   <div class="promo">
-    <strong>Fall Special:</strong> Book now and get your first application <strong>50% off.</strong> Limited openings — <a href="book">Book Now →</a>
+    <strong>Fall Special:</strong> Free lawn assessment — no obligation, no pressure. <a href="book">Book Now →</a>
   </div>
 
   <!-- Nav -->
@@ -607,13 +607,6 @@
             <div class="result-card__price" id="price">$0.00</div>
             <div class="result-card__per-app">Per treatment visit · minimum may apply</div>
 
-            <!-- 50% off first application -->
-            <div style="background:linear-gradient(135deg,#1B6B2A,#22803A);border-radius:10px;padding:14px 16px;margin:16px 0;text-align:center;">
-              <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.8);margin-bottom:3px;">Fall Special — 50% Off</div>
-              <div style="font-size:12px;color:rgba(255,255,255,.8);margin-bottom:6px;">Your first application</div>
-              <div style="font-family:'DM Serif Display',Georgia,serif;font-size:44px;color:#fff;line-height:1;margin-bottom:3px;" id="discountPrice">$0.00</div>
-              <div style="font-size:11px;color:rgba(255,255,255,.65);">First visit only · Regular price applies after</div>
-            </div>
 
             <!-- Lead capture -->
             <div class="lead-capture">
@@ -859,7 +852,6 @@
         const count = shapes.length + 1;
         document.getElementById('sqft').textContent = totalSqFt.toLocaleString();
         document.getElementById('price').textContent = '$' + price.toFixed(2);
-        document.getElementById('discountPrice').textContent = '$' + (price / 2).toFixed(2);
         document.getElementById('areaCount').textContent = count === 1 ? 'drawing section 1' : `drawing section ${count}`;
         showResult();
       }
@@ -961,7 +953,6 @@
 
       document.getElementById('sqft').textContent = totalSqFt.toLocaleString();
       document.getElementById('price').textContent = '$' + price.toFixed(2);
-      document.getElementById('discountPrice').textContent = '$' + (price / 2).toFixed(2);
       document.getElementById('areaCount').textContent =
         count === 1 ? '1 section drawn' : `${count} sections drawn`;
       showResult();
